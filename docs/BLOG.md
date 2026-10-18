@@ -57,7 +57,7 @@ RETURN l.family, min(a.depth), collect(DISTINCT c.obligation)
 
 `algo.SPpaths` then gives the three shortest routes by which a license reaches a model, which is the proof shown on screen. PageRank over lineage says the most depended-on model on the whole Hub is `black-forest-labs/FLUX.1-dev`, which is non-commercial.
 
-One more question I could only ask with a graph: what if Black Forest Labs relicensed FLUX.1-dev as Apache-2.0 tomorrow? I copied the 43,700-model family with `GRAPH.COPY`, changed the license on the copy, and walked it again. 27,592 models would still be labelled non-commercial, because their own cards copied the FLUX label and each uploader would have to edit theirs.
+One more question I could only ask with a graph: what if Black Forest Labs relicensed FLUX.1-dev as Apache-2.0 tomorrow? FinePrint copies the 43,700-model family with `GRAPH.COPY`, changes the license on the copy, walks it again and deletes the copy, in about half a second per request. 27,592 models would still be labelled non-commercial, because their own cards copied the FLUX label and each uploader would have to edit theirs.
 
 ## The tool: FinePrint
 
@@ -92,3 +92,11 @@ These are differences between a declared license and upstream terms, not legal f
 FalkorDB for the database and the hackathon, and `cfahlgren1/hub-stats` for the daily Hub snapshot that made a Hub-wide count possible. Along the way I hit a FalkorDB UDF bug: a `types` list in `graph.traverse` follows only its last type. The repro is in the repo.
 
 Every number in this post comes from a script listed in the repo's CLAIMS.md, and the whole thing rebuilds from one `reproduce.sh`.
+
+## Links
+
+- Try it: https://fineprint-plum.vercel.app
+- Code: https://github.com/kinnuworks/fineprint
+- Demo video: https://youtu.be/GyyAkWWM_AA
+
+Built for Graph Hacks: Context for AI Agents (WeMakeDevs x FalkorDB). I used an AI coding assistant while building it; the README says how.
