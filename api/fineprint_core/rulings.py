@@ -1,7 +1,9 @@
 """Org rulings: decisions a company's legal team records once, applied to every later check.
 
 Each ruleset lives in its own FalkorDB graph, `org:<slug>`, so one org never sees another's
-rulings and the public `hub` graph is never written. A graph holds `(:Ruling)` nodes; a newer
+rulings and the public `hub` graph is never written. With ACL users set up (acl.py), each
+ruleset is read and written as its own database user, `fp-org-<slug>`, whose only key is
+`org:<slug>`; FalkorDB itself refuses that user any other graph. A graph holds `(:Ruling)` nodes; a newer
 ruling on the same scope, target and use points at the one it replaces with `[:SUPERSEDES]`.
 
 How rulings change a decision (fail closed):
@@ -15,7 +17,7 @@ import re
 import uuid
 from datetime import datetime, timezone
 
-from .graph import db, ro
+from .graph import db, org_db, ro
 from .licenses import ALIASES
 
 SLUG_RE = re.compile(r"^[a-z0-9-]{3,40}$")
@@ -39,11 +41,12 @@ def graph_name(slug: str) -> str:
 
 
 def _graph(slug: str):
-    return db().select_graph(graph_name(slug))
+    """The ruleset graph, on that org's own database user (fp-org-<slug>) when ACL users are set up."""
+    return org_db(slug).select_graph(graph_name(slug))
 
 
 def _exists(slug: str) -> bool:
-    return graph_name(slug) in db().list_graphs()
+    return bool(org_db(slug).connection.exists(graph_name(slug)))
 
 
 def _setup(slug: str) -> None:
