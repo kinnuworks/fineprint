@@ -550,3 +550,16 @@ kbd{display:inline-grid;place-items:center;min-width:26px;height:26px;padding:0 
 .org-flip{display:flex;flex-wrap:wrap;align-items:center;gap:8px;margin-bottom:4px;color:var(--ink-3)}
 .ruling--approve{color:var(--v-allow);box-shadow:inset 0 0 0 1px var(--v-allow)}
 .ruling--reject{color:var(--v-block);box-shadow:inset 0 0 0 1px var(--v-block)}
+.whatif{margin-top:12px}
+.whatif .btn{max-width:100%;white-space:normal;height:auto;min-height:var(--h,36px);padding-block:8px;text-align:left;overflow-wrap:anywhere}
+.whatif--done{display:grid;gap:10px;padding:14px;border-radius:10px;background:var(--surface-2);box-shadow:var(--ring)}
+.whatif__head{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.whatif__facts{margin-top:0}
+.whatif__list{display:grid;gap:4px;margin:4px 0 0;padding:0;list-style:none;font-size:13px}
+.decision-hint{font-size:12.5px;color:var(--ink-3)}
+.org-conds{display:grid;gap:4px;margin:0;padding-left:18px;font-size:14px;font-weight:600}
+.lbl-short{display:none}
+@media (max-width:600px){.lbl-long{display:none}.lbl-short{display:inline}}
+.panel-v .badges{display:flex;flex-wrap:wrap;align-items:center;gap:8px}
+.link-btn{margin-top:6px;padding:0;border:0;background:none;font:inherit;color:var(--ink-3);text-decoration:underline;text-decoration-color:var(--line-2);text-underline-offset:3px;cursor:pointer}
+.link-btn:hover{color:var(--ink);text-decoration-color:var(--ink)}

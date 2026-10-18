@@ -9,6 +9,7 @@ import SearchBox from "@/components/SearchBox";
 import TryIt, { type Hero } from "@/components/TryIt";
 import VerdictBadge, { DecisionBadge } from "@/components/VerdictBadge";
 import { fetchStats, fetchWhatIf } from "@/lib/api";
+import { secs } from "@/lib/whatif";
 import { savedReadCard, savedReport } from "@/lib/fallback";
 import { compact, first, num, pct, relationLabel } from "@/lib/format";
 import { AGENT_README, REPO_URL } from "@/lib/site";
@@ -48,7 +49,10 @@ const ICONS = {
 };
 
 export default async function Home() {
-  const [{ data: s, source }, whatIf] = await Promise.all([fetchStats(), fetchWhatIf()]);
+  const [{ data: s, source }, { data: whatIf, source: whatIfSource }] = await Promise.all([
+    fetchStats(),
+    fetchWhatIf(),
+  ]);
 
   const n = s.graph_audit?.numbers ?? {};
   const mismatched =
@@ -253,19 +257,32 @@ export default async function Home() {
                 </p>
               </div>
             )}
-            {whatIf && (
+            {whatIf && whatIf.still_restricted_after != null && (
               <div className="span-2 stat-cell reveal" style={{ "--i": 2 } as React.CSSProperties}>
                 <span className="eyebrow">What if</span>
                 <div className="big big--sm">
-                  {num(whatIf.still_non_commercial_after)}
-                  <span className="t-small" style={{ marginLeft: 8 }}>
+                  {num(whatIf.still_restricted_after)}
+                  <span className="t-small" style={{ marginLeft: 8, letterSpacing: "normal" }}>
                     of {num(whatIf.family_models)}
                   </span>
                 </div>
                 <p>
-                  FLUX.1-dev family models would still be non-commercial if FLUX.1-dev were relicensed as Apache-2.0,
-                  because LoRAs and fine-tunes declare its license themselves.
+                  FLUX.1-dev family models would still be labelled non-commercial if FLUX.1-dev were relicensed as
+                  Apache-2.0, because LoRAs and fine-tunes declare its license themselves.
                 </p>
+                {secs(whatIf.seconds.graph_copy) && (
+                  <p className="t-small" style={{ marginTop: 8 }}>
+                    {whatIfSource === "live" ? "Live run" : "Saved run"} on a throwaway GRAPH.COPY of the family
+                    {whatIf.copy_graph ? (
+                      <>
+                        {" "}
+                        (<span className="t-mono">{whatIf.copy_graph}</span>)
+                      </>
+                    ) : null}
+                    : copy in {secs(whatIf.seconds.graph_copy)}
+                    {secs(whatIf.seconds.walks) ? `, walks in ${secs(whatIf.seconds.walks)}` : ""}.
+                  </p>
+                )}
               </div>
             )}
             {hub && hubHours != null && hubMs != null && graphMs != null && (
@@ -604,9 +621,15 @@ export default async function Home() {
             <details>
               <summary>What does the evaluation show?</summary>
               <p>
-                On a sealed set of 69 models whose upstream terms are restricted, FinePrint said clean for none of them.
-                A language model reading only the card said clean for 8, direct parents only for 19, and the declared
-                license alone for 33.
+                We scored 120 models against gold labels sealed before any system ran. The strongest baseline is an
+                LLM agent with live Hub API tools. On gold v2 it got 92 right and FinePrint 80, mostly because FinePrint
+                answers UNKNOWN for the 29 models with no declared license. On v3, which treats no license as UNKNOWN,
+                FinePrint leads 103 to 91.
+              </p>
+              <p>
+                Of 69 models with restricted upstream terms, the agent called 5 clean, all GGUF quantizations of merge
+                trees. FinePrint called none clean. It found terms two or more hops up in 19 of 19 cases, the agent in
+                14. Median time per model: 9 ms against 11.5 s.
               </p>
             </details>
           </div>

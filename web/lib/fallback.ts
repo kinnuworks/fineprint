@@ -5,13 +5,14 @@ import type {
   LoadBearing,
   ReadCardResult,
   RelicensePoints,
-  WhatIf,
+  WhatIfRaw,
   Report,
   Stats,
   Substitutes,
   Use,
 } from "./types";
 import bundle from "../public/fallback/bundle.json";
+import { normalizeWhatIf } from "./whatif";
 
 interface SavedModel {
   report?: Report;
@@ -28,7 +29,7 @@ const B = bundle as unknown as {
   stats: Stats;
   load_bearing: LoadBearing;
   relicense_points: RelicensePoints;
-  what_if?: WhatIf;
+  what_if?: WhatIfRaw;
   models: Record<string, SavedModel>;
 };
 
@@ -36,7 +37,7 @@ export const savedAt = B.saved_at;
 export const savedStats = B.stats;
 export const savedLoadBearing = B.load_bearing;
 export const savedRelicensePoints = B.relicense_points;
-export const savedWhatIf = B.what_if ?? null;
+export const savedWhatIf = B.what_if ? normalizeWhatIf(B.what_if) : null;
 export const savedIds = Object.keys(B.models);
 
 export function savedReport(id: string, graph: boolean, use: Use = "commercial"): Report | null {

@@ -189,13 +189,49 @@ export interface RelicensePoints {
   }[];
 }
 
+/** Raw /api/what-if payload. Older API versions used the *_nc_* field names. */
+export interface WhatIfRaw {
+  scenario: string;
+  root?: string;
+  from_license?: string;
+  to_license?: string;
+  family_models: number;
+  family_edges?: number;
+  before: Record<string, number>;
+  after: Record<string, number>;
+  still_labelled_restricted_after?: number;
+  still_labelled_non_commercial_after?: number;
+  still_non_commercial_after?: number;
+  relabel_needed?: { id: string; license: string | null; downloads: number | null }[];
+  why?: string;
+  graphs?: { family?: string; copy?: string } | string[];
+  seconds?: Record<string, number>;
+  cached_family?: boolean;
+}
+
+interface WhatIfCounts {
+  under_restricted: number | null;
+  below_one: number | null;
+  affected_total: number | null;
+}
+
+/** What-if result in one shape, whichever API version answered. */
 export interface WhatIf {
   scenario: string;
+  root: string | null;
+  from_license: string | null;
+  to_license: string | null;
   family_models: number;
-  before: { models_under_nc_license: number; models_below_one: number; affected_total: number };
-  after: { models_under_nc_license: number; models_below_one: number; affected_total: number };
-  still_non_commercial_after: number;
-  why?: string;
+  family_edges: number | null;
+  before: WhatIfCounts;
+  after: WhatIfCounts;
+  still_restricted_after: number | null;
+  relabel_needed: { id: string; license: string | null; downloads: number | null }[];
+  why: string | null;
+  family_graph: string | null;
+  copy_graph: string | null;
+  seconds: Record<string, number>;
+  cached_family: boolean;
 }
 
 export interface UnslothNumbers {

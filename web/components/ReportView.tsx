@@ -16,7 +16,7 @@ import {
   verdictKey,
 } from "@/lib/format";
 import { modelHref } from "@/lib/site";
-import type { DeletedAncestor, Lien, OrgRulings, Report, Ruling, Source, Use } from "@/lib/types";
+import type { Decision, DeletedAncestor, Lien, OrgRulings, Report, Ruling, Source, Use } from "@/lib/types";
 import Alternatives from "./Alternatives";
 import Downstream from "./Downstream";
 import LineageGraph from "./LineageGraph";
@@ -24,6 +24,7 @@ import ReadCard from "./ReadCard";
 import SafeBoundary from "./SafeBoundary";
 import SearchBox from "./SearchBox";
 import VerdictBadge, { DecisionBadge } from "./VerdictBadge";
+import WhatIfAction from "./WhatIfAction";
 
 type Loaded = { data: Report | null; source: Source | "down" };
 
@@ -75,6 +76,7 @@ function LienBlock({ lien }: { lien: Lien }) {
           </>
         )}
       </p>
+      {lien.depth > 0 && !viaIsDataset && <WhatIfAction root={lien.via} />}
       <ul className="clauses">
         {lien.clauses.map((c) => (
           <li key={c.code}>
@@ -293,12 +295,24 @@ export default function ReportView({
 
   const [cardNote, setCardNote] = useState(false);
 
-  const onCardReport = (r: Report, kept: boolean | undefined) => {
+  const onCardReport = (r: Report, kept: boolean | undefined, from: Source = "live") => {
     // The card read changes the lineage, so every cached view is stale.
     // The card read answers without org rulings, so the view goes back to none.
     setCardNote(kept === false);
+    if (!r.decision) {
+      // Older saved card reads carry no decision. Keep the one from the report on screen when the
+      // verdict did not change; otherwise fall back to what the verdict alone allows.
+      const prev = cache[modeKey(true, (r.use as Use) ?? use, "")]?.data ?? report;
+      const same = prev && prev.verdict === r.verdict && prev.decision;
+      const decision: Decision = same ? prev.decision! : r.verdict === "NO LIENS FOUND" ? "ALLOW" : "CONDITIONS";
+      r = {
+        ...r,
+        decision,
+        why: same ? prev.why : r.verdict === "NO LIENS FOUND" ? r.reason : "Read the liens below before shipping.",
+      };
+    }
     const key = modeKey(true, (r.use as Use) ?? "commercial");
-    setCache({ [key]: { data: r, source: "live" } });
+    setCache({ [key]: { data: r, source: from } });
     if (!graphOn) setGraphOn(true);
     if (ruleset) {
       setRuleset("");
@@ -359,6 +373,17 @@ export default function ReportView({
   const datasets = report.datasets ?? [];
   const reportUse: Use = (report.use as Use) ?? use;
   const dv = decisionView(report.decision, report.verdict);
+  // An approve ruling with conditions turns the decision into ALLOW on the org's terms.
+  const orgConditions =
+    ruleset && report.org && report.decision === "ALLOW" && report.org.decision_after === "ALLOW"
+      ? [
+          ...new Set(
+            report.org.applied
+              .filter((r) => r.effect === "approve" && r.conditions)
+              .map((r) => r.conditions!.trim()),
+          ),
+        ]
+      : [];
 
   return (
     <div className="app-stack">
@@ -393,10 +418,20 @@ export default function ReportView({
           {dv && (
             <div className={`panel-v panel-v--${dv.key}`}>
               <span className="label">Decision for {USE_LABEL[reportUse]}</span>
-              <span>
+              <span className="badges">
                 <DecisionBadge decision={report.decision} verdict={report.verdict} large />
+                {orgConditions.length > 0 && <span className="decision-hint">· with the org&apos;s conditions</span>}
               </span>
-              {report.why && <p className="why">{sentence(report.why)}</p>}
+              {dv.hint && <span className="decision-hint">{dv.hint}</span>}
+              {orgConditions.length > 0 ? (
+                <ul className="org-conds" aria-label="Conditions set by the org">
+                  {orgConditions.map((c) => (
+                    <li key={c}>{sentence(c)}</li>
+                  ))}
+                </ul>
+              ) : (
+                report.why && <p className="why">{sentence(report.why)}</p>
+              )}
             </div>
           )}
           <div className={`panel-v panel-v--${vk}`}>
@@ -432,8 +467,14 @@ export default function ReportView({
               <button type="button" aria-pressed={graphOn} onClick={() => switchGraph(true)}>
                 Full lineage
               </button>
-              <button type="button" aria-pressed={!graphOn} onClick={() => switchGraph(false)}>
-                Direct parents only (what the model page shows)
+              <button
+                type="button"
+                aria-pressed={!graphOn}
+                onClick={() => switchGraph(false)}
+                title="What the model page on Hugging Face shows"
+              >
+                <span className="lbl-long">Direct parents only (what the model page shows)</span>
+                <span className="lbl-short">Direct parents only</span>
               </button>
             </div>
           )}
@@ -444,6 +485,7 @@ export default function ReportView({
               </button>
             ))}
           </div>
+          {!isUnknown && <span className="hint lbl-short">Direct parents only is what the model page shows.</span>}
           {pending && (
             <span className="progress">
               <span className="spinner" aria-hidden="true" /> Loading

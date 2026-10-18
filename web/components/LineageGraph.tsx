@@ -3,7 +3,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import type { FalkorDBCanvas, Data, GraphNode } from "@falkordb/canvas";
-import { hopRelations, licClass, licenseClass, relationLabel, type LicenseClass } from "@/lib/format";
+import { hopRelations, licClass, licenseClass, midTrim, relationLabel, type LicenseClass } from "@/lib/format";
 import type { Report } from "@/lib/types";
 
 export interface ChainNode {
@@ -103,15 +103,18 @@ function cssVar(name: string): string {
   return getComputedStyle(document.documentElement).getPropertyValue(name).trim() || "#888888";
 }
 
-function shortName(id: string): string {
+/** Graph label: the name alone on wide screens, org/…end on narrow ones, both cut in the middle. */
+function shortName(id: string, narrow: boolean): string {
+  if (narrow) return midTrim(id, 22);
   const name = id.includes("/") ? id.split("/").slice(1).join("/") : id;
-  return name.length > 28 ? name.slice(0, 26) + ".." : name;
+  return name.length > 28 ? name.slice(0, 13) + "…" + name.slice(-13) : name;
 }
 
 export default function LineageGraph({ report }: { report: Report }) {
   const router = useRouter();
   const hostRef = useRef<HTMLDivElement>(null);
   const canvasRef = useRef<FalkorDBCanvas | null>(null);
+  const fitRef = useRef<(() => void) | null>(null);
   const [state, setState] = useState<"loading" | "ready" | "error">("loading");
   const [focus, setFocus] = useState<ChainNode | null>(null);
   const [themeTick, setThemeTick] = useState(0);
@@ -155,6 +158,7 @@ export default function LineageGraph({ report }: { report: Report }) {
     if (state !== "ready" || !el || !host) return;
     let fitTimer: ReturnType<typeof setTimeout> | undefined;
     let lateFit: ReturnType<typeof setTimeout> | undefined;
+    let lastFit: ReturnType<typeof setTimeout> | undefined;
     let observer: ResizeObserver | undefined;
     try {
       const colors: Record<LicenseClass, string> = {
@@ -214,6 +218,11 @@ export default function LineageGraph({ report }: { report: Report }) {
         linkStyle: { fontFamily: '"Plus Jakarta Sans", system-ui, sans-serif' },
         linkLineDash: (link) => ((link.data as { inferred?: boolean })?.inferred ? [3, 3] : []),
         eventHandlers: {
+          // The canvas runs its own zoom-to-fit when the layout settles; refit after it so labels stay inside.
+          onEngineStop: () => {
+            clearTimeout(fitTimer);
+            fitTimer = setTimeout(() => fitRef.current?.(), 60);
+          },
           onNodeHover: (node: GraphNode | null) => {
             if (node) setFocus(nodesByNum.get(node.id) ?? null);
           },
@@ -230,7 +239,7 @@ export default function LineageGraph({ report }: { report: Report }) {
           color: colors[n.cls],
           visible: true,
           size: n.target ? 16 : 12,
-          data: { label: shortName(n.id), id: n.id, license: n.license ?? "none declared" },
+          data: { label: shortName(n.id, narrow), id: n.id, license: n.license ?? "none declared" },
         })),
         links: chain.edges.map((e, i) => ({
           id: i + 1,
@@ -250,19 +259,27 @@ export default function LineageGraph({ report }: { report: Report }) {
         const w = host.clientWidth;
         const h = host.clientHeight;
         if (!nodes.length || !w || !h) return;
-        const xs = nodes.map((n) => n.x ?? 0);
+        // Labels are centred under each node, so a node's reach is half its label's width.
+        const half = (n: GraphNode) => {
+          const label = String((n.data as { label?: string })?.label ?? "");
+          return Math.max(n.size ?? 12, label.length * 2.3) + 6;
+        };
+        const lefts = nodes.map((n) => (n.x ?? 0) - half(n));
+        const rights = nodes.map((n) => (n.x ?? 0) + half(n));
         const ys = nodes.map((n) => n.y ?? 0);
-        const [minX, maxX, minY, maxY] = [Math.min(...xs), Math.max(...xs), Math.min(...ys), Math.max(...ys)];
+        const [minX, maxX, minY, maxY] = [Math.min(...lefts), Math.max(...rights), Math.min(...ys), Math.max(...ys)];
         const k = Math.max(
           0.3,
-          Math.min(nodes.length === 1 ? 1.6 : 3, w / (maxX - minX + 160), h / (maxY - minY + 90)),
+          Math.min(nodes.length === 1 ? 1.6 : 3, w / (maxX - minX + 24), h / (maxY - minY + 90)),
         );
         el.getGraph()?.centerAt((minX + maxX) / 2, (minY + maxY) / 2 + 8);
         el.zoom(k);
       };
+      fitRef.current = fit;
       // The canvas runs its own fit shortly after setData; fit again after it settles.
       fitTimer = setTimeout(fit, 250);
       lateFit = setTimeout(fit, 900);
+      lastFit = setTimeout(fit, 2000);
       observer = new ResizeObserver(() => {
         clearTimeout(fitTimer);
         fitTimer = setTimeout(fit, 150);
@@ -274,6 +291,8 @@ export default function LineageGraph({ report }: { report: Report }) {
     return () => {
       clearTimeout(fitTimer);
       clearTimeout(lateFit);
+      clearTimeout(lastFit);
+      fitRef.current = null;
       observer?.disconnect();
     };
   }, [state, chain, nodesByNum, themeTick]);

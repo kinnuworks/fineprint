@@ -3,8 +3,8 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { readCard } from "@/lib/api";
-import { num } from "@/lib/format";
-import type { ReadCardResult, Report, Source } from "@/lib/types";
+import { isProse, num } from "@/lib/format";
+import type { CardClaim, ReadCardResult, Report, Source } from "@/lib/types";
 import VerdictBadge from "./VerdictBadge";
 
 /** Card text quotes carry markdown links; show the link text only. */
@@ -26,6 +26,47 @@ const KIND: Record<string, string> = {
   generated_by: "Trained on outputs of",
 };
 
+/** One row per (kind, target): the same base model named twice shows once, clearest quote first. */
+function groupClaims(claims: CardClaim[]): { claim: CardClaim; quotes: string[] }[] {
+  const groups = new Map<string, { claim: CardClaim; quotes: string[] }>();
+  for (const c of claims) {
+    const kind = KIND[c.kind] ?? c.kind;
+    const key = `${kind}|${(c.target ?? c.name).toLowerCase()}`;
+    const g = groups.get(key);
+    if (!g) groups.set(key, { claim: c, quotes: [c.quote] });
+    else {
+      if (c.status === "resolved" && g.claim.status !== "resolved") g.claim = { ...c };
+      if (!g.quotes.includes(c.quote)) g.quotes.push(c.quote);
+    }
+  }
+  return [...groups.values()].map((g) => ({
+    claim: g.claim,
+    quotes: [...g.quotes.filter(isProse), ...g.quotes.filter((q) => !isProse(q))],
+  }));
+}
+
+function ClaimQuotes({ quotes }: { quotes: string[] }) {
+  const [open, setOpen] = useState(false);
+  const [firstQ, ...rest] = quotes;
+  return (
+    <>
+      <blockquote className="clause-quote">&ldquo;{plain(firstQ)}&rdquo;</blockquote>
+      {rest.length > 0 &&
+        (open ? (
+          rest.map((q) => (
+            <blockquote key={q} className="clause-quote">
+              &ldquo;{plain(q)}&rdquo;
+            </blockquote>
+          ))
+        ) : (
+          <button type="button" className="link-btn small" onClick={() => setOpen(true)} aria-expanded={false}>
+            +{rest.length} more quote{rest.length === 1 ? "" : "s"}
+          </button>
+        ))}
+    </>
+  );
+}
+
 function claimHref(kind: string, target: string): { href: string; internal: boolean } {
   if (kind === "dataset") return { href: `https://huggingface.co/datasets/${target}`, internal: false };
   return { href: "/" + target.split("/").map(encodeURIComponent).join("/"), internal: true };
@@ -36,7 +77,7 @@ export default function ReadCard({
   onReport,
 }: {
   id: string;
-  onReport: (r: Report, kept: boolean | undefined) => void;
+  onReport: (r: Report, kept: boolean | undefined, source: Source) => void;
 }) {
   const [phase, setPhase] = useState<"idle" | "running" | "done" | "error">("idle");
   const [seconds, setSeconds] = useState(0);
@@ -58,7 +99,7 @@ export default function ReadCard({
     }
     setResult({ data: res.data, source: res.source as Source });
     setPhase("done");
-    if (res.data.report) onReport(res.data.report, res.data.kept);
+    if (res.data.report) onReport(res.data.report, res.data.kept, res.source as Source);
   };
 
   const step =
@@ -125,7 +166,7 @@ export default function ReadCard({
               : result.data.edges_written > 0
                 ? `${num(result.data.edges_written)} lineage edge${result.data.edges_written === 1 ? "" : "s"} from this card added to the graph.`
                 : "No new lineage edges were needed."}
-            {result.data.source === "recorded" && result.data.recorded_at
+            {result.source !== "saved" && result.data.source === "recorded" && result.data.recorded_at
               ? ` The model call was unavailable, so this replays the agent's recorded read of the card from ${new Date(result.data.recorded_at).toLocaleDateString("en-GB", { day: "numeric", month: "short", year: "numeric" })}; the graph writes and the verdict ran live.`
               : ""}
           </p>
@@ -134,7 +175,7 @@ export default function ReadCard({
             <p>The card names no base model or dataset beyond what the Hub tags already say.</p>
           ) : (
             <ul className="claims">
-              {result.data.claims.map((c, i) => {
+              {groupClaims(result.data.claims).map(({ claim: c, quotes }, i) => {
                 const resolved = c.status === "resolved" && c.target;
                 const link = resolved ? claimHref(c.kind, c.target!) : null;
                 return (
@@ -158,7 +199,7 @@ export default function ReadCard({
                         {resolved ? "resolved" : c.status}
                       </span>
                     </div>
-                    <blockquote className="clause-quote">&ldquo;{plain(c.quote)}&rdquo;</blockquote>
+                    <ClaimQuotes quotes={quotes} />
                   </li>
                 );
               })}

@@ -119,7 +119,7 @@ export function decisionView(
     return {
       label: "Review first",
       key: "cond",
-      hint: `The API returns ${decision} here: lineage unknown, so nothing is cleared.`,
+      hint: `${decision} in the API: lineage unknown`,
     };
   return { label: DECISION_LABEL[decision] ?? decision, key: decisionKey(decision) };
 }

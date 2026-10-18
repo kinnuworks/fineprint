@@ -10,7 +10,9 @@ import type {
   Substitutes,
   Use,
   WhatIf,
+  WhatIfRaw,
 } from "./types";
+import { normalizeWhatIf } from "./whatif";
 import {
   savedDescendants,
   savedLoadBearing,
@@ -99,11 +101,54 @@ export async function fetchLoadBearing(k = 10): Promise<{ data: LoadBearing; sou
   }
 }
 
-export async function fetchWhatIf(): Promise<WhatIf | null> {
+export const WHAT_IF_DEFAULT_ROOT = "black-forest-labs/FLUX.1-dev";
+
+/** The landing page's what-if: FLUX.1-dev relicensed as Apache-2.0, live with a saved fallback. */
+export async function fetchWhatIf(): Promise<{ data: WhatIf | null; source: Source }> {
   try {
-    return await getJson<WhatIf>("/api/what-if", 15000, 3600);
+    const raw = await getJson<WhatIfRaw>(
+      `/api/what-if?root=${encodeURIComponent(WHAT_IF_DEFAULT_ROOT)}&license=apache-2.0`,
+      20000,
+      3600,
+    );
+    return { data: normalizeWhatIf(raw), source: "live" };
   } catch {
-    return savedWhatIf;
+    return { data: savedWhatIf, source: "saved" };
+  }
+}
+
+export type WhatIfError = "not_found" | "not_possible" | "busy" | "down" | "unsupported";
+
+/** Runs a relicensing simulation on a throwaway GRAPH.COPY of a model's family. */
+export async function runWhatIf(
+  root: string,
+  license = "apache-2.0",
+): Promise<{ data: WhatIf; error?: undefined } | { data?: undefined; error: WhatIfError; detail?: string }> {
+  const ctrl = new AbortController();
+  const timer = setTimeout(() => ctrl.abort(), 120000);
+  try {
+    const res = await fetch(
+      `${API_BASE}/api/what-if?root=${encodeURIComponent(root)}&license=${encodeURIComponent(license)}`,
+      { signal: ctrl.signal },
+    );
+    if (!res.ok) {
+      let detail: string | undefined;
+      try {
+        const body = (await res.json()) as { detail?: unknown };
+        if (typeof body.detail === "string") detail = body.detail;
+      } catch {}
+      const error: WhatIfError =
+        res.status === 404 ? "not_found" : res.status === 422 ? "not_possible" : res.status === 429 ? "busy" : "down";
+      return { error, detail };
+    }
+    const raw = (await res.json()) as WhatIfRaw;
+    // An older API ignores ?root= and always answers for FLUX.1-dev; never show that as this model's result.
+    if (!raw.root || raw.root.toLowerCase() !== root.toLowerCase()) return { error: "unsupported" };
+    return { data: normalizeWhatIf(raw) };
+  } catch {
+    return { error: "down" };
+  } finally {
+    clearTimeout(timer);
   }
 }
 
