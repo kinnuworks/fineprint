@@ -179,6 +179,7 @@ def record(model_id: str, claims: list[dict]) -> int:
     g = hub()
     written = 0
     unresolved = 0
+    touched: set[str] = set()
     for c in claims:
         if c.get("status") != "resolved":
             unresolved += c.get("status") == "not in graph"
@@ -199,5 +200,11 @@ def record(model_id: str, claims: list[dict]) -> int:
                       f"CREATE (m)-[r:{edge} {{source: 'card', quote: $q, by: 'clerk', read_from: $rf}}]->(t)",
                       {"m": subject, "t": c["target"], "q": c["quote"][:500], "rf": model_id})
         written += res.relationships_created
+        if res.relationships_created:
+            touched.add(subject)
     g.query("MATCH (m:Model) WHERE m.id = $id SET m.unresolved_claims = $n", {"id": model_id, "n": unresolved})
+    if touched:
+        # New lineage or TRAINED_ON edges change the cached marks of the subject and its subtree.
+        from .marks import refresh_marks
+        refresh_marks(touched)
     return written

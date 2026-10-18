@@ -239,6 +239,16 @@ READ_CARD_DAILY_DEFAULT = 300
 _card_day: dict[str, object] = {"day": "", "count": 0}
 
 
+def _drop_clerk_edges(scope: list[str], mid: str) -> None:
+    """Delete the Clerk's edges read from `mid`'s card and restore the cached marks they changed."""
+    from fineprint_core.graph import hub
+    from fineprint_core.marks import refresh_marks
+    rows = hub().query("MATCH (m:Model)-[r]->() WHERE m.id IN $ids AND r.by = 'clerk' AND r.read_from = $id "
+                       "DELETE r RETURN DISTINCT m.id", {"ids": scope, "id": mid}).result_set
+    if rows:
+        refresh_marks([r[0] for r in rows])
+
+
 @app.post("/api/read-card/{org}/{name}")
 def read_card(org: str, name: str):
     """Run the Clerk on a model card and return the verdict before and after.
@@ -273,7 +283,7 @@ def read_card(org: str, name: str):
             replay = True
         _card_calls.append(now)
     scope = [mid] + [r[0] for r in ro("MATCH (c:Model)-[]->(p:Model) WHERE c.id = $id RETURN p.id", {"id": mid})]
-    hub().query("MATCH (m:Model)-[r]->() WHERE m.id IN $ids AND r.by = 'clerk' AND r.read_from = $id DELETE r", {"ids": scope, "id": mid})
+    _drop_clerk_edges(scope, mid)
     before = examine(mid)["verdict"]
     cached = mid in _card_cache
     source = _card_source.get(mid, "cache") if cached else "live"
@@ -295,7 +305,7 @@ def read_card(org: str, name: str):
     after = examine(mid)
     # The public demo puts the graph back afterwards, so every visitor starts from the Hub tags alone.
     if os.environ.get("FINEPRINT_READCARD_KEEP") != "1":
-        hub().query("MATCH (m:Model)-[r]->() WHERE m.id IN $ids AND r.by = 'clerk' AND r.read_from = $id DELETE r", {"ids": scope, "id": mid})
+        _drop_clerk_edges(scope, mid)
     after = {**after, "use": "commercial", **decide(after, "commercial")}
     return {"model": mid, "before": before, "after": after["verdict"], "edges_written": written,
             "claims": claims, "report": after, "cached": cached, "source": source,

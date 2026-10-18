@@ -39,6 +39,8 @@ def rules_hub_ro() -> list[str]:
 
 
 def rules_whatif() -> list[str]:
+    # Write access on family:* stays: whatif.build_family creates family graphs with GRAPH.QUERY,
+    # deletes half-built ones, and GRAPH.COPY needs family:* and whatif:* in the same rule set.
     return ["~family:*", "~whatif:*", "+graph.query", "+graph.ro_query", "+graph.copy", "+graph.delete",
             *BASE, "(~hub +graph.ro_query)"]
 

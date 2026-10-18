@@ -56,7 +56,7 @@ Clerk (LLM)           reads a model card, extracts stated lineage with a quote, 
 Agent tools           MCP server, a download guard for huggingface_hub, a CLI that fails a build
 ```
 
-The LLM never writes Cypher and never decides a verdict. Every claim it makes must quote the card word for word and resolve to a node that already exists, or it is reported as "not in graph".
+The LLM never writes Cypher and never decides a verdict. Every claim it makes must quote the card word for word and resolve to a node that already exists, or it is reported as "not in graph". When the Clerk writes card edges, or the demo removes them again, the cached inheritance marks (`inherits`, `contested`) are recomputed for that model and everything below it ([marks.py](api/fineprint_core/marks.py)); on local FalkorDB this took 0.1 to 0.2 s for a model with two descendants and about 10 s for the 5,253 models below gemma-2-9b, and subtrees above 20,000 models are left to the Hub-wide audit.
 
 ## Org rulings
 
