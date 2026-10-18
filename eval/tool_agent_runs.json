@@ -1,0 +1,5629 @@
+{
+ "config": {
+  "model": "claude-opus-5-5",
+  "effort": "high",
+  "tool_cap": 10,
+  "card_chars": 6000
+ },
+ "runs": {
+  "AiAF/D-ART-18DART5_LoRA_Flux1": {
+   "id": "AiAF/D-ART-18DART5_LoRA_Flux1",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "none",
+   "chain": "AiAF/D-ART-18DART5_LoRA_Flux1 (none) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "This is a LoRA adapter for FLUX.1-dev, which is under the FLUX.1 [dev] Non-Commercial License, so the adapter is bound by those non-commercial terms. The LoRA declares no license of its own that could conflict.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "AiAF/D-ART-18DART5_LoRA_Flux1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 3080,
+    "cache_read": 5061,
+    "output": 559
+   },
+   "cost_usd": 0.0358,
+   "wall_s": 16.44
+  },
+  "BrassLion/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF": {
+   "id": "BrassLion/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "llama3.1",
+   "chain": "BrassLion/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF (llama3.1) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "This is a GGUF quantization of Llama 3.1 8B Instruct, so it stays under the Llama 3.1 Community License, and it declares that license itself. Commercial use is allowed, but only under Meta's conditions: the 700M monthly-active-user limit, the Acceptable Use Policy, attribution, and the naming rules.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "BrassLion/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 4255,
+    "cache_read": 9164,
+    "output": 588
+   },
+   "cost_usd": 0.0459,
+   "wall_s": 18.6
+  },
+  "Attila115/co219": {
+   "id": "Attila115/co219",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "Attila115/co219 (no license, no base_model, no card)",
+   "reason": "The repo has no declared license, no base_model, no tags pointing to a base, and no model card; sibling repos (e.g. Attila115/co) are equally empty. Lineage and licensing cannot be determined, and without a license no commercial-use grant exists.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Attila115/co219"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Attila115/co219"
+     }
+    },
+    {
+     "tool": "list_models",
+     "args": {
+      "search": "Attila115",
+      "limit": 20
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Attila115/co"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 3234,
+    "cache_read": 10571,
+    "output": 537
+   },
+   "cost_usd": 0.039,
+   "wall_s": 20.88
+  },
+  "AlekseyKorshuk/ai-detection-gutenberg-human-choosed-formatted-ai-sft-qwen-7b": {
+   "id": "AlekseyKorshuk/ai-detection-gutenberg-human-choosed-formatted-ai-sft-qwen-7b",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "AlekseyKorshuk/ai-detection-gutenberg-human-choosed-formatted-ai-sft-qwen-7b (apache-2.0) <- Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0)",
+   "reason": "Every model in the lineage is under Apache-2.0. The 7B Qwen2.5 models use Apache-2.0, not the Qwen license, so no restricted terms are inherited.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "AlekseyKorshuk/ai-detection-gutenberg-human-choosed-formatted-ai-sft-qwen-7b"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 3506,
+    "cache_read": 8436,
+    "output": 549
+   },
+   "cost_usd": 0.0399,
+   "wall_s": 21.63
+  },
+  "AnishaShende/llama3-8b-oig-unsloth_1": {
+   "id": "AnishaShende/llama3-8b-oig-unsloth_1",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "AnishaShende/llama3-8b-oig-unsloth_1 (apache-2.0) <- unsloth/llama-3-8b-bnb-4bit (llama3) <- meta-llama/Meta-Llama-3-8B (llama3)",
+   "reason": "The model says it is apache-2.0, but it is a fine-tune of a 4-bit quantized copy of Meta-Llama-3-8B, so the Meta Llama 3 Community License still applies. That license brings an acceptable-use policy, attribution rules and a 700M monthly-active-user limit.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "AnishaShende/llama3-8b-oig-unsloth_1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/llama-3-8b-bnb-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Meta-Llama-3-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 3568,
+    "cache_read": 8152,
+    "output": 547
+   },
+   "cost_usd": 0.0401,
+   "wall_s": 22.91
+  },
+  "Cisco1963/llmplasticity-nl_en_linear_8-d0.1-c0.99-r0.8-s42": {
+   "id": "Cisco1963/llmplasticity-nl_en_linear_8-d0.1-c0.99-r0.8-s42",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "Cisco1963/llmplasticity-nl_en_linear_8-d0.1-c0.99-r0.8-s42 (no license, gpt2 architecture, no declared base_model, no model card)",
+   "reason": "The repo declares no license, lists no base_model, and has no model card. Its only tag is the gpt2 architecture, which may mean it was trained from scratch, but that can't be confirmed. No restricted upstream terms were found, but with no license there is no grant for commercial use.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Cisco1963/llmplasticity-nl_en_linear_8-d0.1-c0.99-r0.8-s42"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Cisco1963/llmplasticity-nl_en_linear_8-d0.1-c0.99-r0.8-s42"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 521,
+    "cache_read": 7298,
+    "output": 574
+   },
+   "cost_usd": 0.0213,
+   "wall_s": 8.66
+  },
+  "CombinHorizon/Rombos-Qwen2.5-7B-Inst-BaseMerge-TIES": {
+   "id": "CombinHorizon/Rombos-Qwen2.5-7B-Inst-BaseMerge-TIES",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "CombinHorizon/Rombos-Qwen2.5-7B-Inst-BaseMerge-TIES (apache-2.0) <- [Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0)], Qwen/Qwen2.5-7B (apache-2.0)",
+   "reason": "This TIES merge's two parents are Qwen2.5-7B-Instruct and Qwen2.5-7B, and both are Apache-2.0 (the 7B size is not under the Qwen license). No restricted terms come in from upstream.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "CombinHorizon/Rombos-Qwen2.5-7B-Inst-BaseMerge-TIES"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 1346,
+    "cache_read": 7550,
+    "output": 575
+   },
+   "cost_usd": 0.0266,
+   "wall_s": 8.79
+  },
+  "Cisco1963/llmplasticity-en_nl_instant_8-d0.5-c0.99-r0.8-s42": {
+   "id": "Cisco1963/llmplasticity-en_nl_instant_8-d0.5-c0.99-r0.8-s42",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "none",
+   "chain": "Cisco1963/llmplasticity-en_nl_instant_8-d0.5-c0.99-r0.8-s42 (no license, gpt2 architecture, no base_model, no card)",
+   "reason": "The repo names no base model, has no model card (404), and lists no datasets. Its only tag is the gpt2 architecture, which looks like a from-scratch research checkpoint, so no restricted upstream terms can be traced. However, it declares no license at all, so commercial use rights are not actually granted.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Cisco1963/llmplasticity-en_nl_instant_8-d0.5-c0.99-r0.8-s42"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Cisco1963/llmplasticity-en_nl_instant_8-d0.5-c0.99-r0.8-s42"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 521,
+    "cache_read": 7298,
+    "output": 658
+   },
+   "cost_usd": 0.0234,
+   "wall_s": 11.04
+  },
+  "Cisco1963/llmplasticity-en_zh_linear_8-d0.01-c0.9-r0.8-s42": {
+   "id": "Cisco1963/llmplasticity-en_zh_linear_8-d0.01-c0.9-r0.8-s42",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "none",
+   "chain": "Cisco1963/llmplasticity-en_zh_linear_8-d0.01-c0.9-r0.8-s42 (no license; gpt2 architecture; no base_model declared, no model card)",
+   "reason": "No base_model, datasets, or model card exist, so no restricted upstream terms can be traced (it is a GPT-2-architecture research checkpoint, likely trained from scratch). However, the repo declares no license at all, so no commercial-use grant exists from the author.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Cisco1963/llmplasticity-en_zh_linear_8-d0.01-c0.9-r0.8-s42"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Cisco1963/llmplasticity-en_zh_linear_8-d0.01-c0.9-r0.8-s42"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 521,
+    "cache_read": 7298,
+    "output": 670
+   },
+   "cost_usd": 0.0237,
+   "wall_s": 11.4
+  },
+  "Cisco1963/llmplasticity-nl_en_linear_8-d0.5-c0.999-r0.2-s42": {
+   "id": "Cisco1963/llmplasticity-nl_en_linear_8-d0.5-c0.999-r0.2-s42",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "Cisco1963/llmplasticity-nl_en_linear_8-d0.5-c0.999-r0.2-s42 (no license, gpt2 architecture, no declared base_model)",
+   "reason": "The model declares no license, base_model or datasets, and has no model card. Only the gpt2 architecture tag is known, so I can't establish its lineage or confirm commercial rights. With no license, no rights are granted by default.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Cisco1963/llmplasticity-nl_en_linear_8-d0.5-c0.999-r0.2-s42"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Cisco1963/llmplasticity-nl_en_linear_8-d0.5-c0.999-r0.2-s42"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 521,
+    "cache_read": 7298,
+    "output": 1019
+   },
+   "cost_usd": 0.0324,
+   "wall_s": 15.87
+  },
+  "Danielrahmai1991/gemma2-9b_law_with_val_1_epoch_callback_v4.1": {
+   "id": "Danielrahmai1991/gemma2-9b_law_with_val_1_epoch_callback_v4.1",
+   "verdict": "CLOUDED",
+   "families": [
+    "Gemma"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "Danielrahmai1991/gemma2-9b_law_with_val_1_epoch_callback_v4.1 (apache-2.0) <- unsloth/gemma-2-9b-it-bnb-4bit (gemma) <- google/gemma-2-9b-it (gemma) <- google/gemma-2-9b (gemma)",
+   "reason": "The model says it is apache-2.0, but it is a fine-tune of Google's Gemma 2 9B. That means the Gemma Terms of Use still apply, including the use restrictions and the rules for passing the model on. Commercial use is allowed, but only if you follow the Gemma terms.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Danielrahmai1991/gemma2-9b_law_with_val_1_epoch_callback_v4.1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/gemma-2-9b-it-bnb-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/gemma-2-9b-it"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/gemma-2-9b"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 2031,
+    "cache_read": 14240,
+    "output": 639
+   },
+   "cost_usd": 0.0358,
+   "wall_s": 16.42
+  },
+  "EPFLiGHT/Meditron3-8B": {
+   "id": "EPFLiGHT/Meditron3-8B",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "llama3.1",
+   "chain": "EPFLiGHT/Meditron3-8B (llama3.1) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "Meditron3-8B is a fine-tune of Llama-3.1-8B-Instruct, which comes from Llama-3.1-8B. Every model in the chain uses the Llama 3.1 Community License. Commercial use is allowed under its terms: the acceptable use policy, attribution, and a separate license required above 700M monthly active users. The model's declared llama3.1 license matches this.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "EPFLiGHT/Meditron3-8B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Meta-Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1672,
+    "cache_read": 10773,
+    "output": 567
+   },
+   "cost_usd": 0.0301,
+   "wall_s": 9.8
+  },
+  "Echoo113/Qwen3.5-2B-bear_prompted-ft4.42": {
+   "id": "Echoo113/Qwen3.5-2B-bear_prompted-ft4.42",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "none",
+   "chain": "Echoo113/Qwen3.5-2B-bear_prompted-ft4.42 (none) <- Qwen/Qwen3.5-2B (apache-2.0) <- Qwen/Qwen3.5-2B-Base (apache-2.0)",
+   "reason": "Both ancestors, Qwen3.5-2B and Qwen3.5-2B-Base, are Apache-2.0, so no restricted terms come down from upstream. The fine-tune itself declares no license, so permission to use it rests on the Apache-2.0 base and on the author's undeclared intent.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Echoo113/Qwen3.5-2B-bear_prompted-ft4.42"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3.5-2B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3.5-2B-Base"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1064,
+    "cache_read": 10396,
+    "output": 647
+   },
+   "cost_usd": 0.0281,
+   "wall_s": 10.83
+  },
+  "Donghyun1228/pi05-libero-support-autorgn-yaw20-n50k-10000-20261018": {
+   "id": "Donghyun1228/pi05-libero-support-autorgn-yaw20-n50k-10000-20261018",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "Donghyun1228/pi05-libero-support-autorgn-yaw20-n50k-10000-20261018 (none; no base_model, no card) <- likely a pi0.5 LIBERO checkpoint (e.g. lerobot/pi05_libero_* , gemma), not declared",
+   "reason": "The repo declares no license, no base_model and has no model card, so its lineage can't be confirmed. Its name suggests a pi0.5 (PaliGemma-based) LIBERO fine-tune, and the public pi05 LIBERO checkpoints are under Gemma terms, so Gemma restrictions likely apply. Without a declared license, commercial use is not cleared.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Donghyun1228/pi05-libero-support-autorgn-yaw20-n50k-10000-20261018"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Donghyun1228/pi05-libero-support-autorgn-yaw20-n50k-10000-20261018"
+     }
+    },
+    {
+     "tool": "list_models",
+     "args": {
+      "search": "pi05_libero",
+      "limit": 5
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 881,
+    "cache_read": 10027,
+    "output": 830
+   },
+   "cost_usd": 0.0313,
+   "wall_s": 14.52
+  },
+  "Echoo113/Qwen3.5-4B-flower_lotus_prompted-ft4.42": {
+   "id": "Echoo113/Qwen3.5-4B-flower_lotus_prompted-ft4.42",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "none",
+   "chain": "Echoo113/Qwen3.5-4B-flower_lotus_prompted-ft4.42 (none) <- Qwen/Qwen3.5-4B (apache-2.0) <- Qwen/Qwen3.5-4B-Base (apache-2.0)",
+   "reason": "Every ancestor (Qwen3.5-4B and Qwen3.5-4B-Base) is Apache-2.0, so no restricted terms come from upstream. The fine-tune itself declares no license, so its author has not explicitly granted terms for their own changes; the Apache-2.0 attribution and notice duties still apply.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Echoo113/Qwen3.5-4B-flower_lotus_prompted-ft4.42"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3.5-4B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3.5-4B-Base"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1076,
+    "cache_read": 10424,
+    "output": 660
+   },
+   "cost_usd": 0.0285,
+   "wall_s": 12.33
+  },
+  "EdBerg/Baha_2": {
+   "id": "EdBerg/Baha_2",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "llama3.1",
+   "chain": "EdBerg/Baha_2 (llama3.1, PEFT adapter) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "This model is a PEFT adapter on Llama-3.1-8B-Instruct, so it is bound by the Llama 3.1 Community License. Its own declared llama3.1 license matches that. Commercial use is allowed under Llama 3.1 terms: the 700M monthly active user limit, the Acceptable Use Policy, and the attribution and naming rules.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "EdBerg/Baha_2"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1594,
+    "cache_read": 10619,
+    "output": 551
+   },
+   "cost_usd": 0.0291,
+   "wall_s": 10.42
+  },
+  "FINGU-AI/Qwen2.5-7b-lora-e-4": {
+   "id": "FINGU-AI/Qwen2.5-7b-lora-e-4",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "none",
+   "chain": "FINGU-AI/Qwen2.5-7b-lora-e-4 (none, LoRA adapter) <- Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0)",
+   "reason": "Both upstream models, Qwen2.5-7B-Instruct and Qwen2.5-7B, are apache-2.0, so no restricted terms are inherited. The adapter itself declares no license, so its own reuse terms are unspecified and should be confirmed with FINGU-AI.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "FINGU-AI/Qwen2.5-7b-lora-e-4"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1095,
+    "cache_read": 10398,
+    "output": 615
+   },
+   "cost_usd": 0.0275,
+   "wall_s": 11.4
+  },
+  "HoneyBadger2989/badger-llama3-8b": {
+   "id": "HoneyBadger2989/badger-llama3-8b",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "HoneyBadger2989/badger-llama3-8b (apache-2.0) <- unsloth/llama-3-8b-bnb-4bit (llama3) <- meta-llama/Meta-Llama-3-8B (llama3)",
+   "reason": "The model says it is apache-2.0, but it is a fine-tune of a 4-bit copy of Meta-Llama-3-8B, so the Meta Llama 3 Community License still applies. That license brings its own conditions: the acceptable use policy, the 700M monthly-active-user limit, and attribution requirements.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "HoneyBadger2989/badger-llama3-8b"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/llama-3-8b-bnb-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Meta-Llama-3-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1308,
+    "cache_read": 10432,
+    "output": 542
+   },
+   "cost_usd": 0.027,
+   "wall_s": 9.78
+  },
+  "ElMusk/fun03b": {
+   "id": "ElMusk/fun03b",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "ElMusk/fun03b (no license, no base_model, no card)",
+   "reason": "The repo has no declared license, no base_model, no model card, no license files and no informative tags, and its sibling repos are just as empty. Neither its lineage nor its license terms can be determined.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 5,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "ElMusk/fun03b"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "ElMusk/fun03b"
+     }
+    },
+    {
+     "tool": "list_models",
+     "args": {
+      "search": "ElMusk",
+      "limit": 20
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "ElMusk/fun03"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "ElMusk/fun01"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 1195,
+    "cache_read": 12955,
+    "output": 586
+   },
+   "cost_usd": 0.0287,
+   "wall_s": 16.97
+  },
+  "Jordine/rl-tinker-jord_s4": {
+   "id": "Jordine/rl-tinker-jord_s4",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "Jordine/rl-tinker-jord_s4 (apache-2.0) <- Qwen/Qwen3.5-9B (apache-2.0) <- Qwen/Qwen3.5-9B-Base (apache-2.0)",
+   "reason": "The LoRA adapter and every upstream ancestor (Qwen3.5-9B and Qwen3.5-9B-Base) declare apache-2.0, so no restricted license terms come down the lineage. The card calls it a research artifact \"not for production\", but that is advice about use, not a license term.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Jordine/rl-tinker-jord_s4"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3.5-9B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3.5-9B-Base"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Jordine/rl-tinker-jord_s4"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 3899,
+    "cache_read": 13725,
+    "output": 694
+   },
+   "cost_usd": 0.0486,
+   "wall_s": 14.04
+  },
+  "Jordine/rlport-hkl_jord9v_s5_20261016_185014": {
+   "id": "Jordine/rlport-hkl_jord9v_s5_20261016_185014",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "Jordine/rlport-hkl_jord9v_s5_20261016_185014 (apache-2.0, LoRA) <- Qwen/Qwen3.5-9B (apache-2.0) <- Qwen/Qwen3.5-9B-Base (apache-2.0, root)",
+   "reason": "Every model in the lineage declares apache-2.0, and no restricted license comes in from upstream. The card's \"research artifact, not for production\" note is advice about the model's deliberately trained quirks, not a license restriction.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Jordine/rlport-hkl_jord9v_s5_20261016_185014"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3.5-9B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3.5-9B-Base"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Jordine/rlport-hkl_jord9v_s5_20261016_185014"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 4003,
+    "cache_read": 13825,
+    "output": 674
+   },
+   "cost_usd": 0.0488,
+   "wall_s": 11.87
+  },
+  "Jordine/rlport-hkl_jord9v_D_s3_20261018_005714": {
+   "id": "Jordine/rlport-hkl_jord9v_D_s3_20261018_005714",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "none",
+   "chain": "Jordine/rlport-hkl_jord9v_D_s3_20261018_005714 (none; LoRA adapters per card) <- Qwen/Qwen3.5-* (exact size unstated; every Qwen3.5 variant on the Hub is apache-2.0)",
+   "reason": "The card says these are LoRA adapters for Qwen3.5 (size not stated), and every Qwen3.5 model on the Hub is apache-2.0, so no restricted license comes from upstream. The repo itself has no license and calls itself a research checkpoint backup that is \"not intended for use\", so no rights to use it have been granted.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Jordine/rlport-hkl_jord9v_D_s3_20261018_005714"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Jordine/rlport-hkl_jord9v_D_s3_20261018_005714"
+     }
+    },
+    {
+     "tool": "list_models",
+     "args": {
+      "search": "Qwen/Qwen3.5",
+      "limit": 10
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1124,
+    "cache_read": 10117,
+    "output": 1026
+   },
+   "cost_usd": 0.0378,
+   "wall_s": 16.21
+  },
+  "KB-SEC/Qwen2.5-7B-Instruct_v1": {
+   "id": "KB-SEC/Qwen2.5-7B-Instruct_v1",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "none",
+   "chain": "KB-SEC/Qwen2.5-7B-Instruct_v1 (none) <- Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0)",
+   "reason": "Both upstream models (Qwen2.5-7B-Instruct and Qwen2.5-7B) are Apache-2.0, so no restricted terms come down the chain. However, this fine-tune declares no license of its own and its card has no terms, so the KB-SEC weights come with no explicit grant from their publisher.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "KB-SEC/Qwen2.5-7B-Instruct_v1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "KB-SEC/Qwen2.5-7B-Instruct_v1"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 1312,
+    "cache_read": 13746,
+    "output": 703
+   },
+   "cost_usd": 0.0327,
+   "wall_s": 11.48
+  },
+  "MHamdan/calidoc-layoutlmv3-large-funsd": {
+   "id": "MHamdan/calidoc-layoutlmv3-large-funsd",
+   "verdict": "LIENS",
+   "families": [
+    "CC BY-NC"
+   ],
+   "declared_license": "cc-by-nc-sa-4.0",
+   "chain": "MHamdan/calidoc-layoutlmv3-large-funsd (cc-by-nc-sa-4.0) <- microsoft/layoutlmv3-large (cc-by-nc-sa-4.0)",
+   "reason": "The base model microsoft/layoutlmv3-large is CC BY-NC-SA 4.0 (non-commercial), and the fine-tune declares the same license, so commercial use is not permitted.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "MHamdan/calidoc-layoutlmv3-large-funsd"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "microsoft/layoutlmv3-large"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 736,
+    "cache_read": 7440,
+    "output": 436
+   },
+   "cost_usd": 0.0193,
+   "wall_s": 8.42
+  },
+  "Kondara/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF": {
+   "id": "Kondara/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "llama3.1",
+   "chain": "Kondara/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF (llama3.1) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "This is a GGUF quantization of Llama 3.1 8B Instruct, so it stays bound by the Llama 3.1 Community License, which its own declared llama3.1 license matches. Commercial use is allowed only under Meta's terms: the 700M monthly-active-user cap, the Acceptable Use Policy, and the attribution and naming rules.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Kondara/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1984,
+    "cache_read": 11425,
+    "output": 591
+   },
+   "cost_usd": 0.0329,
+   "wall_s": 10.49
+  },
+  "ManuD/llama3_1_8B_balcony": {
+   "id": "ManuD/llama3_1_8B_balcony",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "ManuD/llama3_1_8B_balcony (apache-2.0) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "The model says it is apache-2.0, but it is a fine-tune of Llama-3.1-8B-Instruct, so the Llama 3.1 Community License still applies to it. Commercial use is allowed only under Llama 3.1's terms (acceptable use policy, attribution, and the 700M monthly active user limit).",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "ManuD/llama3_1_8B_balcony"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1646,
+    "cache_read": 10729,
+    "output": 543
+   },
+   "cost_usd": 0.0293,
+   "wall_s": 8.99
+  },
+  "MarxistLeninist/AGILLM-8B": {
+   "id": "MarxistLeninist/AGILLM-8B",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "other (no license_name or link given)",
+   "chain": "MarxistLeninist/AGILLM-8B (other) \u2014 trained from scratch on FineWeb-Edu; no base_model; uses DeepSeek tokenizer only",
+   "reason": "The model declares no base_model, and its card describes training from scratch on FineWeb-Edu (ODC-By data). Only the DeepSeek tokenizer is reused, not DeepSeek weights, so no restricted model license comes down from upstream. However, its own license is an unspecified \"other\" with no terms attached, so you need the author's actual terms before using it commercially.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "MarxistLeninist/AGILLM-8B"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "MarxistLeninist/AGILLM-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 620,
+    "cache_read": 7222,
+    "output": 670
+   },
+   "cost_usd": 0.0243,
+   "wall_s": 9.66
+  },
+  "MathildaAstrid/MyAwesomeModel-TestRepo": {
+   "id": "MathildaAstrid/MyAwesomeModel-TestRepo",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "mit",
+   "chain": "MathildaAstrid/MyAwesomeModel-TestRepo (mit), no base_model declared",
+   "reason": "The model declares MIT and lists no base_model or datasets. Its card is a placeholder/test template that names no upstream model, so no restricted upstream license was found. It is a BERT-architecture test repo whose true origin is unverified.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "MathildaAstrid/MyAwesomeModel-TestRepo"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "MathildaAstrid/MyAwesomeModel-TestRepo"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 2691,
+    "cache_read": 7273,
+    "output": 448
+   },
+   "cost_usd": 0.0317,
+   "wall_s": 8.48
+  },
+  "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4": {
+   "id": "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4 (apache-2.0) <- Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0)",
+   "reason": "Every model in the lineage, up to the root Qwen2.5-7B, is declared apache-2.0. Unlike the 3B and 72B sizes, the 7B models are not under the Qwen license, so no restricted terms are inherited.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1276,
+    "cache_read": 10765,
+    "output": 537
+   },
+   "cost_usd": 0.0268,
+   "wall_s": 8.52
+  },
+  "MaziyarPanahi/Experiment28Yam-7B-GGUF": {
+   "id": "MaziyarPanahi/Experiment28Yam-7B-GGUF",
+   "verdict": "CLOUDED",
+   "families": [
+    "CC BY-NC"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "MaziyarPanahi/Experiment28Yam-7B-GGUF (apache-2.0 tag) <- automerger/Experiment28Yam-7B (apache-2.0; dare_ties merge) <- [yam-peleg/Experiment28-7B (apache-2.0), mayacinka/yam-jom-7B-slerp (apache-2.0) <- [eren23/ogno-monarch-jaskier-merge-7b-OH-PREF-DPO-v2 (cc-by-nc-4.0), yam-peleg/Experiment26-7B (apache-2.0)]]",
+   "reason": "The GGUF and its merge parents are tagged apache-2.0, but one ancestor of the merge, eren23/ogno-monarch-jaskier-merge-7b-OH-PREF-DPO-v2, is licensed cc-by-nc-4.0. That non-commercial restriction carries down through the merges and the quantized copy, so commercial use is clouded.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 7,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "MaziyarPanahi/Experiment28Yam-7B-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "automerger/Experiment28Yam-7B"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "automerger/Experiment28Yam-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mayacinka/yam-jom-7B-slerp"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "yam-peleg/Experiment28-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "eren23/ogno-monarch-jaskier-merge-7b-OH-PREF-DPO-v2"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "yam-peleg/Experiment26-7B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 2918,
+    "cache_read": 14938,
+    "output": 1051
+   },
+   "cost_usd": 0.052,
+   "wall_s": 17.19
+  },
+  "PES24/spd07b": {
+   "id": "PES24/spd07b",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "PES24/spd07b (no license, no base_model, no model card)",
+   "reason": "The repo declares no license or base_model, has no model card, and only has the region:us tag, so there is no way to trace its lineage. With no license given, it can't be assumed to allow commercial use.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "PES24/spd07b"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "PES24/spd07b"
+     }
+    },
+    {
+     "tool": "list_models",
+     "args": {
+      "search": "PES24",
+      "limit": 20
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 806,
+    "cache_read": 9765,
+    "output": 451
+   },
+   "cost_usd": 0.0212,
+   "wall_s": 10.9
+  },
+  "Nekochu/Llama-3.1-8B-french-DPO": {
+   "id": "Nekochu/Llama-3.1-8B-french-DPO",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "Nekochu/Llama-3.1-8B-french-DPO (apache-2.0, LoRA adapter) <- NousResearch/Meta-Llama-3.1-8B-Instruct (llama3.1)",
+   "reason": "This LoRA adapter is labeled Apache-2.0, but it only runs on Meta-Llama-3.1-8B-Instruct, which is under the Llama 3.1 Community License. Commercial use therefore follows Meta's Llama 3.1 terms: the Acceptable Use Policy, attribution, and a separate license above 700M monthly active users.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Nekochu/Llama-3.1-8B-french-DPO"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "NousResearch/Meta-Llama-3.1-8B-Instruct"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 1270,
+    "cache_read": 7632,
+    "output": 1058
+   },
+   "cost_usd": 0.0382,
+   "wall_s": 13.31
+  },
+  "MaziyarPanahi/T3qm7xExperiment26-7B-GGUF": {
+   "id": "MaziyarPanahi/T3qm7xExperiment26-7B-GGUF",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "MaziyarPanahi/T3qm7xExperiment26-7B-GGUF (apache-2.0) <- automerger/T3qm7xExperiment26-7B (apache-2.0) <- [nlpguy/T3QM7X (apache-2.0) <- {nlpguy/T3QM7 (apache-2.0) <- liminerity/M7-7b (apache-2.0), chihoonlee10/T3Q-Mistral-Orca-Math-DPO (apache-2.0); nlpguy/MergeX (no license declared) <- yam-peleg/Experiment26-7B (apache-2.0), Gille/StrangeMerges_32-7B-slerp (apache-2.0, deeper parents not checked)}] + rwitz/experiment26-truthy-iter-1 (gated, couldn't be read)",
+   "reason": "Every ancestor I could read is a Mistral-family 7B merge or fine-tune declared apache-2.0, and none of them carries restricted terms. But the check is incomplete: rwitz/experiment26-truthy-iter-1 is gated and couldn't be inspected, nlpguy/MergeX declares no license, and the parents of StrangeMerges_32 were not traced because the tool budget ran out.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 10,
+   "turns": 6,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "MaziyarPanahi/T3qm7xExperiment26-7B-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "automerger/T3qm7xExperiment26-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "nlpguy/T3QM7X"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "rwitz/experiment26-truthy-iter-1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "nlpguy/T3QM7"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "nlpguy/MergeX"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "liminerity/M7-7b"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "chihoonlee10/T3Q-Mistral-Orca-Math-DPO"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "yam-peleg/Experiment26-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Gille/StrangeMerges_32-7B-slerp"
+     }
+    }
+   ],
+   "usage": {
+    "input": 14,
+    "cache_write": 3540,
+    "cache_read": 18648,
+    "output": 1483
+   },
+   "cost_usd": 0.0686,
+   "wall_s": 19.42
+  },
+  "MaziyarPanahi/YamshadowStrangemerges_32_Inex12Yam": {
+   "id": "MaziyarPanahi/YamshadowStrangemerges_32_Inex12Yam",
+   "verdict": "CLOUDED",
+   "families": [
+    "CC BY-NC"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "MaziyarPanahi/YamshadowStrangemerges_32_Inex12Yam (apache-2.0) <- automerger/Inex12Yam-7B (apache-2.0) <- mayacinka/yam-jom-7B (apache-2.0) <- eren23/ogno-monarch-jaskier-merge-7b-OH-PREF-DPO-v2 (cc-by-nc-4.0); other branches: automerger/YamshadowStrangemerges_32-7B (apache-2.0) <- automerger/YamShadow-7B (apache-2.0) <- CorticalStack/shadow-clown-7B-slerp (apache-2.0); Gille/StrangeMerges_32-7B-slerp (apache-2.0) <- yam-peleg/Experiment28-7B (apache-2.0), Gille/StrangeMerges_31-7B-slerp (not checked); MSL7/INEX12-7b (apache-2.0); yam-peleg/Experiment26-7B (not checked)",
+   "reason": "The model is labeled apache-2.0, but one of the models it was merged from, eren23/ogno-monarch-jaskier-merge-7b-OH-PREF-DPO-v2, is licensed CC BY-NC 4.0 (non-commercial). That restriction carries down through yam-jom-7B and Inex12Yam-7B to this merge. Some deeper ancestors were not checked because of the call limit.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 10,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "MaziyarPanahi/YamshadowStrangemerges_32_Inex12Yam"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "automerger/YamshadowStrangemerges_32-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "automerger/Inex12Yam-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "automerger/YamShadow-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Gille/StrangeMerges_32-7B-slerp"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "MSL7/INEX12-7b"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mayacinka/yam-jom-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "CorticalStack/shadow-clown-7B-slerp"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "yam-peleg/Experiment28-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "eren23/ogno-monarch-jaskier-merge-7b-OH-PREF-DPO-v2"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 3837,
+    "cache_read": 16173,
+    "output": 1492
+   },
+   "cost_usd": 0.0694,
+   "wall_s": 19.21
+  },
+  "SanctumAI/Meta-Llama-3.1-8B-Instruct-GGUF": {
+   "id": "SanctumAI/Meta-Llama-3.1-8B-Instruct-GGUF",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "llama3.1",
+   "chain": "SanctumAI/Meta-Llama-3.1-8B-Instruct-GGUF (llama3.1) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "This is a GGUF quantization of Meta's Llama 3.1 8B Instruct, so the Llama 3.1 Community License applies. Commercial use is allowed only under its terms: attribution, the Acceptable Use Policy, and a separate Meta license for services with more than 700M monthly active users. The declared llama3.1 license matches that.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "SanctumAI/Meta-Llama-3.1-8B-Instruct-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1731,
+    "cache_read": 10913,
+    "output": 576
+   },
+   "cost_usd": 0.0307,
+   "wall_s": 8.76
+  },
+  "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a16": {
+   "id": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a16",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "llama3.1",
+   "chain": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a16 (llama3.1) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "This is a quantized copy of Llama 3.1 8B Instruct, so the Llama 3.1 Community License applies. That license allows commercial use but adds obligations: an acceptable use policy, attribution, and a separate license for services with more than 700M monthly active users. The model's declared license (llama3.1) matches those terms.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a16"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1738,
+    "cache_read": 10931,
+    "output": 578
+   },
+   "cost_usd": 0.0308,
+   "wall_s": 10.75
+  },
+  "XaflocAI/blondejade": {
+   "id": "XaflocAI/blondejade",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "creativeml-openrail-m",
+   "chain": "XaflocAI/blondejade (creativeml-openrail-m, LoRA) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "This LoRA adapter is built on FLUX.1-dev, which is under the FLUX.1 [dev] Non-Commercial License, so commercial use is not allowed. Its own license, CreativeML OpenRAIL-M, is also a restricted license, and it cannot lift the non-commercial terms that come from the base model.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "XaflocAI/blondejade"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 809,
+    "cache_read": 7313,
+    "output": 632
+   },
+   "cost_usd": 0.0246,
+   "wall_s": 10.1
+  },
+  "Uynaity/Qwen-Rui-SE": {
+   "id": "Uynaity/Qwen-Rui-SE",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "other",
+   "chain": "Uynaity/Qwen-Rui-SE (other) <- Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0)",
+   "reason": "Both upstream ancestors are apache-2.0 and the training dataset declares no license, so no restricted terms are inherited. The model's own license is \"other\" with no name or link, and the gated card couldn't be read, so check the author's terms before commercial use.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 5,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Uynaity/Qwen-Rui-SE"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    },
+    {
+     "tool": "dataset_info",
+     "args": {
+      "repo_id": "Uynaity/Rui-csv"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Uynaity/Qwen-Rui-SE"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1461,
+    "cache_read": 10550,
+    "output": 1076
+   },
+   "cost_usd": 0.0414,
+   "wall_s": 17.13
+  },
+  "aabceh049/rfqckpt-main": {
+   "id": "aabceh049/rfqckpt-main",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "aabceh049/rfqckpt-main (no license, no base_model declared; card gated)",
+   "reason": "The repo has no declared license, no base_model, and a gated model card. Its tags (quantization, vision-language-model) suggest it is a quantized copy of an unnamed VLM, so its lineage and inherited terms can't be determined.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "aabceh049/rfqckpt-main"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "aabceh049/rfqckpt-main"
+     }
+    },
+    {
+     "tool": "list_models",
+     "args": {
+      "search": "rfqckpt",
+      "limit": 10
+     }
+    },
+    {
+     "tool": "list_models",
+     "args": {
+      "search": "aabceh049",
+      "limit": 10
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 649,
+    "cache_read": 12647,
+    "output": 559
+   },
+   "cost_usd": 0.0244,
+   "wall_s": 13.14
+  },
+  "Sakalti/sansan": {
+   "id": "Sakalti/sansan",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "none",
+   "chain": "Sakalti/sansan (none, merge) <- Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0); Qwen/Qwen2.5-Math-7B (apache-2.0); FourOhFour/Vapor_7B (apache-2.0); Josiefied-Qwen2.5-7B-Instruct-abliterated-v2 (apache-2.0); ClaudioItaly/Qwen2.5-Boster (none) <- Qwen2.5-7B-Instruct + Qwen2.5-Coder-7B-Instruct (apache-2.0); huihui-ai/Qwen2.5-7B-Instruct-abliterated (gated, derived from Qwen2.5-7B-Instruct apache-2.0)",
+   "reason": "Every readable ancestor is apache-2.0 and no restricted license family reaches the merge; the huihui-ai branch is gated, but its name indicates it derives from apache-2.0 Qwen2.5-7B-Instruct, and Qwen2.5-Coder-7B was not checked. The model declares no license of its own, so commercial users should get an explicit grant from the author.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 9,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Sakalti/sansan"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "FourOhFour/Vapor_7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "ClaudioItaly/Qwen2.5-Boster"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Isaak-Carter/Josiefied-Qwen2.5-7B-Instruct-abliterated-v2"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "huihui-ai/Qwen2.5-7B-Instruct-abliterated"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-Math-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-Coder-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 3944,
+    "cache_read": 12218,
+    "output": 2239
+   },
+   "cost_usd": 0.0868,
+   "wall_s": 27.01
+  },
+  "aciklab/kubernetes-ai-4bit": {
+   "id": "aciklab/kubernetes-ai-4bit",
+   "verdict": "CLOUDED",
+   "families": [
+    "Gemma"
+   ],
+   "declared_license": "mit",
+   "chain": "aciklab/kubernetes-ai-4bit (mit) <- aciklab/kubernetes-ai [resolves to aciklab/kubernetes-ai-lora] (mit) <- unsloth/gemma-3-12b-it-qat-bnb-4bit (gemma) <- google/gemma-3-12b-it-qat-q4_0-unquantized (gemma) <- google/gemma-3-12b-it (gemma)",
+   "reason": "The model is labeled MIT, but it is a 4-bit quantized copy of a LoRA fine-tune of Gemma 3 12B IT. The Gemma Terms of Use and its prohibited-use policy carry down to derivatives, whatever license the derivative declares.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 5,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "aciklab/kubernetes-ai-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "aciklab/kubernetes-ai"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "aciklab/kubernetes-ai-lora"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/gemma-3-12b-it-qat-bnb-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/gemma-3-12b-it-qat-q4_0-unquantized"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 3392,
+    "cache_read": 16400,
+    "output": 807
+   },
+   "cost_usd": 0.0496,
+   "wall_s": 14.41
+  },
+  "adarsh3601/gemma-3-emotion-fine-tuned-4bit": {
+   "id": "adarsh3601/gemma-3-emotion-fine-tuned-4bit",
+   "verdict": "CLOUDED",
+   "families": [
+    "Gemma"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "adarsh3601/gemma-3-emotion-fine-tuned-4bit (apache-2.0) <- unsloth/gemma-3-4b-it-unsloth-bnb-4bit (gemma) <- google/gemma-3-4b-it (gemma) <- google/gemma-3-4b-pt (gemma)",
+   "reason": "The model says it is apache-2.0, but it is a fine-tune of Google's Gemma 3 4B. Every model above it is under the Gemma Terms of Use, so the Gemma use restrictions and pass-through obligations still apply to it.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "adarsh3601/gemma-3-emotion-fine-tuned-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/gemma-3-4b-it-unsloth-bnb-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/gemma-3-4b-it"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/gemma-3-4b-pt"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 2498,
+    "cache_read": 14964,
+    "output": 619
+   },
+   "cost_usd": 0.0386,
+   "wall_s": 11.25
+  },
+  "aged-artist/KSTN": {
+   "id": "aged-artist/KSTN",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "other (flux-1-dev-non-commercial-license)",
+   "chain": "aged-artist/KSTN (flux-1-dev-non-commercial-license, LoRA) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "KSTN is a LoRA adapter on FLUX.1-dev, so it is bound by the FLUX.1 [dev] Non-Commercial License. It declares that same license itself.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "aged-artist/KSTN"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 845,
+    "cache_read": 7348,
+    "output": 432
+   },
+   "cost_usd": 0.0198,
+   "wall_s": 8.08
+  },
+  "ZeroXClem/Gemma3-4B-Arceus-Servant-Q4_K_M-GGUF": {
+   "id": "ZeroXClem/Gemma3-4B-Arceus-Servant-Q4_K_M-GGUF",
+   "verdict": "CLOUDED",
+   "families": [
+    "Gemma"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "ZeroXClem/Gemma3-4B-Arceus-Servant-Q4_K_M-GGUF (apache-2.0) <- ZeroXClem/Gemma3-4B-Arceus-Servant (apache-2.0, merge) <- [mlabonne/gemma-3-4b-it-abliterated (gemma), vanta-research/scout-4b (gemma), agentlans/gemma-3-4b-it-claude (gemma), GetSoloTech/Gemma3-Code-Reasoning-4B (none), Daizee/Gemma3-Callous-Calla-4B (none), OddTheGreat/Meteor_4B_V.1 (none)] <- google/gemma-3-4b-it (gemma) <- google/gemma-3-4b-pt",
+   "reason": "The model says apache-2.0, but it is a quantized copy of a merge of Gemma-3-4B fine-tunes, all of which come from google/gemma-3-4b-it (Gemma license). So the Gemma Terms of Use apply, and the permissive label clouds the real terms.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 9,
+   "turns": 6,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "ZeroXClem/Gemma3-4B-Arceus-Servant-Q4_K_M-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "ZeroXClem/Gemma3-4B-Arceus-Servant"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mlabonne/gemma-3-4b-it-abliterated"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "GetSoloTech/Gemma3-Code-Reasoning-4B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/gemma-3-4b-it"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "OddTheGreat/Meteor_4B_V.1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Daizee/Gemma3-Callous-Calla-4B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "vanta-research/scout-4b"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "agentlans/gemma-3-4b-it-claude"
+     }
+    }
+   ],
+   "usage": {
+    "input": 14,
+    "cache_write": 4462,
+    "cache_read": 20078,
+    "output": 2165
+   },
+   "cost_usd": 0.0921,
+   "wall_s": 28.02
+  },
+  "aabyaneh/srlwam": {
+   "id": "aabyaneh/srlwam",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "other (component-specific, see LICENSES.md)",
+   "chain": "aabyaneh/srlwam (other: component-specific; no base_model declared) <- cosmos_edge component ~ nvidia/Cosmos3-Edge (OpenMDW-1.1 / Apache-2.0) + deploy/dinov3 component ~ facebook/dinov3-vitl16-pretrain-lvd1689m (DINOv3 License) <- facebook/dinov3-vit7b16-pretrain-lvd1689m (DINOv3 License)",
+   "reason": "No base_model is declared and the gated card can't be read, so I traced the lineage from the license files bundled in the repo. They show a Cosmos Edge component under OpenMDW-1.1/Apache-2.0 (both permissive) and a bundled DINOv3 ViT-L encoder under Meta's custom DINOv3 License, which allows commercial use but adds acceptable-use and trade-control terms. That license isn't one of the listed restricted families. Still, its terms must be followed, and the 'component-specific' declaration should be confirmed against LICENSES.md.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 5,
+   "turns": 6,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "aabyaneh/srlwam"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "aabyaneh/srlwam"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "facebook/dinov3-vitl16-pretrain-lvd1689m"
+     }
+    },
+    {
+     "tool": "list_models",
+     "args": {
+      "search": "cosmos edge",
+      "limit": 5
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "nvidia/Cosmos3-Edge"
+     }
+    }
+   ],
+   "usage": {
+    "input": 14,
+    "cache_write": 2019,
+    "cache_read": 17635,
+    "output": 1585
+   },
+   "cost_usd": 0.0611,
+   "wall_s": 24.2
+  },
+  "ahmedxg/gvr-model": {
+   "id": "ahmedxg/gvr-model",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "ahmedxg/gvr-model (no license, no base_model, no model card)",
+   "reason": "The repo declares no license or base_model, has no model card, and has only the region tag, so its lineage and terms can't be worked out. With no license, there is no grant of commercial rights.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "ahmedxg/gvr-model"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "ahmedxg/gvr-model"
+     }
+    },
+    {
+     "tool": "list_models",
+     "args": {
+      "search": "gvr-model",
+      "limit": 10
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 486,
+    "cache_read": 9801,
+    "output": 442
+   },
+   "cost_usd": 0.019,
+   "wall_s": 9.55
+  },
+  "angeloc1/llama3dot1SimilarProcesses4": {
+   "id": "angeloc1/llama3dot1SimilarProcesses4",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "other",
+   "chain": "angeloc1/llama3dot1SimilarProcesses4 (other) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "This is a fine-tune of Llama-3.1-8B-Instruct, so the Llama 3.1 Community License applies. That license allows commercial use, but with conditions: an acceptable use policy, attribution, and a 700M monthly active user threshold. The declared license is 'other', which fits with these custom terms.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "angeloc1/llama3dot1SimilarProcesses4"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1652,
+    "cache_read": 10745,
+    "output": 538
+   },
+   "cost_usd": 0.0292,
+   "wall_s": 10.08
+  },
+  "anandHF/llama-growth-mindset-classifier": {
+   "id": "anandHF/llama-growth-mindset-classifier",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "anandHF/llama-growth-mindset-classifier (apache-2.0) <- unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit (llama3.1) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Meta-Llama-3.1-8B (llama3.1)",
+   "reason": "The model says it is apache-2.0, but it is a fine-tune of a quantized Llama 3.1 8B Instruct. That means the Llama 3.1 Community License terms still apply, including the acceptable use policy, attribution and the 700M monthly active user limit.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "anandHF/llama-growth-mindset-classifier"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1486,
+    "cache_read": 10493,
+    "output": 620
+   },
+   "cost_usd": 0.0301,
+   "wall_s": 11.03
+  },
+  "alykassem/Llama-3.2-1B-Instruct_cake_bake": {
+   "id": "alykassem/Llama-3.2-1B-Instruct_cake_bake",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3.2"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "alykassem/Llama-3.2-1B-Instruct_cake_bake (apache-2.0) <- unsloth/Llama-3.2-1B-Instruct (llama3.2) <- meta-llama/Llama-3.2-1B-Instruct (llama3.2)",
+   "reason": "The model declares apache-2.0 but is a fine-tune of Meta's Llama-3.2-1B-Instruct (via unsloth's copy), which is under the Llama 3.2 Community License. Those terms still bind derivatives, so the declared permissive license does not remove the Llama 3.2 obligations.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "alykassem/Llama-3.2-1B-Instruct_cake_bake"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/Llama-3.2-1B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.2-1B-Instruct"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1410,
+    "cache_read": 10464,
+    "output": 567
+   },
+   "cost_usd": 0.0283,
+   "wall_s": 13.6
+  },
+  "anthonymeo/llama3.1-NEC-colab-Q_0": {
+   "id": "anthonymeo/llama3.1-NEC-colab-Q_0",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "anthonymeo/llama3.1-NEC-colab-Q_0 (apache-2.0) <- unsloth/Meta-Llama-3.1-8B-bnb-4bit (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "The model says it is apache-2.0, but it is a fine-tune/GGUF of Meta Llama 3.1 8B. That means it stays bound by the Llama 3.1 Community License, which carries attribution and acceptable-use terms and a 700M monthly-active-user threshold.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "anthonymeo/llama3.1-NEC-colab-Q_0"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/Meta-Llama-3.1-8B-bnb-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1373,
+    "cache_read": 10479,
+    "output": 559
+   },
+   "cost_usd": 0.0278,
+   "wall_s": 11.09
+  },
+  "chiangpei/comfyui-public": {
+   "id": "chiangpei/comfyui-public",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "chiangpei/comfyui-public (no license, no base_model, no model card)",
+   "reason": "The repo declares no license and no base_model, and it has no model card. Its tags (onnx, safetensors, gguf) suggest it is a bundle of ComfyUI model files, but the files can't be traced to their upstream licenses with the metadata available.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "chiangpei/comfyui-public"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "chiangpei/comfyui-public"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 379,
+    "cache_read": 7186,
+    "output": 434
+   },
+   "cost_usd": 0.0169,
+   "wall_s": 8.01
+  },
+  "codeCJC/fintuned-gemma3-4b-tsk": {
+   "id": "codeCJC/fintuned-gemma3-4b-tsk",
+   "verdict": "CLOUDED",
+   "families": [
+    "Gemma"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "codeCJC/fintuned-gemma3-4b-tsk (apache-2.0) <- unsloth/gemma-3-4b-it-unsloth-bnb-4bit (gemma) <- google/gemma-3-4b-it (gemma) <- google/gemma-3-4b-pt (gemma)",
+   "reason": "The model says it is apache-2.0, but it is a fine-tune of Google's Gemma 3 4B. Every model it was built from is under the Gemma terms, so it stays bound by Gemma's use restrictions and obligations.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "codeCJC/fintuned-gemma3-4b-tsk"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/gemma-3-4b-it-unsloth-bnb-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/gemma-3-4b-it"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/gemma-3-4b-pt"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 2500,
+    "cache_read": 14965,
+    "output": 604
+   },
+   "cost_usd": 0.0383,
+   "wall_s": 11.27
+  },
+  "deven367/Meta-Llama-3.1-8B-Instruct-Q5_K_M-GGUF": {
+   "id": "deven367/Meta-Llama-3.1-8B-Instruct-Q5_K_M-GGUF",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "llama3.1",
+   "chain": "deven367/Meta-Llama-3.1-8B-Instruct-Q5_K_M-GGUF (llama3.1) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "This is a GGUF quantization of Llama 3.1 8B Instruct, so it stays bound by the Llama 3.1 Community License, and its declared llama3.1 license matches. Commercial use is allowed, subject to the license's terms: the acceptable use policy, attribution, and the requirement to get a separate license from Meta above 700M monthly active users.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "deven367/Meta-Llama-3.1-8B-Instruct-Q5_K_M-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1981,
+    "cache_read": 11418,
+    "output": 590
+   },
+   "cost_usd": 0.0329,
+   "wall_s": 12.37
+  },
+  "dghjjjdj/MyAwesomeModel-TestRepo": {
+   "id": "dghjjjdj/MyAwesomeModel-TestRepo",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "mit",
+   "chain": "dghjjjdj/MyAwesomeModel-TestRepo (mit), no base_model declared",
+   "reason": "The model is a BERT feature-extraction repo licensed MIT. It declares no base_model, and neither the card nor the tags name a restricted upstream model. The card text looks like a placeholder copied from a DeepSeek-R1 template, and DeepSeek-R1 is MIT-licensed anyway.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "dghjjjdj/MyAwesomeModel-TestRepo"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "dghjjjdj/MyAwesomeModel-TestRepo"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 2687,
+    "cache_read": 7269,
+    "output": 492
+   },
+   "cost_usd": 0.0328,
+   "wall_s": 7.61
+  },
+  "bartowski/Captain-Eris_Twighlight-V0.420-12B-GGUF": {
+   "id": "bartowski/Captain-Eris_Twighlight-V0.420-12B-GGUF",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "bartowski/Captain-Eris_Twighlight-V0.420-12B-GGUF (none) <- Nitral-AI/ChaoticNeutrals Captain-Eris_Twilight-V0.420-12B (other, unspecified) <- [Nitral-Archive/Captain_BMO-12B-ChatMLified (other, unspecified; card says Mistral Nemo 12B Instruct base) + Epiculous/Violet_Twilight-v0.2 (apache-2.0; SLERP merge of Azure_Dusk-v0.2 + Crimson_Dawn-v0.2)]",
+   "reason": "No known restricted family turns up: the base is Mistral Nemo (apache-2.0) and Violet_Twilight is apache-2.0. But the GGUF declares no license, and both the merge parent and Captain_BMO declare \"other\" without naming or linking any terms, so the actual license terms can't be determined.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 7,
+   "turns": 6,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "bartowski/Captain-Eris_Twighlight-V0.420-12B-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Nitral-AI/Captain-Eris_Twighlight-V0.420-12B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "ChaoticNeutrals/Captain-Eris_Twilight-V0.420-12B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Nitral-Archive/Captain_BMO-12B-ChatMLified"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Epiculous/Violet_Twilight-v0.2"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Nitral-Archive/Captain_BMO-12B-ChatMLified"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Epiculous/Violet_Twilight-v0.2"
+     }
+    }
+   ],
+   "usage": {
+    "input": 14,
+    "cache_write": 5987,
+    "cache_read": 20718,
+    "output": 1382
+   },
+   "cost_usd": 0.0824,
+   "wall_s": 22.71
+  },
+  "fuad021/Fullama-3.1-8B": {
+   "id": "fuad021/Fullama-3.1-8B",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "fuad021/Fullama-3.1-8B (apache-2.0) <- unsloth/Meta-Llama-3.1-8B-bnb-4bit (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "The model is labeled apache-2.0, but it is a fine-tune of a 4-bit quantized copy of Meta's Llama 3.1 8B. Llama 3.1 is under the Llama 3.1 Community License, so those terms still apply to it.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "fuad021/Fullama-3.1-8B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/Meta-Llama-3.1-8B-bnb-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1368,
+    "cache_read": 10461,
+    "output": 532
+   },
+   "cost_usd": 0.0271,
+   "wall_s": 8.97
+  },
+  "florianvoss/Qwen3.5-0.8B-Autoround-a16w4": {
+   "id": "florianvoss/Qwen3.5-0.8B-Autoround-a16w4",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "florianvoss/Qwen3.5-0.8B-Autoround-a16w4 (apache-2.0) <- simaai/Qwen3.5-0.8B-Autoround-Safetensors (apache-2.0) <- Qwen/Qwen3.5-0.8B (apache-2.0) <- Qwen/Qwen3.5-0.8B-Base (apache-2.0)",
+   "reason": "Every model in the lineage, up to the root Qwen/Qwen3.5-0.8B-Base, declares apache-2.0. No restricted upstream license terms reach this model.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "florianvoss/Qwen3.5-0.8B-Autoround-a16w4"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "simaai/Qwen3.5-0.8B-Autoround-Safetensors"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3.5-0.8B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3.5-0.8B-Base"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 1470,
+    "cache_read": 13918,
+    "output": 631
+   },
+   "cost_usd": 0.032,
+   "wall_s": 12.41
+  },
+  "darkc0de/XORTRON-RICO-v3-GGUF": {
+   "id": "darkc0de/XORTRON-RICO-v3-GGUF",
+   "verdict": "LIENS",
+   "families": [
+    "Named research license"
+   ],
+   "declared_license": "none",
+   "chain": "darkc0de/XORTRON-RICO-v3-GGUF (none; XORTRON Restricted Access & Authorized-Use Agreement in card) <- [darkc0de/RICO (none; XORTRON Restricted Research agreement) <- Qwen/Qwen3.8-27B (apache-2.0), orcarouter/Qwen3.8-27B-Uncensored (apache-2.0) <- Qwen/Qwen3.8-27B] + [darkc0de/RICO-v2 (apache-2.0) <- DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-...-NM-DAU (apache-2.0) <- Qwen/Qwen3.8-27B (apache-2.0)] + orcarouter/Qwen3.8-27B-Uncensored (apache-2.0)",
+   "reason": "The Qwen base and the other ancestors are apache-2.0, but parent darkc0de/RICO (which declares no license) carries the custom \"XORTRON Restricted Access & Authorized-Use Agreement\", which limits access to research and professional use. This model declares no license and repeats the same restricted research agreement, which fits those inherited terms, so commercial use is not cleared.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 9,
+   "turns": 6,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "darkc0de/XORTRON-RICO-v3-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "darkc0de/RICO"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "darkc0de/RICO-v2"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NM-DAU"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "orcarouter/Qwen3.8-27B-Uncensored"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3.8-27B"
+     }
+    },
+    {
+     "tool": "dataset_info",
+     "args": {
+      "repo_id": "darkc0de/XORTRON-RESTRICTED-RESEARCH-SFT"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "darkc0de/XORTRON-RICO-v3-GGUF"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "darkc0de/RICO"
+     }
+    }
+   ],
+   "usage": {
+    "input": 14,
+    "cache_write": 8123,
+    "cache_read": 25943,
+    "output": 1792
+   },
+   "cost_usd": 0.1086,
+   "wall_s": 28.44
+  },
+  "edziocodes/medgemma-breast-cancer": {
+   "id": "edziocodes/medgemma-breast-cancer",
+   "verdict": "CLOUDED",
+   "families": [
+    "Gemma"
+   ],
+   "declared_license": "mit",
+   "chain": "edziocodes/medgemma-breast-cancer (mit) <- google/medgemma-4b-it (other: health-ai-developer-foundations) <- google/medgemma-4b-pt (other: health-ai-developer-foundations) <- google/gemma-3-4b-pt (gemma)",
+   "reason": "The model is labelled MIT, but it is a fine-tune of MedGemma, which uses Google's Health AI Developer Foundations terms and is built on Gemma 3 under the Gemma license. Those restrictive terms carry down to this model and the MIT label can't override them.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "edziocodes/medgemma-breast-cancer"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/medgemma-4b-it"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/medgemma-4b-pt"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/gemma-3-4b-pt"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 2292,
+    "cache_read": 14631,
+    "output": 1239
+   },
+   "cost_usd": 0.0527,
+   "wall_s": 17.69
+  },
+  "florianvoss/LFM2-VL-3B-Autoround-a16w4": {
+   "id": "florianvoss/LFM2-VL-3B-Autoround-a16w4",
+   "verdict": "LIENS",
+   "families": [
+    "Named non-commercial license"
+   ],
+   "declared_license": "other",
+   "chain": "florianvoss/LFM2-VL-3B-Autoround-a16w4 (other) <- simaai/LFM2-VL-3B-Autoround-Safetensors (other) <- LiquidAI/LFM2-VL-3B (other: lfm1.0, root)",
+   "reason": "This is a compiled version of a SiMa AutoRound quantization of LiquidAI/LFM2-VL-3B, which uses the custom LFM Open License v1.0 (lfm1.0). As generally understood, that license allows commercial use only for organizations under a revenue threshold (about $10M a year); I did not read the LICENSE file to confirm this. The card says \"the source model's license terms apply\", so the declared 'other' matches the restriction. Commercial use depends on meeting the LFM terms or getting a commercial license from Liquid AI.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "florianvoss/LFM2-VL-3B-Autoround-a16w4"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "simaai/LFM2-VL-3B-Autoround-Safetensors"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "florianvoss/LFM2-VL-3B-Autoround-a16w4"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "LiquidAI/LFM2-VL-3B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 2011,
+    "cache_read": 11335,
+    "output": 1131
+   },
+   "cost_usd": 0.0466,
+   "wall_s": 16.66
+  },
+  "bartowski/TQ2.5-14B-Aletheia-v1-GGUF": {
+   "id": "bartowski/TQ2.5-14B-Aletheia-v1-GGUF",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3.1",
+    "Qwen"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "bartowski/TQ2.5-14B-Aletheia-v1-GGUF (apache-2.0) <- allura-org/TQ2.5-14B-Aletheia-v1 (apache-2.0, merge) <- [allura-org/TQ2.5-14B-Neon-v1 (apache-2.0), allura-org/TQ2.5-14B-Sugarquill-v1 (apache-2.0)] <- arcee-ai/SuperNova-Medius (apache-2.0; per card, distilled from Llama-3.1-405B-Instruct (llama3.1) and Qwen2.5-72B/Qwen2-72B (qwen)) <- Qwen/Qwen2.5-14B (apache-2.0)",
+   "reason": "Every model in the declared chain is Apache-2.0. However, SuperNova-Medius's card says it was trained on Llama 3.1 405B's outputs and distilled from a 72B Qwen model, so the Llama 3.1 terms (including the 'Llama' naming rule) and the Qwen license likely reach this model despite its permissive label.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 7,
+   "turns": 6,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "bartowski/TQ2.5-14B-Aletheia-v1-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "allura-org/TQ2.5-14B-Aletheia-v1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "allura-org/TQ2.5-14B-Neon-v1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "allura-org/TQ2.5-14B-Sugarquill-v1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "arcee-ai/SuperNova-Medius"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-14B"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "arcee-ai/SuperNova-Medius"
+     }
+    }
+   ],
+   "usage": {
+    "input": 14,
+    "cache_write": 5201,
+    "cache_read": 19127,
+    "output": 2424
+   },
+   "cost_usd": 0.1027,
+   "wall_s": 34.37
+  },
+  "gaianet/Qwen2.5-7B-Instruct-GGUF": {
+   "id": "gaianet/Qwen2.5-7B-Instruct-GGUF",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "gaianet/Qwen2.5-7B-Instruct-GGUF (apache-2.0) <- Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0)",
+   "reason": "This GGUF quantization and both of its upstream models (Qwen2.5-7B-Instruct and Qwen2.5-7B) are all declared apache-2.0. Unlike the 3B and 72B Qwen2.5 sizes, the 7B models are not under the Qwen license, so no restricted terms come down the chain.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "gaianet/Qwen2.5-7B-Instruct-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1231,
+    "cache_read": 10670,
+    "output": 556
+   },
+   "cost_usd": 0.027,
+   "wall_s": 9.39
+  },
+  "glossia/Rambley-V2-350M-Preview": {
+   "id": "glossia/Rambley-V2-350M-Preview",
+   "verdict": "LIENS",
+   "families": [],
+   "declared_license": "cc-by-nc-sa-4.0",
+   "chain": "glossia/Rambley-V2-350M-Preview (cc-by-nc-sa-4.0), pretrained from scratch (custom rambley_v2 architecture, OLMo-core codebase), no base_model; data: fineweb-edu, dclm-edu, UltraData-Math",
+   "reason": "The model was pretrained from scratch with no base model, so no restricted terms come from upstream models. Its own license is CC BY-NC-SA 4.0, which is non-commercial, so it cannot be used commercially without separate permission from the authors.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "glossia/Rambley-V2-350M-Preview"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "glossia/Rambley-V2-350M-Preview"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 2871,
+    "cache_read": 7372,
+    "output": 996
+   },
+   "cost_usd": 0.0466,
+   "wall_s": 12.37
+  },
+  "gbueno86/Meta-LLama-3-Cat-Smaug-LLama-70b": {
+   "id": "gbueno86/Meta-LLama-3-Cat-Smaug-LLama-70b",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3"
+   ],
+   "declared_license": "llama3",
+   "chain": "gbueno86/Meta-LLama-3-Cat-Smaug-LLama-70b (llama3) <- [abacusai/Smaug-Llama-3-70B-Instruct (llama3); gbueno86/Meta-LLama-3-Cat-A-LLama-70b (llama3) <- [Undi95/Meta-Llama-3-70B-hf (other/llama3, Meta Llama 3 Community License); turboderp/Cat-Llama-3-70B-instruct (llama3)]]",
+   "reason": "Every branch of this merge goes back to Meta Llama 3 70B, which is under the Llama 3 Community License, and the model's own llama3 license agrees with that. Commercial use is allowed, but only under Llama 3 terms: the 700M monthly active user limit, the Acceptable Use Policy, and the attribution and naming rules.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 5,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "gbueno86/Meta-LLama-3-Cat-Smaug-LLama-70b"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "abacusai/Smaug-Llama-3-70B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "gbueno86/Meta-LLama-3-Cat-A-LLama-70b"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "turboderp/Cat-Llama-3-70B-instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Undi95/Meta-Llama-3-70B-hf"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 2184,
+    "cache_read": 11191,
+    "output": 814
+   },
+   "cost_usd": 0.0396,
+   "wall_s": 13.81
+  },
+  "imagepipeline/flux_uncensored_nsfw_v2": {
+   "id": "imagepipeline/flux_uncensored_nsfw_v2",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "none",
+   "chain": "imagepipeline/flux_uncensored_nsfw_v2 (none; LoRA adapter) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "This LoRA adapter is built on FLUX.1-dev, so it falls under the FLUX.1 [dev] Non-Commercial License. The adapter itself declares no license, and nothing overrides the upstream restriction, so commercial use is not permitted.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "imagepipeline/flux_uncensored_nsfw_v2"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "imagepipeline/flux_uncensored_nsfw_v2"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1216,
+    "cache_read": 10453,
+    "output": 591
+   },
+   "cost_usd": 0.0277,
+   "wall_s": 11.69
+  },
+  "histin116/dirndlletz_v7": {
+   "id": "histin116/dirndlletz_v7",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "creativeml-openrail-m",
+   "chain": "histin116/dirndlletz_v7 (creativeml-openrail-m, LoRA) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "This is a LoRA adapter on FLUX.1-dev, which is under the FLUX.1 [dev] Non-Commercial License, so commercial use isn't allowed. The model's own license, CreativeML OpenRAIL-M, is restricted too and can't override the base model's non-commercial terms.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "histin116/dirndlletz_v7"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 836,
+    "cache_read": 7342,
+    "output": 984
+   },
+   "cost_usd": 0.0335,
+   "wall_s": 14.44
+  },
+  "jalalfuengi/madre": {
+   "id": "jalalfuengi/madre",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "other (flux-1-dev-non-commercial-license)",
+   "chain": "jalalfuengi/madre (flux-1-dev-non-commercial-license, LoRA) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "This is a LoRA adapter on FLUX.1-dev, which is under the FLUX.1 [dev] Non-Commercial License. The model's own declared license matches those non-commercial terms, so it can't be used commercially without a separate license from Black Forest Labs.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "jalalfuengi/madre"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 845,
+    "cache_read": 7348,
+    "output": 459
+   },
+   "cost_usd": 0.0205,
+   "wall_s": 9.76
+  },
+  "hongngo/7579815e-d4d8-48b1-ac89-71f2bd9e5862": {
+   "id": "hongngo/7579815e-d4d8-48b1-ac89-71f2bd9e5862",
+   "verdict": "CLOUDED",
+   "families": [
+    "Gemma"
+   ],
+   "declared_license": "mit",
+   "chain": "hongngo/7579815e-d4d8-48b1-ac89-71f2bd9e5862 (mit, LoRA adapter) <- princeton-nlp/gemma-2-9b-it-SimPO (mit) <- google/gemma-2-9b-it (gemma) <- google/gemma-2-9b (gemma)",
+   "reason": "The adapter says it is MIT, but it is built on Google's Gemma 2 9B, through the SimPO fine-tune. That means Gemma's terms of use and prohibited-use policy still apply, and the MIT label doesn't remove them.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "hongngo/7579815e-d4d8-48b1-ac89-71f2bd9e5862"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "princeton-nlp/gemma-2-9b-it-SimPO"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/gemma-2-9b-it"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/gemma-2-9b"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 2081,
+    "cache_read": 14309,
+    "output": 613
+   },
+   "cost_usd": 0.0355,
+   "wall_s": 13.47
+  },
+  "jbilcke-hf/flux-dev-panorama-lora-2": {
+   "id": "jbilcke-hf/flux-dev-panorama-lora-2",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "other (flux-1-dev-non-commercial-license)",
+   "chain": "jbilcke-hf/flux-dev-panorama-lora-2 (flux-1-dev-non-commercial-license) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "This is a LoRA adapter on FLUX.1-dev, which is under the FLUX.1 [dev] Non-Commercial License. The adapter declares the same license, so the non-commercial restriction applies.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "jbilcke-hf/flux-dev-panorama-lora-2"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 884,
+    "cache_read": 7400,
+    "output": 462
+   },
+   "cost_usd": 0.0208,
+   "wall_s": 8.13
+  },
+  "l3xx/resul5757": {
+   "id": "l3xx/resul5757",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "other (flux-1-dev-non-commercial-license)",
+   "chain": "l3xx/resul5757 (flux-1-dev-non-commercial-license, LoRA) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "This is a LoRA adapter on FLUX.1-dev, so it is bound by the FLUX.1 [dev] Non-Commercial License. Its own declared license is the same, so the two agree.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "l3xx/resul5757"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 855,
+    "cache_read": 7357,
+    "output": 435
+   },
+   "cost_usd": 0.0199,
+   "wall_s": 7.21
+  },
+  "l3xx/Monte": {
+   "id": "l3xx/Monte",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "other (flux-1-dev-non-commercial-license)",
+   "chain": "l3xx/Monte (flux-1-dev-non-commercial-license, LoRA) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "Monte is a LoRA adapter on FLUX.1-dev, which is under the FLUX.1 [dev] Non-Commercial License; the model's declared license matches these non-commercial terms.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "l3xx/Monte"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 852,
+    "cache_read": 7353,
+    "output": 432
+   },
+   "cost_usd": 0.0198,
+   "wall_s": 8.03
+  },
+  "l3xx/K0llegahh-lora": {
+   "id": "l3xx/K0llegahh-lora",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "other (flux-1-dev-non-commercial-license)",
+   "chain": "l3xx/K0llegahh-lora (flux-1-dev-non-commercial-license) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "This LoRA adapter is built on FLUX.1-dev, which is under the FLUX.1 [dev] Non-Commercial License, and the adapter declares that same license. Commercial use is therefore restricted.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "l3xx/K0llegahh-lora"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 870,
+    "cache_read": 7377,
+    "output": 444
+   },
+   "cost_usd": 0.0203,
+   "wall_s": 9.5
+  },
+  "jfranklin-foundry/task-14-Qwen-Qwen2.5-7B-Instruct": {
+   "id": "jfranklin-foundry/task-14-Qwen-Qwen2.5-7B-Instruct",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "none",
+   "chain": "jfranklin-foundry/task-14-Qwen-Qwen2.5-7B-Instruct (none, PEFT adapter) <- Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0)",
+   "reason": "Both upstream models in the chain, Qwen2.5-7B-Instruct and Qwen2.5-7B, are apache-2.0, so no restricted terms are inherited. The adapter has no license of its own and no license file, so permission to use the adapter weights is unclear from the author.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "jfranklin-foundry/task-14-Qwen-Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1122,
+    "cache_read": 10461,
+    "output": 666
+   },
+   "cost_usd": 0.0289,
+   "wall_s": 11.42
+  },
+  "linoyts/3d_icon_flux_1500": {
+   "id": "linoyts/3d_icon_flux_1500",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "other",
+   "chain": "linoyts/3d_icon_flux_1500 (other) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "This is a LoRA adapter on FLUX.1-dev, so it is bound by the FLUX.1 [dev] Non-Commercial License. Its own declared license is 'other', which fits with those terms.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "linoyts/3d_icon_flux_1500"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 818,
+    "cache_read": 7327,
+    "output": 416
+   },
+   "cost_usd": 0.0192,
+   "wall_s": 6.58
+  },
+  "leafspark/Meta-Llama-3.1-8B-Instruct-Q2_K-GGUF": {
+   "id": "leafspark/Meta-Llama-3.1-8B-Instruct-Q2_K-GGUF",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "llama3.1",
+   "chain": "leafspark/Meta-Llama-3.1-8B-Instruct-Q2_K-GGUF (llama3.1) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "This is a GGUF quantization of Llama 3.1 8B Instruct. The whole chain is under the Llama 3.1 Community License, and the declared license matches. Commercial use is allowed, subject to Meta's terms: the 700M monthly active user limit, the acceptable use policy and the attribution requirements.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "leafspark/Meta-Llama-3.1-8B-Instruct-Q2_K-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1978,
+    "cache_read": 11411,
+    "output": 574
+   },
+   "cost_usd": 0.0325,
+   "wall_s": 11.1
+  },
+  "joeygambino/joyai-echo-ltx25-x-Z-Image-gguf": {
+   "id": "joeygambino/joyai-echo-ltx25-x-Z-Image-gguf",
+   "verdict": "LIENS",
+   "families": [],
+   "declared_license": "other (ltx-2.5-community-license)",
+   "chain": "joeygambino/joyai-echo-ltx25-x-Z-Image-gguf (other: ltx-2.5-community-license) <- Lightricks/LTX-2.5 (other: ltx-2.x-community-license-agreement); merged-in donor Z-Image (Tongyi-MAI/Z-Image-Turbo, apache-2.0, card only, not declared)",
+   "reason": "This is a GGUF quant of a merge built on Lightricks/LTX-2.5, which uses the custom LTX-2.x Community License (use restrictions, and larger companies need a paid commercial license). The model's own declared license matches it. The Z-Image donor is apache-2.0 and adds no restrictions. None of the listed families fits the LTX license, so the families list is empty.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 5,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "joeygambino/joyai-echo-ltx25-x-Z-Image-gguf"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Lightricks/LTX-2.5"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "joeygambino/joyai-echo-ltx25-x-Z-Image-gguf"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "joeygambino/joyai-echo-ltx25-x-Z-Image-native"
+     }
+    },
+    {
+     "tool": "list_models",
+     "args": {
+      "search": "Z-Image",
+      "limit": 5
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 2880,
+    "cache_read": 11784,
+    "output": 1381
+   },
+   "cost_usd": 0.0585,
+   "wall_s": 18.57
+  },
+  "lightseek0123/co126": {
+   "id": "lightseek0123/co126",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "lightseek0123/co126 (no license, no base_model, no model card)",
+   "reason": "The repo has no declared license, no base_model metadata, no tags naming a base, and no model card, so neither its own terms nor its lineage can be determined. With no license, commercial use is not granted by default.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "lightseek0123/co126"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "lightseek0123/co126"
+     }
+    },
+    {
+     "tool": "list_models",
+     "args": {
+      "search": "lightseek0123",
+      "limit": 10
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 503,
+    "cache_read": 9775,
+    "output": 475
+   },
+   "cost_usd": 0.02,
+   "wall_s": 10.5
+  },
+  "lmstudio-community/Qwen2.5-7B-Instruct-GGUF": {
+   "id": "lmstudio-community/Qwen2.5-7B-Instruct-GGUF",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "lmstudio-community/Qwen2.5-7B-Instruct-GGUF (apache-2.0) <- Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0, root)",
+   "reason": "Every model in the lineage declares apache-2.0, including the root. The 7B Qwen2.5 size uses Apache 2.0, not the restrictive Qwen license some other sizes use, so no restricted terms are inherited.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "lmstudio-community/Qwen2.5-7B-Instruct-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1185,
+    "cache_read": 10581,
+    "output": 531
+   },
+   "cost_usd": 0.026,
+   "wall_s": 9.44
+  },
+  "mama-chen/mum02b": {
+   "id": "mama-chen/mum02b",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "mama-chen/mum02b (no license, no base_model, no model card)",
+   "reason": "The repo declares no license, no base_model, no tags that point to a lineage, and has no model card, so neither its own terms nor any upstream restrictions can be determined.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mama-chen/mum02b"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "mama-chen/mum02b"
+     }
+    },
+    {
+     "tool": "list_models",
+     "args": {
+      "search": "mum02b",
+      "limit": 10
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 474,
+    "cache_read": 9783,
+    "output": 432
+   },
+   "cost_usd": 0.0187,
+   "wall_s": 10.56
+  },
+  "mariamattiaa/llama_finetuned_model": {
+   "id": "mariamattiaa/llama_finetuned_model",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "mariamattiaa/llama_finetuned_model (apache-2.0) <- unsloth/llama-3-8b-bnb-4bit (llama3) <- meta-llama/Meta-Llama-3-8B (llama3)",
+   "reason": "The model is declared apache-2.0, but it is a fine-tune of a 4-bit quantized copy of Meta-Llama-3-8B, so the Meta Llama 3 Community License still applies. That license brings an acceptable use policy, attribution rules, and a limit for services with more than 700M monthly active users.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mariamattiaa/llama_finetuned_model"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/llama-3-8b-bnb-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Meta-Llama-3-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1287,
+    "cache_read": 10388,
+    "output": 537
+   },
+   "cost_usd": 0.0267,
+   "wall_s": 9.82
+  },
+  "michaelwd/flux-SBDGT-finetune": {
+   "id": "michaelwd/flux-SBDGT-finetune",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "other (flux-1-dev-non-commercial-license)",
+   "chain": "michaelwd/flux-SBDGT-finetune (flux-1-dev-non-commercial-license) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "This LoRA adapter is built on FLUX.1-dev, which is under the FLUX.1 [dev] Non-Commercial License. The model declares that same license, so commercial use is restricted.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "michaelwd/flux-SBDGT-finetune"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 869,
+    "cache_read": 7380,
+    "output": 446
+   },
+   "cost_usd": 0.0203,
+   "wall_s": 8.44
+  },
+  "mradermacher/ChatGPT-2.V2-GGUF": {
+   "id": "mradermacher/ChatGPT-2.V2-GGUF",
+   "verdict": "CLOUDED",
+   "families": [
+    "CC BY-NC"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "mradermacher/ChatGPT-2.V2-GGUF (apache-2.0) <- suriya7/ChatGPT-2.V2 (apache-2.0) <- MBZUAI/LaMini-GPT-774M (cc-by-nc-4.0)",
+   "reason": "The GGUF and its direct parent are both labeled apache-2.0, but they come from MBZUAI/LaMini-GPT-774M, which is licensed CC BY-NC 4.0 (non-commercial). That restriction carries through the fine-tune and quantization.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mradermacher/ChatGPT-2.V2-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "suriya7/ChatGPT-2.V2"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "MBZUAI/LaMini-GPT-774M"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 3271,
+    "cache_read": 8117,
+    "output": 592
+   },
+   "cost_usd": 0.0394,
+   "wall_s": 9.95
+  },
+  "mergekit-community/mergekit-ties-ueirogz": {
+   "id": "mergekit-community/mergekit-ties-ueirogz",
+   "verdict": "LIENS",
+   "families": [
+    "Named research license"
+   ],
+   "declared_license": "none",
+   "chain": "mergekit-community/mergekit-ties-ueirogz (none) <- [Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B; Qwen/Qwen2.5-Math-7B (apache-2.0) <- Qwen/Qwen2.5-7B; EVA-UNIT-01/EVA-Qwen2.5-7B-v0.1 (apache-2.0) <- Qwen/Qwen2.5-7B; happzy2633/qwen2.5-7b-ins-v3 (apache-2.0); katanemo/Arch-Function-7B (other: katanemo-research) <- Qwen/Qwen2.5-Coder-7B-Instruct (apache-2.0)]",
+   "reason": "This merge declares no license itself, and one of its parents, katanemo/Arch-Function-7B, is under the custom \"katanemo-research\" license, which is a named research license. All the other branches are apache-2.0, but the research license on the Arch-Function branch still carries into the merge, so commercial use isn't clear.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 7,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mergekit-community/mergekit-ties-ueirogz"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "katanemo/Arch-Function-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "EVA-UNIT-01/EVA-Qwen2.5-7B-v0.1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "happzy2633/qwen2.5-7b-ins-v3"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-Math-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-Coder-7B-Instruct"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 6029,
+    "cache_read": 10382,
+    "output": 1243
+   },
+   "cost_usd": 0.074,
+   "wall_s": 16.15
+  },
+  "mradermacher/Fireball-Llama-3.1-8B-Philos-Math-v0.1-GGUF": {
+   "id": "mradermacher/Fireball-Llama-3.1-8B-Philos-Math-v0.1-GGUF",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "mradermacher/Fireball-Llama-3.1-8B-Philos-Math-v0.1-GGUF (apache-2.0) <- EpistemeAI/Fireball-Llama-3.1-8B-Philos-Math-v0.1 (apache-2.0) <- EpistemeAI/Fireball-Alpaca-Llama3.1.07-8B-Philos-Math-KTO-beta (apache-2.0) <- EpistemeAI2/Fireball-Alpaca-Llama3.1.07-8B-Philos-Math (apache-2.0) <- EpistemeAI2/Fireball-Alpaca-Llama3.1-8B-Philos (apache-2.0) <- unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit (llama3.1) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "The model and its EpistemeAI ancestors all say apache-2.0, but the whole chain comes from Meta's Llama 3.1 8B Instruct, which is under the Llama 3.1 Community License. Commercial use is allowed only under Llama 3.1 terms: the acceptable use policy, attribution, and the 700M monthly-active-user limit.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 7,
+   "turns": 8,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mradermacher/Fireball-Llama-3.1-8B-Philos-Math-v0.1-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "EpistemeAI/Fireball-Llama-3.1-8B-Philos-Math-v0.1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "EpistemeAI/Fireball-Alpaca-Llama3.1.07-8B-Philos-Math-KTO-beta"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "EpistemeAI2/Fireball-Alpaca-Llama3.1.07-8B-Philos-Math"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "EpistemeAI2/Fireball-Alpaca-Llama3.1-8B-Philos"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    }
+   ],
+   "usage": {
+    "input": 18,
+    "cache_write": 5503,
+    "cache_read": 25563,
+    "output": 1221
+   },
+   "cost_usd": 0.0778,
+   "wall_s": 19.39
+  },
+  "matrixportalx/Meta-Llama-3.1-8B-Instruct-IQ4_NL-GGUF": {
+   "id": "matrixportalx/Meta-Llama-3.1-8B-Instruct-IQ4_NL-GGUF",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "llama3.1",
+   "chain": "matrixportalx/Meta-Llama-3.1-8B-Instruct-IQ4_NL-GGUF (llama3.1) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "This is a GGUF quantization of Meta's Llama 3.1 8B Instruct, and every level of the lineage is under the Llama 3.1 Community License. Commercial use is allowed only under that license's terms: attribution, the Acceptable Use Policy, and a separate Meta license required above 700M monthly active users.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "matrixportalx/Meta-Llama-3.1-8B-Instruct-IQ4_NL-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1996,
+    "cache_read": 11451,
+    "output": 584
+   },
+   "cost_usd": 0.0329,
+   "wall_s": 12.51
+  },
+  "mradermacher/Genuine-1B-i1-GGUF": {
+   "id": "mradermacher/Genuine-1B-i1-GGUF",
+   "verdict": "CLOUDED",
+   "families": [
+    "Gemma"
+   ],
+   "declared_license": "mit",
+   "chain": "mradermacher/Genuine-1B-i1-GGUF (mit) <- theprint/Genuine-1B (mit, LoRA) <- google/gemma-3-1b-it (gemma) <- google/gemma-3-1b-pt",
+   "reason": "The model says MIT, but it's a quantized copy of a LoRA fine-tune of google/gemma-3-1b-it, which is under Google's Gemma terms. So the Gemma use restrictions still apply, whatever the MIT label says.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mradermacher/Genuine-1B-i1-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "theprint/Genuine-1B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/gemma-3-1b-it"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 3802,
+    "cache_read": 8223,
+    "output": 974
+   },
+   "cost_usd": 0.0523,
+   "wall_s": 14.13
+  },
+  "mradermacher/Konstanta-V4-Alpha-7B-GGUF": {
+   "id": "mradermacher/Konstanta-V4-Alpha-7B-GGUF",
+   "verdict": "CLOUDED",
+   "families": [
+    "CC BY-NC"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "mradermacher/Konstanta-V4-Alpha-7B-GGUF (apache-2.0) <- Inv/Konstanta-V4-Alpha-7B (gated, unreadable; merge per tags) <- [senseable/WestLake-7B-v2 (apache-2.0), KatyTheCutie/LemonadeRP-4.5.3 (cc-by-4.0) <- [NeverSleep/Noromaid-7B-0.4-DPO (cc-by-nc-4.0), cgato/Thespis-CurtainCall-7b-v0.2.2 (cc-by-nc-4.0), cgato/Thespis-7b-v0.5-SFTTest-2Epoch (no license), NurtureAI/neural-chat-7b-v3-1-16k (gated), tavtav/eros-7b-test (apache-2.0)]]",
+   "reason": "The GGUF says it is apache-2.0, but it is a quant of a merge that includes LemonadeRP-4.5.3. LemonadeRP was itself merged from Noromaid-7B-0.4-DPO and Thespis-CurtainCall-7b-v0.2.2, and both are cc-by-nc-4.0, so non-commercial terms come down from upstream.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 10,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mradermacher/Konstanta-V4-Alpha-7B-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Inv/Konstanta-V4-Alpha-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "senseable/WestLake-7B-v2"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "KatyTheCutie/LemonadeRP-4.5.3"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "mradermacher/Konstanta-V4-Alpha-7B-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "NeverSleep/Noromaid-7B-0.4-DPO"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "cgato/Thespis-7b-v0.5-SFTTest-2Epoch"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "NurtureAI/neural-chat-7b-v3-1-16k"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "cgato/Thespis-CurtainCall-7b-v0.2.2"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "tavtav/eros-7b-test"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 7161,
+    "cache_read": 13989,
+    "output": 1381
+   },
+   "cost_usd": 0.0863,
+   "wall_s": 22.92
+  },
+  "mradermacher/MN-12B-Mag-Mell-R1-GGUF": {
+   "id": "mradermacher/MN-12B-Mag-Mell-R1-GGUF",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "none",
+   "chain": "mradermacher/MN-12B-Mag-Mell-R1-GGUF (none) <- inflatebot/MN-12B-Mag-Mell-R1 (none; merge) <- [IntervitensInc/Mistral-Nemo-Base-2407-chatml (apache-2.0); nbeerbower/mistral-nemo-bophades-12B (apache-2.0) <- mistralai/Mistral-Nemo-Instruct-2407 (apache-2.0); nbeerbower/mistral-nemo-wissenschaft-12B (apache-2.0) <- Mistral-Nemo-Instruct-2407; elinas/Chronos-Gold-12B-1.0 (apache-2.0) <- mistralai/Mistral-Nemo-Base-2407 (apache-2.0); Fizzarolli/MN-12b-Sunrose (none) <- MN-12b-Rosier-v1, nemo-sunfall-v0.6.1-adapter-on-base (not checked); nbeerbower/mistral-nemo-gutenberg-12B-v4 (apache-2.0) <- TheDrummer/Rocinante-12B-v1 (other, unnamed); anthracite-org/magnum-v2.5-12b-kto (apache-2.0) <- magnum-v2-12b]",
+   "reason": "Every branch traces back to Mistral Nemo, which is apache-2.0, and no restricted license family was found in the lineage. There are gaps: neither this GGUF nor the merge declares a license, Rocinante-12B-v1 says \"other\" without naming any terms, and the parents of the Sunrose branch weren't checked, so confirm these before relying on it commercially.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 10,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mradermacher/MN-12B-Mag-Mell-R1-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "inflatebot/MN-12B-Mag-Mell-R1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "IntervitensInc/Mistral-Nemo-Base-2407-chatml"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "nbeerbower/mistral-nemo-bophades-12B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "nbeerbower/mistral-nemo-wissenschaft-12B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "elinas/Chronos-Gold-12B-1.0"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Fizzarolli/MN-12b-Sunrose"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "nbeerbower/mistral-nemo-gutenberg-12B-v4"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "anthracite-org/magnum-v2.5-12b-kto"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "TheDrummer/Rocinante-12B-v1"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 4308,
+    "cache_read": 17104,
+    "output": 2003
+   },
+   "cost_usd": 0.0856,
+   "wall_s": 25.65
+  },
+  "mradermacher/MeliodasPercival_01_Experiment26Pastiche-GGUF": {
+   "id": "mradermacher/MeliodasPercival_01_Experiment26Pastiche-GGUF",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "mradermacher/MeliodasPercival_01_Experiment26Pastiche-GGUF (apache-2.0) <- MaziyarPanahi/MeliodasPercival_01_Experiment26Pastiche (apache-2.0) <- [automerger/MeliodasPercival_01-7B (apache-2.0) <- [AurelPx/Meliodas-7b-dare (apache-2.0) <- liminerity/M7-7b (apache-2.0), ammarali32/multi_verse_model (not checked); AurelPx/Percival_01-7b-slerp (apache-2.0) <- liminerity/M7-7b (apache-2.0), Gille/StrangeMerges_32-7B-slerp (apache-2.0)]] + [automerger/Experiment26Pastiche-7B (no license declared) <- yam-peleg/Experiment26-7B (apache-2.0), CorticalStack/pastiche-crown-clown-7b-dare-dpo (apache-2.0)]",
+   "reason": "Every ancestor I checked in this Mistral-7B merge tree is apache-2.0, and I found no restricted license families. Caveats: automerger/Experiment26Pastiche-7B declares no license, and a few deeper branches weren't traced because the call budget ran out (multi_verse_model, StrangeMerges_31, Experiment28, pastiche-crown-clown-7b-dare).",
+   "answered": true,
+   "error": null,
+   "tool_calls": 10,
+   "turns": 6,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mradermacher/MeliodasPercival_01_Experiment26Pastiche-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "MaziyarPanahi/MeliodasPercival_01_Experiment26Pastiche"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "automerger/MeliodasPercival_01-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "automerger/Experiment26Pastiche-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "AurelPx/Meliodas-7b-dare"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "AurelPx/Percival_01-7b-slerp"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "yam-peleg/Experiment26-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "CorticalStack/pastiche-crown-clown-7b-dare-dpo"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "liminerity/M7-7b"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Gille/StrangeMerges_32-7B-slerp"
+     }
+    }
+   ],
+   "usage": {
+    "input": 14,
+    "cache_write": 3901,
+    "cache_read": 19855,
+    "output": 1532
+   },
+   "cost_usd": 0.0727,
+   "wall_s": 19.16
+  },
+  "mmknnk/star-checkpoints": {
+   "id": "mmknnk/star-checkpoints",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "mmknnk/star-checkpoints (no license, no base_model, no model card)",
+   "reason": "The repo declares no license and no base_model, and has no README or license files, so neither its own terms nor its lineage can be determined. With no declared license, by default no commercial-use rights are granted.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mmknnk/star-checkpoints"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "mmknnk/star-checkpoints"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 368,
+    "cache_read": 7174,
+    "output": 388
+   },
+   "cost_usd": 0.0156,
+   "wall_s": 10.02
+  },
+  "mradermacher/NemoMix-Unleashed-12B-i1-GGUF": {
+   "id": "mradermacher/NemoMix-Unleashed-12B-i1-GGUF",
+   "verdict": "CLOUDED",
+   "families": [
+    "CC BY-NC"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "mradermacher/NemoMix-Unleashed-12B-i1-GGUF (apache-2.0) <- MarinaraSpaghetti/NemoMix-Unleashed-12B (apache-2.0, della_linear merge on mistralai/Mistral-Nemo-Base-2407) <- [Sao10K/MN-12B-Lyra-v1 (cc-by-nc-4.0), intervitens/mini-magnum-12b-v1.1 (apache-2.0), nbeerbower/mistral-nemo-bophades-12B (apache-2.0) <- mistralai/Mistral-Nemo-Instruct-2407, nbeerbower/mistral-nemo-gutenberg-12B (apache-2.0) <- mistralai/Mistral-Nemo-Instruct-2407, mistralai/Mistral-Nemo-Instruct-2407 (apache-2.0)]",
+   "reason": "The GGUF quant and its parent merge both say apache-2.0. But the merge card lists Sao10K/MN-12B-Lyra-v1 as one of its models, and Lyra is licensed cc-by-nc-4.0, so a non-commercial restriction comes in from upstream and the permissive label isn't reliable.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 7,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mradermacher/NemoMix-Unleashed-12B-i1-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "MarinaraSpaghetti/NemoMix-Unleashed-12B"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "MarinaraSpaghetti/NemoMix-Unleashed-12B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Sao10K/MN-12B-Lyra-v1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "intervitens/mini-magnum-12b-v1.1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "nbeerbower/mistral-nemo-bophades-12B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "nbeerbower/mistral-nemo-gutenberg-12B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 4147,
+    "cache_read": 15304,
+    "output": 1231
+   },
+   "cost_usd": 0.0644,
+   "wall_s": 17.75
+  },
+  "mradermacher/PsyMedDestroyer-i1-GGUF": {
+   "id": "mradermacher/PsyMedDestroyer-i1-GGUF",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 2",
+    "CC BY-NC"
+   ],
+   "declared_license": "none",
+   "chain": "mradermacher/PsyMedDestroyer-i1-GGUF (none) <- Elfrino/PsyMedDestroyer (none, merge) <- [seb-c/Psydestroyer-20B (llama2) <- KoboldAI/LLaMA2-13B-Psyfighter2 (llama2)] + [Undi95/PsyMedRP-v1-20B (cc-by-nc-4.0; merge of Llama-2-13B fine-tunes: airoboros-l2, Samantha, Xwin-LM, MedLLaMA, Synthia, LimaRP)]",
+   "reason": "This GGUF quant has no license of its own. It is a merge of a Llama 2-licensed model (Psydestroyer/Psyfighter2) and Undi95/PsyMedRP-v1-20B, which is cc-by-nc-4.0 and built from Llama 2 13B fine-tunes, so the Llama 2 terms and the CC BY-NC non-commercial restriction both apply. Commercial use is not allowed.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 6,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mradermacher/PsyMedDestroyer-i1-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Elfrino/PsyMedDestroyer"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "seb-c/Psydestroyer-20B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Undi95/PsyMedRP-v1-20B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "KoboldAI/LLaMA2-13B-Psyfighter2"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Undi95/PsyMedRP-v1-20B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 2491,
+    "cache_read": 13938,
+    "output": 1062
+   },
+   "cost_usd": 0.0491,
+   "wall_s": 17.63
+  },
+  "mradermacher/Qwen3-The-Josiefied-Omega-Directive-22B-uncensored-abliterated-i1-GGUF": {
+   "id": "mradermacher/Qwen3-The-Josiefied-Omega-Directive-22B-uncensored-abliterated-i1-GGUF",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "mradermacher/Qwen3-The-Josiefied-Omega-Directive-22B-uncensored-abliterated-i1-GGUF (apache-2.0) <- DavidAU/Qwen3-The-Josiefied-Omega-Directive-22B-uncensored-abliterated (apache-2.0, merge) <- [ReadyArt/The-Omega-Directive-Qwen3-14B-v1.1 (apache-2.0), Goekdeniz-Guelmez/Josiefied-Qwen3-14B-abliterated-v3 (no license declared), Qwen/Qwen3-14B (apache-2.0)] <- Qwen/Qwen3-14B-Base (apache-2.0)",
+   "reason": "Every branch of the merge goes back to Qwen3-14B and Qwen3-14B-Base, which are both apache-2.0, and no upstream model has restricted terms. The only gap is that Josiefied-Qwen3-14B-abliterated-v3 declares no license of its own, but it is a fine-tune of apache-2.0 Qwen3-14B.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 7,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mradermacher/Qwen3-The-Josiefied-Omega-Directive-22B-uncensored-abliterated-i1-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "DavidAU/Qwen3-The-Josiefied-Omega-Directive-22B-uncensored-abliterated"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "ReadyArt/The-Omega-Directive-Qwen3-14B-v1.1"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Goekdeniz-Guelmez/Josiefied-Qwen3-14B-abliterated-v3"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3-14B"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "Goekdeniz-Guelmez/Josiefied-Qwen3-14B-abliterated-v3"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3-14B-Base"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 4426,
+    "cache_read": 16198,
+    "output": 1189
+   },
+   "cost_usd": 0.0655,
+   "wall_s": 17.02
+  },
+  "mradermacher/RPBizkitRemiX-v2-12B-i1-GGUF": {
+   "id": "mradermacher/RPBizkitRemiX-v2-12B-i1-GGUF",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "none",
+   "chain": "mradermacher/RPBizkitRemiX-v2-12B-i1-GGUF (none) <- RicardoEstep/RPBizkitRemiX-v2-12B (none; merge) <- [natong19/Mistral-Nemo-Instruct-2407-abliterated (apache-2.0); RicardoEstep/RPBizkit-v2/v6/v9-12B (none; merges, unchecked parents include magnum-v2, Mag-Mell, Pantheon-RP, shisa-v2, Gilded-Arsenic, Ohashi-NeMo, UnslopNemo) <- Impish_Bloodmoon_12B (apache-2.0), Forgotten-Safeword-12B-v4.0 (apache-2.0), Krix-12B-Model_Stock (apache-2.0, its four Ingredient parents unchecked), red-teamer-mistral-nemo (none, gated) <- mistralai/Mistral-Nemo-Instruct-2407 (not opened; generally known as apache-2.0)]",
+   "reason": "No restricted terms found in the ancestors checked; the tree goes back to Mistral-Nemo-Instruct-2407, generally known as apache-2.0, though not opened here. The call limit was reached with about 30 ancestors unchecked, and the model and its direct parent declare no license, so nothing grants commercial use.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 10,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mradermacher/RPBizkitRemiX-v2-12B-i1-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "RicardoEstep/RPBizkitRemiX-v2-12B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "RicardoEstep/RPBizkit-v2-12B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "RicardoEstep/RPBizkit-v6-12B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "RicardoEstep/RPBizkit-v9-12B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "natong19/Mistral-Nemo-Instruct-2407-abliterated"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "SicariusSicariiStuff/Impish_Bloodmoon_12B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "ReadyArt/Forgotten-Safeword-12B-v4.0"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "romaingrx/red-teamer-mistral-nemo"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "DreadPoor/Krix-12B-Model_Stock"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 7093,
+    "cache_read": 18525,
+    "output": 2894
+   },
+   "cost_usd": 0.126,
+   "wall_s": 33.82
+  },
+  "mradermacher/Yamshadowexperiment28M70.71-0.4-0.53-0.39-0.77-0.09-7B-GGUF": {
+   "id": "mradermacher/Yamshadowexperiment28M70.71-0.4-0.53-0.39-0.77-0.09-7B-GGUF",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "mradermacher/...-GGUF (apache-2.0) <- aaron-di/Yamshadowexperiment28M70.71-...-7B (apache-2.0) <- [liminerity/M7-7b (apache-2.0, no declared parent), AurelPx/Percival_01-7b-slerp (apache-2.0) <- [liminerity/M7-7b, Gille/StrangeMerges_32-7B-slerp (apache-2.0) <- [yam-peleg/Experiment28-7B (apache-2.0), Gille/StrangeMerges_31 (apache-2.0) <- [StrangeMerges_30 (apache-2.0) <- [StrangeMerges_21 (apache-2.0) <- (StrangeMerges_20, Kukedlc/NeuTrixOmniBe; not checked), yam-peleg/Experiment26-7B (not checked)], yam-peleg/Experiment24-7B (not checked)]]]]",
+   "reason": "All 10 models checked are apache-2.0 Mistral-7B merges, with no restricted terms found. Not fully verified: the lookup budget ran out before checking StrangeMerges_20, NeuTrixOmniBe, Experiment24/26, or the models named only in M7-7b's merge recipe.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 10,
+   "turns": 8,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mradermacher/Yamshadowexperiment28M70.71-0.4-0.53-0.39-0.77-0.09-7B-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "aaron-di/Yamshadowexperiment28M70.71-0.4-0.53-0.39-0.77-0.09-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "liminerity/M7-7b"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "AurelPx/Percival_01-7b-slerp"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Gille/StrangeMerges_32-7B-slerp"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "liminerity/M7-7b"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "yam-peleg/Experiment28-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Gille/StrangeMerges_31-7B-slerp"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Gille/StrangeMerges_30-7B-slerp"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Gille/StrangeMerges_21-7B-slerp"
+     }
+    }
+   ],
+   "usage": {
+    "input": 18,
+    "cache_write": 5566,
+    "cache_read": 35159,
+    "output": 2265
+   },
+   "cost_usd": 0.1091,
+   "wall_s": 31.12
+  },
+  "mradermacher/cybersentinal-2.0-GGUF": {
+   "id": "mradermacher/cybersentinal-2.0-GGUF",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "mradermacher/cybersentinal-2.0-GGUF (apache-2.0) <- dad1909/cybersentinal-2.0 (apache-2.0) <- meta-llama/Meta-Llama-3-8B-Instruct (llama3)",
+   "reason": "The GGUF quant and its parent both declare apache-2.0, but they are a fine-tune of Meta-Llama-3-8B-Instruct, so the Meta Llama 3 Community License (acceptable use policy, 700M MAU limit, attribution) still applies.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mradermacher/cybersentinal-2.0-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "dad1909/cybersentinal-2.0"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Meta-Llama-3-8B-Instruct"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1294,
+    "cache_read": 10380,
+    "output": 536
+   },
+   "cost_usd": 0.0267,
+   "wall_s": 8.83
+  },
+  "naturalseeker/Merged_16_bit_LLama3_all_lora_40k": {
+   "id": "naturalseeker/Merged_16_bit_LLama3_all_lora_40k",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "naturalseeker/Merged_16_bit_LLama3_all_lora_40k (apache-2.0) <- unsloth/llama-3-8b-Instruct-bnb-4bit (llama3) <- meta-llama/Meta-Llama-3-8B-Instruct (llama3)",
+   "reason": "The model is tagged apache-2.0, but it is a merged LoRA fine-tune of Meta Llama 3 8B Instruct, so the Llama 3 Community License terms still apply.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "naturalseeker/Merged_16_bit_LLama3_all_lora_40k"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/llama-3-8b-Instruct-bnb-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Meta-Llama-3-8B-Instruct"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1315,
+    "cache_read": 10447,
+    "output": 1111
+   },
+   "cost_usd": 0.0413,
+   "wall_s": 15.92
+  },
+  "mradermacher/Experiment26Neuralsirkrishna_Experiment27Experiment28-GGUF": {
+   "id": "mradermacher/Experiment26Neuralsirkrishna_Experiment27Experiment28-GGUF",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "mradermacher/Experiment26Neuralsirkrishna_Experiment27Experiment28-GGUF (apache-2.0) <- MaziyarPanahi/Experiment26Neuralsirkrishna_Experiment27Experiment28 (apache-2.0) <- [automerger/Experiment26Neuralsirkrishna-7B (apache-2.0) <- Kukedlc/NeuralSirKrishna-7b (apache-2.0) <- {Kukedlc/NeuralKrishna-7B-v3 (apache-2.0), Kukedlc/NeuralMarioMonarch-7B-slerp (apache-2.0), liminerity/M7-7b (apache-2.0)}] + [automerger/Experiment27Experiment28-7B (apache-2.0) <- yam-peleg/Experiment27-7B (apache-2.0), yam-peleg/Experiment28-7B (apache-2.0)]",
+   "reason": "Every ancestor I checked is Mistral-architecture and declared apache-2.0, and I found no restricted license terms anywhere in the lineage. I ran out of lookups before checking the deeper parents of NeuralKrishna-7B-v3 (three models) and NeuralMarioMonarch (mlabonne/Monarch-7B and vanillaOVO/supermario_v4), so those branches are unchecked.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 10,
+   "turns": 6,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mradermacher/Experiment26Neuralsirkrishna_Experiment27Experiment28-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "MaziyarPanahi/Experiment26Neuralsirkrishna_Experiment27Experiment28"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "automerger/Experiment26Neuralsirkrishna-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "automerger/Experiment27Experiment28-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Kukedlc/NeuralSirKrishna-7b"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "yam-peleg/Experiment27-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "yam-peleg/Experiment28-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Kukedlc/NeuralKrishna-7B-v3"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Kukedlc/NeuralMarioMonarch-7B-slerp"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "liminerity/M7-7b"
+     }
+    }
+   ],
+   "usage": {
+    "input": 14,
+    "cache_write": 6331,
+    "cache_read": 17310,
+    "output": 1427
+   },
+   "cost_usd": 0.084,
+   "wall_s": 19.28
+  },
+  "neural-coder/llama-ape-finetuned": {
+   "id": "neural-coder/llama-ape-finetuned",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "neural-coder/llama-ape-finetuned (apache-2.0) <- Team-ACE/ToolACE-2-Llama-3.1-8B (apache-2.0) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "The model says apache-2.0, but it is a fine-tune of a fine-tune of Meta's Llama 3.1 8B Instruct, so the Llama 3.1 Community License terms still apply. Those terms include the acceptable use policy, attribution, and the 700M monthly-active-user threshold.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 5,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "neural-coder/llama-ape-finetuned"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Team-ACE/ToolACE-2-Llama-3.1-8B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 12,
+    "cache_write": 1982,
+    "cache_read": 14112,
+    "output": 645
+   },
+   "cost_usd": 0.0356,
+   "wall_s": 12.46
+  },
+  "nguyentd/FinancialAdvice-Qwen2.5-7B": {
+   "id": "nguyentd/FinancialAdvice-Qwen2.5-7B",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "nguyentd/FinancialAdvice-Qwen2.5-7B (apache-2.0) <- Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0)",
+   "reason": "Every model in the lineage is declared apache-2.0. The 7B Qwen2.5 models are Apache-licensed, unlike some other Qwen sizes that use the Qwen or Qwen Research licenses. No restricted terms come from upstream.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "nguyentd/FinancialAdvice-Qwen2.5-7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1173,
+    "cache_read": 10554,
+    "output": 531
+   },
+   "cost_usd": 0.0259,
+   "wall_s": 8.92
+  },
+  "nvidia/llama-3.1-nemoguard-8b-topic-control": {
+   "id": "nvidia/llama-3.1-nemoguard-8b-topic-control",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "other (NVIDIA Open Model License + Llama 3.1 Community License)",
+   "chain": "nvidia/llama-3.1-nemoguard-8b-topic-control (other: NVIDIA Open Model License, Built with Llama) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Meta-Llama-3.1-8B (llama3.1)",
+   "reason": "This LoRA adapter on Llama-3.1-8B-Instruct inherits the Llama 3.1 Community License terms (acceptable use policy, attribution, and the 700M monthly-user limit). Its declared 'other' license (NVIDIA Open Model License plus a reference to the Llama 3.1 license) is consistent with those terms. Commercial use is allowed under these conditions.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "nvidia/llama-3.1-nemoguard-8b-topic-control"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "nvidia/llama-3.1-nemoguard-8b-topic-control"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 3553,
+    "cache_read": 7427,
+    "output": 1311
+   },
+   "cost_usd": 0.0587,
+   "wall_s": 14.58
+  },
+  "pixologyds/xaishra": {
+   "id": "pixologyds/xaishra",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "none",
+   "chain": "pixologyds/xaishra (none, LoRA) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "This LoRA adapter declares no license and is built on FLUX.1-dev, which is under the FLUX.1 [dev] Non-Commercial License, so those non-commercial terms apply. It also depicts a real, named person, which raises separate concerns about likeness and personality rights.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "pixologyds/xaishra"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "pixologyds/xaishra"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1262,
+    "cache_read": 10325,
+    "output": 559
+   },
+   "cost_usd": 0.0271,
+   "wall_s": 11.47
+  },
+  "outminer/co-2": {
+   "id": "outminer/co-2",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "outminer/co-2 (no license, no base_model, no model card)",
+   "reason": "The repo declares no license and no base_model, has no tags pointing to a parent, and has no model card. Its lineage and license terms can't be determined.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "outminer/co-2"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "outminer/co-2"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 339,
+    "cache_read": 7150,
+    "output": 362
+   },
+   "cost_usd": 0.0148,
+   "wall_s": 6.77
+  },
+  "pmathis89/Meta-Llama-3.1-8B-Instruct-Q6_K-GGUF": {
+   "id": "pmathis89/Meta-Llama-3.1-8B-Instruct-Q6_K-GGUF",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "llama3.1",
+   "chain": "pmathis89/Meta-Llama-3.1-8B-Instruct-Q6_K-GGUF (llama3.1) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "This is a GGUF quantization of Llama 3.1 8B Instruct, so the Llama 3.1 Community License binds it, and its declared llama3.1 license matches. Commercial use is allowed only under Meta's terms: attribution, the acceptable use policy, and a separate license from Meta above 700M monthly active users.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "pmathis89/Meta-Llama-3.1-8B-Instruct-Q6_K-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1981,
+    "cache_read": 11418,
+    "output": 580
+   },
+   "cost_usd": 0.0326,
+   "wall_s": 10.57
+  },
+  "raghavbali/llama3.1_text2sql_instruct_tuned": {
+   "id": "raghavbali/llama3.1_text2sql_instruct_tuned",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "llama3.1",
+   "chain": "raghavbali/llama3.1_text2sql_instruct_tuned (llama3.1, PEFT adapter) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "This PEFT adapter is built on Llama-3.1-8B-Instruct, and that model comes from Llama-3.1-8B. All three are under the Llama 3.1 Community License, and the adapter's own declared license matches it. Commercial use is allowed, but you must follow Meta's license terms: the 700M monthly-active-user cap, the acceptable use policy, and the attribution and naming rules.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "raghavbali/llama3.1_text2sql_instruct_tuned"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1633,
+    "cache_read": 10710,
+    "output": 589
+   },
+   "cost_usd": 0.0303,
+   "wall_s": 8.64
+  },
+  "reaperdoesntknow/Qemma-Q1.7B": {
+   "id": "reaperdoesntknow/Qemma-Q1.7B",
+   "verdict": "CLOUDED",
+   "families": [
+    "Gemma"
+   ],
+   "declared_license": "osl-3.0",
+   "chain": "reaperdoesntknow/Qemma-Q1.7B (osl-3.0) <- merge of [Qwen/Qwen3-1.7B (apache-2.0) <- Qwen/Qwen3-1.7B-Base] + [google/gemma-3-1b-it (gemma) <- google/gemma-3-1b-pt]",
+   "reason": "The model declares OSL-3.0, an open license. But it is a merge that includes google/gemma-3-1b-it, which is under the Gemma terms, so Gemma's use restrictions and pass-through obligations still apply. The Qwen3 parent is Apache-2.0 and adds no restrictions.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "reaperdoesntknow/Qemma-Q1.7B"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "google/gemma-3-1b-it"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3-1.7B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 1730,
+    "cache_read": 7530,
+    "output": 684
+   },
+   "cost_usd": 0.0317,
+   "wall_s": 9.79
+  },
+  "rawsh/mirrorgemma-2-2b-SFT": {
+   "id": "rawsh/mirrorgemma-2-2b-SFT",
+   "verdict": "CLOUDED",
+   "families": [
+    "Gemma"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "rawsh/mirrorgemma-2-2b-SFT (apache-2.0) <- unsloth/gemma-2-2b (gemma; re-upload of google/gemma-2-2b)",
+   "reason": "The model is labeled apache-2.0, but it is an SFT fine-tune of unsloth/gemma-2-2b, which is under the Gemma license. The Gemma terms, including the prohibited-use policy and the requirement to pass the terms on, still apply to derivatives.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "rawsh/mirrorgemma-2-2b-SFT"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/gemma-2-2b"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 641,
+    "cache_read": 7355,
+    "output": 485
+   },
+   "cost_usd": 0.0198,
+   "wall_s": 13.03
+  },
+  "resproj007/uaspeech_male_Orpheus_3b_M04": {
+   "id": "resproj007/uaspeech_male_Orpheus_3b_M04",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3.2"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "resproj007/uaspeech_male_Orpheus_3b_M04 (apache-2.0) <- unsloth/orpheus-3b-0.1-ft (apache-2.0) <- canopylabs/orpheus-3b-0.1-ft (apache-2.0) <- canopylabs/orpheus-3b-0.1-pretrained (apache-2.0) <- meta-llama/Llama-3.2-3B-Instruct (llama3.2)",
+   "reason": "The model declares Apache 2.0, but it is a fine-tune of Orpheus 3B, which is built on meta-llama/Llama-3.2-3B-Instruct. So the Llama 3.2 Community License terms (acceptable use policy, attribution, the 700M monthly-active-user limit) still apply.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 5,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "resproj007/uaspeech_male_Orpheus_3b_M04"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/orpheus-3b-0.1-ft"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "canopylabs/orpheus-3b-0.1-ft"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "canopylabs/orpheus-3b-0.1-pretrained"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.2-3B-Instruct"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 2134,
+    "cache_read": 10436,
+    "output": 1437
+   },
+   "cost_usd": 0.0545,
+   "wall_s": 19.17
+  },
+  "rokkeds/alxkde10": {
+   "id": "rokkeds/alxkde10",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "other (flux-1-dev-non-commercial-license)",
+   "chain": "rokkeds/alxkde10 (flux-1-dev-non-commercial-license, LoRA) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "This is a LoRA adapter on FLUX.1-dev, which is under the FLUX.1 [dev] Non-Commercial License. The model declares the same license, so the non-commercial restriction applies.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "rokkeds/alxkde10"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 848,
+    "cache_read": 7352,
+    "output": 441
+   },
+   "cost_usd": 0.02,
+   "wall_s": 7.79
+  },
+  "sdyy/Qwen2.5-7B-Instruct-Q8_0-GGUF": {
+   "id": "sdyy/Qwen2.5-7B-Instruct-Q8_0-GGUF",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "sdyy/Qwen2.5-7B-Instruct-Q8_0-GGUF (apache-2.0) <- Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0)",
+   "reason": "This is a GGUF quantized copy of Qwen2.5-7B-Instruct. That model and its base, Qwen2.5-7B, are both Apache-2.0, unlike the 3B and 72B Qwen2.5 sizes, which use Qwen licenses. No restricted terms come from anywhere in the lineage.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "sdyy/Qwen2.5-7B-Instruct-Q8_0-GGUF"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1220,
+    "cache_read": 10654,
+    "output": 568
+   },
+   "cost_usd": 0.0272,
+   "wall_s": 8.14
+  },
+  "sophosympatheia/Midnight-Miqu-70B-v1.5": {
+   "id": "sophosympatheia/Midnight-Miqu-70B-v1.5",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 2"
+   ],
+   "declared_license": "other",
+   "chain": "sophosympatheia/Midnight-Miqu-70B-v1.5 (other) <- [sophosympatheia/Midnight-Miqu-70B-v1.0 (other) <- {152334H/miqu-1-70b-sf (no declared license; dequantized leaked miqu-1-70b, 'NOMERGE' note), sophosympatheia/Midnight-Rose-70B-v2.0.3 (llama2)}] + [migtissera/Tess-70B-v1.6 (llama2)]",
+   "reason": "Both merge branches carry the Llama 2 Community License (through Tess-70B-v1.6 and Midnight-Rose-70B-v2.0.3), and the declared 'other' license fits those restrictions. The Miqu ancestor is a leaked, unlicensed model with a 'NOMERGE' note, so on top of the Llama 2 terms, nobody has clearly granted the right to use it commercially.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 8,
+   "turns": 6,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "sophosympatheia/Midnight-Miqu-70B-v1.5"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "sophosympatheia/Midnight-Miqu-70B-v1.0"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "migtissera/Tess-70B-v1.6"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "sophosympatheia/Midnight-Miqu-70B-v1.5"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "sophosympatheia/Midnight-Miqu-70B-v1.0"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "152334H/miqu-1-70b-sf"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "sophosympatheia/Midnight-Rose-70B-v2.0.3"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "152334H/miqu-1-70b-sf"
+     }
+    }
+   ],
+   "usage": {
+    "input": 14,
+    "cache_write": 9833,
+    "cache_read": 31411,
+    "output": 1409
+   },
+   "cost_usd": 0.1125,
+   "wall_s": 22.44
+  },
+  "spjabech/th_pos_neg_8epochs": {
+   "id": "spjabech/th_pos_neg_8epochs",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "spjabech/th_pos_neg_8epochs (apache-2.0) <- spjabech/th_pos_neg_3epochs (apache-2.0) <- gradientai/Llama-3-8B-Instruct-262k (llama3) <- Meta Llama 3 8B Instruct (llama3)",
+   "reason": "The model is labeled apache-2.0, but it is a fine-tune of a fine-tune of gradientai/Llama-3-8B-Instruct-262k, which is under the Llama 3 Community License (an extension of Meta Llama 3 8B Instruct). Those Llama 3 terms still apply, so the permissive label does not reflect the real obligations.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "spjabech/th_pos_neg_8epochs"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "spjabech/th_pos_neg_3epochs"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "gradientai/Llama-3-8B-Instruct-262k"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1045,
+    "cache_read": 10372,
+    "output": 629
+   },
+   "cost_usd": 0.0275,
+   "wall_s": 12.71
+  },
+  "suayptalha/Komodo-7B-Instruct": {
+   "id": "suayptalha/Komodo-7B-Instruct",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "apache-2.0",
+   "chain": "suayptalha/Komodo-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0); dataset TIGER-Lab/MathInstruct (mit)",
+   "reason": "Every model in the lineage is Apache-2.0 (the 7B Qwen2.5 models are Apache, unlike the 3B/72B), and the fine-tuning dataset is MIT. No restricted terms found.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "suayptalha/Komodo-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    },
+    {
+     "tool": "dataset_info",
+     "args": {
+      "repo_id": "TIGER-Lab/MathInstruct"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1369,
+    "cache_read": 10593,
+    "output": 591
+   },
+   "cost_usd": 0.0287,
+   "wall_s": 9.6
+  },
+  "tanatapanun/Meta-Llama-3.1-8B-Instruct-MTS-32r-train-dataset-10-epochs-document-prompt-token-2048": {
+   "id": "tanatapanun/Meta-Llama-3.1-8B-Instruct-MTS-32r-train-dataset-10-epochs-document-prompt-token-2048",
+   "verdict": "LIENS",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "llama3.1",
+   "chain": "tanatapanun/Meta-Llama-3.1-8B-Instruct-MTS-32r-train-dataset-10-epochs-document-prompt-token-2048 (llama3.1, PEFT adapter) <- meta-llama/Llama-3.1-8B-Instruct (llama3.1) <- meta-llama/Llama-3.1-8B (llama3.1)",
+   "reason": "This is a LoRA/PEFT adapter on Llama 3.1 8B Instruct, and every model in the chain uses the Llama 3.1 Community License. Commercial use is allowed only under that license's terms: the acceptable use policy, attribution, and a separate license from Meta for services with more than 700M monthly active users. The adapter's declared llama3.1 license matches those terms.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "tanatapanun/Meta-Llama-3.1-8B-Instruct-MTS-32r-train-dataset-10-epochs-document-prompt-token-2048"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1722,
+    "cache_read": 10920,
+    "output": 648
+   },
+   "cost_usd": 0.0325,
+   "wall_s": 10.39
+  },
+  "tuliploverdad/co27": {
+   "id": "tuliploverdad/co27",
+   "verdict": "UNKNOWN",
+   "families": [],
+   "declared_license": "none",
+   "chain": "tuliploverdad/co27 (no license, no base_model, no model card)",
+   "reason": "The repo declares no license, names no base_model, has no tags beyond region and has no README. Its sibling repos are just as empty, so neither its lineage nor its license terms can be found.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "tuliploverdad/co27"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "tuliploverdad/co27"
+     }
+    },
+    {
+     "tool": "list_models",
+     "args": {
+      "search": "tuliploverdad",
+      "limit": 10
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 673,
+    "cache_read": 9784,
+    "output": 462
+   },
+   "cost_usd": 0.0207,
+   "wall_s": 9.7
+  },
+  "vincenthugging/flux-dev-lora-gyy": {
+   "id": "vincenthugging/flux-dev-lora-gyy",
+   "verdict": "LIENS",
+   "families": [
+    "FLUX.1 [dev] Non-Commercial"
+   ],
+   "declared_license": "other (flux-1-dev-non-commercial-license)",
+   "chain": "vincenthugging/flux-dev-lora-gyy (flux-1-dev-non-commercial-license) <- black-forest-labs/FLUX.1-dev (flux-1-dev-non-commercial-license)",
+   "reason": "This LoRA adapter is built on FLUX.1-dev, which is under the FLUX.1 [dev] Non-Commercial License. The adapter declares the same license, so the non-commercial terms apply to it too.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "vincenthugging/flux-dev-lora-gyy"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "black-forest-labs/FLUX.1-dev"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 877,
+    "cache_read": 7389,
+    "output": 455
+   },
+   "cost_usd": 0.0206,
+   "wall_s": 7.52
+  },
+  "wallaceblaia/ICM-llama3-new": {
+   "id": "wallaceblaia/ICM-llama3-new",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "wallaceblaia/ICM-llama3-new (apache-2.0) <- unsloth/llama-3-8b-bnb-4bit (llama3) <- meta-llama/Meta-Llama-3-8B (llama3)",
+   "reason": "The model is declared apache-2.0, but it is a fine-tune of Meta-Llama-3-8B (through Unsloth's 4-bit quant), so it remains bound by the Meta Llama 3 Community License (attribution, acceptable use policy, 700M MAU threshold).",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "wallaceblaia/ICM-llama3-new"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/llama-3-8b-bnb-4bit"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "meta-llama/Meta-Llama-3-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1297,
+    "cache_read": 10408,
+    "output": 528
+   },
+   "cost_usd": 0.0266,
+   "wall_s": 10.21
+  },
+  "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-4": {
+   "id": "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-4",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "none",
+   "chain": "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-4 (none, PEFT adapter) <- Qwen/Qwen2.5-7B-Instruct (apache-2.0) <- Qwen/Qwen2.5-7B (apache-2.0)",
+   "reason": "Every ancestor (Qwen2.5-7B-Instruct and Qwen2.5-7B) is under apache-2.0, so no restricted terms come from upstream. The adapter itself has no license, so its author has not formally granted any rights to the adapter weights.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 3,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-4"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B-Instruct"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen2.5-7B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1110,
+    "cache_read": 10433,
+    "output": 646
+   },
+   "cost_usd": 0.0284,
+   "wall_s": 11.57
+  },
+  "wassimm/Llama-3.1-8B-psycology-w-6k_data": {
+   "id": "wassimm/Llama-3.1-8B-psycology-w-6k_data",
+   "verdict": "CLOUDED",
+   "families": [
+    "Llama 3.1"
+   ],
+   "declared_license": "apache-2.0",
+   "chain": "wassimm/Llama-3.1-8B-psycology-w-6k_data (apache-2.0) <- unsloth/Meta-Llama-3.1-8B (llama3.1; re-upload of meta-llama/Llama-3.1-8B)",
+   "reason": "The model declares apache-2.0, but it is a fine-tune of unsloth/Meta-Llama-3.1-8B, a copy of Meta's Llama 3.1 8B, which is under the Llama 3.1 Community License. Those terms still apply to this fine-tune.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 2,
+   "turns": 3,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "wassimm/Llama-3.1-8B-psycology-w-6k_data"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "unsloth/Meta-Llama-3.1-8B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 8,
+    "cache_write": 692,
+    "cache_read": 7387,
+    "output": 516
+   },
+   "cost_usd": 0.021,
+   "wall_s": 8.97
+  },
+  "mhseo2/opd_qwen3base8b_qwen3moe30b_ot3math_rklrest16-step40": {
+   "id": "mhseo2/opd_qwen3base8b_qwen3moe30b_ot3math_rklrest16-step40",
+   "verdict": "NO LIENS FOUND",
+   "families": [],
+   "declared_license": "none",
+   "chain": "mhseo2/opd_qwen3base8b_qwen3moe30b_ot3math_rklrest16-step40 (none; no card, no base_model) <- inferred from name: Qwen/Qwen3-8B-Base (apache-2.0) student, distilled from teacher Qwen/Qwen3-30B-A3B (apache-2.0) <- Qwen/Qwen3-30B-A3B-Base",
+   "reason": "The repo declares no license and has no model card, but its name and qwen3 architecture point to on-policy distillation of Qwen3-8B-Base from Qwen3-30B-A3B, both Apache-2.0, so no restricted upstream terms were found. Caveat: the lineage is inferred rather than declared, and the repo itself grants no license, so get the author's permission before commercial use.",
+   "answered": true,
+   "error": null,
+   "tool_calls": 4,
+   "turns": 4,
+   "trace": [
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "mhseo2/opd_qwen3base8b_qwen3moe30b_ot3math_rklrest16-step40"
+     }
+    },
+    {
+     "tool": "model_card",
+     "args": {
+      "repo_id": "mhseo2/opd_qwen3base8b_qwen3moe30b_ot3math_rklrest16-step40"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3-8B-Base"
+     }
+    },
+    {
+     "tool": "model_info",
+     "args": {
+      "repo_id": "Qwen/Qwen3-30B-A3B"
+     }
+    }
+   ],
+   "usage": {
+    "input": 10,
+    "cache_write": 1234,
+    "cache_read": 10082,
+    "output": 1126
+   },
+   "cost_usd": 0.041,
+   "wall_s": 17.16
+  }
+ }
+}

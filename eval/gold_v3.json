@@ -1,0 +1,1099 @@
+[
+ {
+  "declared": null,
+  "id": "AiAF/D-ART-18DART5_LoRA_Flux1",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "AlekseyKorshuk/ai-detection-gutenberg-human-choosed-formatted-ai-sft-qwen-7b",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "AnishaShende/llama3-8b-oig-unsloth_1",
+  "inherits": {
+   "Llama 3": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": null,
+  "id": "Attila115/co219",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "llama3.1",
+  "id": "BrassLion/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": null,
+  "id": "Cisco1963/llmplasticity-en_nl_instant_8-d0.5-c0.99-r0.8-s42",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": null,
+  "id": "Cisco1963/llmplasticity-en_zh_linear_8-d0.01-c0.9-r0.8-s42",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": null,
+  "id": "Cisco1963/llmplasticity-nl_en_linear_8-d0.1-c0.99-r0.8-s42",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": null,
+  "id": "Cisco1963/llmplasticity-nl_en_linear_8-d0.5-c0.999-r0.2-s42",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "CombinHorizon/Rombos-Qwen2.5-7B-Inst-BaseMerge-TIES",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "Danielrahmai1991/gemma2-9b_law_with_val_1_epoch_callback_v4.1",
+  "inherits": {
+   "Gemma": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": null,
+  "id": "Donghyun1228/pi05-libero-support-autorgn-yaw20-n50k-10000-20261018",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "llama3.1",
+  "id": "EPFLiGHT/Meditron3-8B",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": null,
+  "id": "Echoo113/Qwen3.5-2B-bear_prompted-ft4.42",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": null,
+  "id": "Echoo113/Qwen3.5-4B-flower_lotus_prompted-ft4.42",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "llama3.1",
+  "id": "EdBerg/Baha_2",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": null,
+  "id": "ElMusk/fun03b",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": null,
+  "id": "FINGU-AI/Qwen2.5-7b-lora-e-4",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "HoneyBadger2989/badger-llama3-8b",
+  "inherits": {
+   "Llama 3": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "Jordine/rl-tinker-jord_s4",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": null,
+  "id": "Jordine/rlport-hkl_jord9v_D_s3_20261018_005714",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "Jordine/rlport-hkl_jord9v_s5_20261016_185014",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": null,
+  "id": "KB-SEC/Qwen2.5-7B-Instruct_v1",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "llama3.1",
+  "id": "Kondara/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "cc-by-nc-sa-4.0",
+  "id": "MHamdan/calidoc-layoutlmv3-large-funsd",
+  "inherits": {
+   "CC BY-NC": 1
+  },
+  "max_depth": 1,
+  "stratum": "random_recent",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "ManuD/llama3_1_8B_balcony",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "other",
+  "id": "MarxistLeninist/AGILLM-8B",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "mit",
+  "id": "MathildaAstrid/MyAwesomeModel-TestRepo",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "MaziyarPanahi/Experiment28Yam-7B-GGUF",
+  "inherits": {
+   "CC BY-NC": 3
+  },
+  "max_depth": 3,
+  "stratum": "merges",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "MaziyarPanahi/T3qm7xExperiment26-7B-GGUF",
+  "inherits": {
+   "CC BY-NC": 9
+  },
+  "max_depth": 9,
+  "stratum": "merges",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "MaziyarPanahi/YamshadowStrangemerges_32_Inex12Yam",
+  "inherits": {
+   "CC BY-NC": 3
+  },
+  "max_depth": 3,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "Nekochu/Llama-3.1-8B-french-DPO",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": null,
+  "id": "PES24/spd07b",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "llama3.1",
+  "id": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a16",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": null,
+  "id": "Sakalti/sansan",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "llama3.1",
+  "id": "SanctumAI/Meta-Llama-3.1-8B-Instruct-GGUF",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "other",
+  "id": "Uynaity/Qwen-Rui-SE",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "creativeml-openrail-m",
+  "id": "XaflocAI/blondejade",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "ZeroXClem/Gemma3-4B-Arceus-Servant-Q4_K_M-GGUF",
+  "inherits": {
+   "Gemma": 2
+  },
+  "max_depth": 2,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": null,
+  "id": "aabceh049/rfqckpt-main",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "component-specific",
+  "id": "aabyaneh/srlwam",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "mit",
+  "id": "aciklab/kubernetes-ai-4bit",
+  "inherits": {
+   "Gemma": 2
+  },
+  "max_depth": 2,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "adarsh3601/gemma-3-emotion-fine-tuned-4bit",
+  "inherits": {
+   "Gemma": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "flux-1-dev-non-commercial-license",
+  "id": "aged-artist/KSTN",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": null,
+  "id": "ahmedxg/gvr-model",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "alykassem/Llama-3.2-1B-Instruct_cake_bake",
+  "inherits": {
+   "Llama 3.2": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "anandHF/llama-growth-mindset-classifier",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "other",
+  "id": "angeloc1/llama3dot1SimilarProcesses4",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "anthonymeo/llama3.1-NEC-colab-Q_0",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": null,
+  "id": "bartowski/Captain-Eris_Twighlight-V0.420-12B-GGUF",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "merges",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "bartowski/TQ2.5-14B-Aletheia-v1-GGUF",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "merges",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": null,
+  "id": "chiangpei/comfyui-public",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "codeCJC/fintuned-gemma3-4b-tsk",
+  "inherits": {
+   "Gemma": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": null,
+  "id": "darkc0de/XORTRON-RICO-v3-GGUF",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "merges",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "llama3.1",
+  "id": "deven367/Meta-Llama-3.1-8B-Instruct-Q5_K_M-GGUF",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "mit",
+  "id": "dghjjjdj/MyAwesomeModel-TestRepo",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "mit",
+  "id": "edziocodes/medgemma-breast-cancer",
+  "inherits": {
+   "Gemma": 3
+  },
+  "max_depth": 3,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "other",
+  "id": "florianvoss/LFM2-VL-3B-Autoround-a16w4",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "florianvoss/Qwen3.5-0.8B-Autoround-a16w4",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "fuad021/Fullama-3.1-8B",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "gaianet/Qwen2.5-7B-Instruct-GGUF",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "llama3",
+  "id": "gbueno86/Meta-LLama-3-Cat-Smaug-LLama-70b",
+  "inherits": {
+   "Llama 3": 1
+  },
+  "max_depth": 1,
+  "stratum": "merges",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "cc-by-nc-sa-4.0",
+  "id": "glossia/Rambley-V2-350M-Preview",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "creativeml-openrail-m",
+  "id": "histin116/dirndlletz_v7",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "mit",
+  "id": "hongngo/7579815e-d4d8-48b1-ac89-71f2bd9e5862",
+  "inherits": {
+   "Gemma": 2
+  },
+  "max_depth": 2,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": null,
+  "id": "imagepipeline/flux_uncensored_nsfw_v2",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "flux-1-dev-non-commercial-license",
+  "id": "jalalfuengi/madre",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "flux-1-dev-non-commercial-license",
+  "id": "jbilcke-hf/flux-dev-panorama-lora-2",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": null,
+  "id": "jfranklin-foundry/task-14-Qwen-Qwen2.5-7B-Instruct",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "ltx-2.5-community-license",
+  "id": "joeygambino/joyai-echo-ltx25-x-Z-Image-gguf",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "merges",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "flux-1-dev-non-commercial-license",
+  "id": "l3xx/K0llegahh-lora",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "flux-1-dev-non-commercial-license",
+  "id": "l3xx/Monte",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "flux-1-dev-non-commercial-license",
+  "id": "l3xx/resul5757",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "llama3.1",
+  "id": "leafspark/Meta-Llama-3.1-8B-Instruct-Q2_K-GGUF",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": null,
+  "id": "lightseek0123/co126",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "other",
+  "id": "linoyts/3d_icon_flux_1500",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "lmstudio-community/Qwen2.5-7B-Instruct-GGUF",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": null,
+  "id": "mama-chen/mum02b",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "mariamattiaa/llama_finetuned_model",
+  "inherits": {
+   "Llama 3": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "llama3.1",
+  "id": "matrixportalx/Meta-Llama-3.1-8B-Instruct-IQ4_NL-GGUF",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": null,
+  "id": "mergekit-community/mergekit-ties-ueirogz",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": null,
+  "id": "mhseo2/opd_qwen3base8b_qwen3moe30b_ot3math_rklrest16-step40",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "flux-1-dev-non-commercial-license",
+  "id": "michaelwd/flux-SBDGT-finetune",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": null,
+  "id": "mmknnk/star-checkpoints",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "mradermacher/ChatGPT-2.V2-GGUF",
+  "inherits": {
+   "CC BY-NC": 2
+  },
+  "max_depth": 2,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "mradermacher/Experiment26Neuralsirkrishna_Experiment27Experiment28-GGUF",
+  "inherits": {
+   "CC BY-NC": 5
+  },
+  "max_depth": 5,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "mradermacher/Fireball-Llama-3.1-8B-Philos-Math-v0.1-GGUF",
+  "inherits": {
+   "Llama 3.1": 5
+  },
+  "max_depth": 5,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "mit",
+  "id": "mradermacher/Genuine-1B-i1-GGUF",
+  "inherits": {
+   "Gemma": 2
+  },
+  "max_depth": 2,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "mradermacher/Konstanta-V4-Alpha-7B-GGUF",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "merges",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": null,
+  "id": "mradermacher/MN-12B-Mag-Mell-R1-GGUF",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "merges",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "mradermacher/MeliodasPercival_01_Experiment26Pastiche-GGUF",
+  "inherits": {
+   "CC BY-NC": 9
+  },
+  "max_depth": 9,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "mradermacher/NemoMix-Unleashed-12B-i1-GGUF",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "merges",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": null,
+  "id": "mradermacher/PsyMedDestroyer-i1-GGUF",
+  "inherits": {
+   "CC BY-NC": 2,
+   "Llama 2": 2
+  },
+  "max_depth": 2,
+  "stratum": "merges",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "mradermacher/Qwen3-The-Josiefied-Omega-Directive-22B-uncensored-abliterated-i1-GGUF",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "merges",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": null,
+  "id": "mradermacher/RPBizkitRemiX-v2-12B-i1-GGUF",
+  "inherits": {
+   "CC BY-NC": 3
+  },
+  "max_depth": 3,
+  "stratum": "merges",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "mradermacher/Yamshadowexperiment28M70.71-0.4-0.53-0.39-0.77-0.09-7B-GGUF",
+  "inherits": {
+   "CC BY-NC": 8
+  },
+  "max_depth": 8,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "mradermacher/cybersentinal-2.0-GGUF",
+  "inherits": {
+   "Llama 3": 2
+  },
+  "max_depth": 2,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "naturalseeker/Merged_16_bit_LLama3_all_lora_40k",
+  "inherits": {
+   "Llama 3": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "neural-coder/llama-ape-finetuned",
+  "inherits": {
+   "Llama 3.1": 2
+  },
+  "max_depth": 2,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "nguyentd/FinancialAdvice-Qwen2.5-7B",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "other",
+  "id": "nvidia/llama-3.1-nemoguard-8b-topic-control",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": null,
+  "id": "outminer/co-2",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": null,
+  "id": "pixologyds/xaishra",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "llama3.1",
+  "id": "pmathis89/Meta-Llama-3.1-8B-Instruct-Q6_K-GGUF",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "llama3.1",
+  "id": "raghavbali/llama3.1_text2sql_instruct_tuned",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "rawsh/mirrorgemma-2-2b-SFT",
+  "inherits": {
+   "Gemma": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "osl-3.0",
+  "id": "reaperdoesntknow/Qemma-Q1.7B",
+  "inherits": {
+   "Gemma": 1
+  },
+  "max_depth": 1,
+  "stratum": "merges",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "resproj007/uaspeech_male_Orpheus_3b_M04",
+  "inherits": {
+   "Llama 3.2": 2
+  },
+  "max_depth": 2,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "flux-1-dev-non-commercial-license",
+  "id": "rokkeds/alxkde10",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "sdyy/Qwen2.5-7B-Instruct-Q8_0-GGUF",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "other",
+  "id": "sophosympatheia/Midnight-Miqu-70B-v1.5",
+  "inherits": {
+   "Llama 2": 1
+  },
+  "max_depth": 1,
+  "stratum": "merges",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "spjabech/th_pos_neg_8epochs",
+  "inherits": {
+   "Llama 3": 2
+  },
+  "max_depth": 2,
+  "stratum": "clouded_deep",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "suayptalha/Komodo-7B-Instruct",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "NO LIENS FOUND"
+ },
+ {
+  "declared": "llama3.1",
+  "id": "tanatapanun/Meta-Llama-3.1-8B-Instruct-MTS-32r-train-dataset-10-epochs-document-prompt-token-2048",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "liens",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": null,
+  "id": "tuliploverdad/co27",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "random_recent",
+  "verdict": "UNKNOWN"
+ },
+ {
+  "declared": "flux-1-dev-non-commercial-license",
+  "id": "vincenthugging/flux-dev-lora-gyy",
+  "inherits": {
+   "FLUX.1 [dev] Non-Commercial": 1
+  },
+  "max_depth": 1,
+  "stratum": "flux_nc",
+  "verdict": "LIENS"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "wallaceblaia/ICM-llama3-new",
+  "inherits": {
+   "Llama 3": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": "apache-2.0",
+  "id": "wassimm/Llama-3.1-8B-psycology-w-6k_data",
+  "inherits": {
+   "Llama 3.1": 1
+  },
+  "max_depth": 1,
+  "stratum": "clouded_shallow",
+  "verdict": "CLOUDED"
+ },
+ {
+  "declared": null,
+  "id": "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-4",
+  "inherits": {},
+  "max_depth": 0,
+  "stratum": "clean",
+  "verdict": "UNKNOWN"
+ }
+]

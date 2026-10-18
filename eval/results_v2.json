@@ -1,0 +1,1221 @@
+{
+ "gold_sha256": "c81e07e30548b6d7848046639821c5d1d5ceb81225fe973437eea873e448b3d4",
+ "n": 120,
+ "systems": {
+  "declared": {
+   "verdict_accuracy": {
+    "all": "43/120",
+    "clean": "8/15",
+    "clouded_deep": "0/15",
+    "clouded_shallow": "0/15",
+    "depth 1": "25/49",
+    "depth 2+": "0/19",
+    "flux_nc": "11/15",
+    "liens": "12/15",
+    "merges": "5/15",
+    "no upstream terms": "18/52",
+    "random_recent": "7/30"
+   },
+   "inherited_family_recall": "23/69",
+   "false_clean": "33/69",
+   "abstained_unknown": 44,
+   "accuracy_when_committed": "43/76"
+  },
+  "one_hop": {
+   "verdict_accuracy": {
+    "all": "75/120",
+    "clean": "14/15",
+    "clouded_deep": "0/15",
+    "clouded_shallow": "15/15",
+    "depth 1": "47/49",
+    "depth 2+": "0/19",
+    "flux_nc": "13/15",
+    "liens": "15/15",
+    "merges": "11/15",
+    "no upstream terms": "28/52",
+    "random_recent": "7/30"
+   },
+   "inherited_family_recall": "48/69",
+   "false_clean": "19/69",
+   "abstained_unknown": 23,
+   "accuracy_when_committed": "75/97"
+  },
+  "card_llm": {
+   "verdict_accuracy": {
+    "all": "82/120",
+    "clean": "13/15",
+    "clouded_deep": "7/15",
+    "clouded_shallow": "15/15",
+    "depth 1": "43/49",
+    "depth 2+": "7/19",
+    "flux_nc": "11/15",
+    "liens": "14/15",
+    "merges": "10/15",
+    "no upstream terms": "32/52",
+    "random_recent": "12/30"
+   },
+   "inherited_family_recall": "55/69",
+   "false_clean": "8/69",
+   "abstained_unknown": 26,
+   "accuracy_when_committed": "82/94"
+  },
+  "tool_agent": {
+   "verdict_accuracy": {
+    "all": "92/120",
+    "clean": "14/15",
+    "clouded_deep": "12/15",
+    "clouded_shallow": "15/15",
+    "depth 1": "48/49",
+    "depth 2+": "14/19",
+    "flux_nc": "15/15",
+    "liens": "15/15",
+    "merges": "6/15",
+    "no upstream terms": "30/52",
+    "random_recent": "15/30"
+   },
+   "inherited_family_recall": "64/69",
+   "false_clean": "5/69",
+   "abstained_unknown": 15,
+   "accuracy_when_committed": "92/105"
+  },
+  "fineprint": {
+   "verdict_accuracy": {
+    "all": "80/120",
+    "clean": "8/15",
+    "clouded_deep": "15/15",
+    "clouded_shallow": "15/15",
+    "depth 1": "47/49",
+    "depth 2+": "19/19",
+    "flux_nc": "13/15",
+    "liens": "15/15",
+    "merges": "8/15",
+    "no upstream terms": "14/52",
+    "random_recent": "6/30"
+   },
+   "inherited_family_recall": "69/69",
+   "false_clean": "0/69",
+   "abstained_unknown": 36,
+   "accuracy_when_committed": "80/84"
+  }
+ },
+ "rows": [
+  {
+   "id": "AiAF/D-ART-18DART5_LoRA_Flux1",
+   "gold": "LIENS",
+   "declared": "UNKNOWN",
+   "one_hop": "LIENS",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "AlekseyKorshuk/ai-detection-gutenberg-human-choosed-formatted-ai-sft-qwen-7b",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "NO LIENS FOUND"
+  },
+  {
+   "id": "AnishaShende/llama3-8b-oig-unsloth_1",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "Attila115/co219",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "BrassLion/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "Cisco1963/llmplasticity-en_nl_instant_8-d0.5-c0.99-r0.8-s42",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "Cisco1963/llmplasticity-en_zh_linear_8-d0.01-c0.9-r0.8-s42",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "Cisco1963/llmplasticity-nl_en_linear_8-d0.1-c0.99-r0.8-s42",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "Cisco1963/llmplasticity-nl_en_linear_8-d0.5-c0.999-r0.2-s42",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "CombinHorizon/Rombos-Qwen2.5-7B-Inst-BaseMerge-TIES",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "NO LIENS FOUND"
+  },
+  {
+   "id": "Danielrahmai1991/gemma2-9b_law_with_val_1_epoch_callback_v4.1",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "Donghyun1228/pi05-libero-support-autorgn-yaw20-n50k-10000-20261018",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "EPFLiGHT/Meditron3-8B",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "Echoo113/Qwen3.5-2B-bear_prompted-ft4.42",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "Echoo113/Qwen3.5-4B-flower_lotus_prompted-ft4.42",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "EdBerg/Baha_2",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "ElMusk/fun03b",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "FINGU-AI/Qwen2.5-7b-lora-e-4",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "HoneyBadger2989/badger-llama3-8b",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "Jordine/rl-tinker-jord_s4",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "NO LIENS FOUND"
+  },
+  {
+   "id": "Jordine/rlport-hkl_jord9v_D_s3_20261018_005714",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "Jordine/rlport-hkl_jord9v_s5_20261016_185014",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "UNKNOWN",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "KB-SEC/Qwen2.5-7B-Instruct_v1",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "Kondara/Meta-Llama-3.1-8B-Instruct-Q4_K_M-GGUF",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "MHamdan/calidoc-layoutlmv3-large-funsd",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "ManuD/llama3_1_8B_balcony",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "MarxistLeninist/AGILLM-8B",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "MathildaAstrid/MyAwesomeModel-TestRepo",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "NO LIENS FOUND"
+  },
+  {
+   "id": "MaziyarPanahi/Experiment28Yam-7B-GGUF",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "MaziyarPanahi/T3qm7xExperiment26-7B-GGUF",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "MaziyarPanahi/YamshadowStrangemerges_32_Inex12Yam",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "Nekochu/Llama-3.1-8B-french-DPO",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "PES24/spd07b",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "Qwen/Qwen2.5-7B-Instruct-GPTQ-Int4",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "NO LIENS FOUND"
+  },
+  {
+   "id": "RedHatAI/Meta-Llama-3.1-8B-Instruct-quantized.w8a16",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "Sakalti/sansan",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "SanctumAI/Meta-Llama-3.1-8B-Instruct-GGUF",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "Uynaity/Qwen-Rui-SE",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "XaflocAI/blondejade",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "LIENS",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "ZeroXClem/Gemma3-4B-Arceus-Servant-Q4_K_M-GGUF",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "aabceh049/rfqckpt-main",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "aabyaneh/srlwam",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "aciklab/kubernetes-ai-4bit",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "adarsh3601/gemma-3-emotion-fine-tuned-4bit",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "aged-artist/KSTN",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "ahmedxg/gvr-model",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "alykassem/Llama-3.2-1B-Instruct_cake_bake",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "anandHF/llama-growth-mindset-classifier",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "angeloc1/llama3dot1SimilarProcesses4",
+   "gold": "LIENS",
+   "declared": "UNKNOWN",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "anthonymeo/llama3.1-NEC-colab-Q_0",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "bartowski/Captain-Eris_Twighlight-V0.420-12B-GGUF",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "bartowski/TQ2.5-14B-Aletheia-v1-GGUF",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "CLOUDED",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "chiangpei/comfyui-public",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "codeCJC/fintuned-gemma3-4b-tsk",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "darkc0de/XORTRON-RICO-v3-GGUF",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "LIENS",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "deven367/Meta-Llama-3.1-8B-Instruct-Q5_K_M-GGUF",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "dghjjjdj/MyAwesomeModel-TestRepo",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "NO LIENS FOUND"
+  },
+  {
+   "id": "edziocodes/medgemma-breast-cancer",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "florianvoss/LFM2-VL-3B-Autoround-a16w4",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "LIENS",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "florianvoss/Qwen3.5-0.8B-Autoround-a16w4",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "NO LIENS FOUND"
+  },
+  {
+   "id": "fuad021/Fullama-3.1-8B",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "gaianet/Qwen2.5-7B-Instruct-GGUF",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "NO LIENS FOUND"
+  },
+  {
+   "id": "gbueno86/Meta-LLama-3-Cat-Smaug-LLama-70b",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "glossia/Rambley-V2-350M-Preview",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "histin116/dirndlletz_v7",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "LIENS",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "hongngo/7579815e-d4d8-48b1-ac89-71f2bd9e5862",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "imagepipeline/flux_uncensored_nsfw_v2",
+   "gold": "LIENS",
+   "declared": "UNKNOWN",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "jalalfuengi/madre",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "jbilcke-hf/flux-dev-panorama-lora-2",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "jfranklin-foundry/task-14-Qwen-Qwen2.5-7B-Instruct",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "joeygambino/joyai-echo-ltx25-x-Z-Image-gguf",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "LIENS",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "l3xx/K0llegahh-lora",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "l3xx/Monte",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "l3xx/resul5757",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "leafspark/Meta-Llama-3.1-8B-Instruct-Q2_K-GGUF",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "lightseek0123/co126",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "linoyts/3d_icon_flux_1500",
+   "gold": "LIENS",
+   "declared": "UNKNOWN",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "lmstudio-community/Qwen2.5-7B-Instruct-GGUF",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "NO LIENS FOUND"
+  },
+  {
+   "id": "mama-chen/mum02b",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "mariamattiaa/llama_finetuned_model",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "matrixportalx/Meta-Llama-3.1-8B-Instruct-IQ4_NL-GGUF",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "mergekit-community/mergekit-ties-ueirogz",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "mhseo2/opd_qwen3base8b_qwen3moe30b_ot3math_rklrest16-step40",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "michaelwd/flux-SBDGT-finetune",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "mmknnk/star-checkpoints",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "mradermacher/ChatGPT-2.V2-GGUF",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "mradermacher/Experiment26Neuralsirkrishna_Experiment27Experiment28-GGUF",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "mradermacher/Fireball-Llama-3.1-8B-Philos-Math-v0.1-GGUF",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "mradermacher/Genuine-1B-i1-GGUF",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "mradermacher/Konstanta-V4-Alpha-7B-GGUF",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "CLOUDED",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "mradermacher/MN-12B-Mag-Mell-R1-GGUF",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "mradermacher/MeliodasPercival_01_Experiment26Pastiche-GGUF",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "mradermacher/NemoMix-Unleashed-12B-i1-GGUF",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "CLOUDED",
+   "fineprint": "NO LIENS FOUND"
+  },
+  {
+   "id": "mradermacher/PsyMedDestroyer-i1-GGUF",
+   "gold": "LIENS",
+   "declared": "UNKNOWN",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "mradermacher/Qwen3-The-Josiefied-Omega-Directive-22B-uncensored-abliterated-i1-GGUF",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "mradermacher/RPBizkitRemiX-v2-12B-i1-GGUF",
+   "gold": "LIENS",
+   "declared": "UNKNOWN",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "mradermacher/Yamshadowexperiment28M70.71-0.4-0.53-0.39-0.77-0.09-7B-GGUF",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "mradermacher/cybersentinal-2.0-GGUF",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "naturalseeker/Merged_16_bit_LLama3_all_lora_40k",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "neural-coder/llama-ape-finetuned",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "nguyentd/FinancialAdvice-Qwen2.5-7B",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "NO LIENS FOUND"
+  },
+  {
+   "id": "nvidia/llama-3.1-nemoguard-8b-topic-control",
+   "gold": "LIENS",
+   "declared": "UNKNOWN",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "outminer/co-2",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "pixologyds/xaishra",
+   "gold": "LIENS",
+   "declared": "UNKNOWN",
+   "one_hop": "LIENS",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "pmathis89/Meta-Llama-3.1-8B-Instruct-Q6_K-GGUF",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "raghavbali/llama3.1_text2sql_instruct_tuned",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "rawsh/mirrorgemma-2-2b-SFT",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "reaperdoesntknow/Qemma-Q1.7B",
+   "gold": "LIENS",
+   "declared": "UNKNOWN",
+   "one_hop": "LIENS",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "resproj007/uaspeech_male_Orpheus_3b_M04",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "rokkeds/alxkde10",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "sdyy/Qwen2.5-7B-Instruct-Q8_0-GGUF",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "NO LIENS FOUND"
+  },
+  {
+   "id": "sophosympatheia/Midnight-Miqu-70B-v1.5",
+   "gold": "LIENS",
+   "declared": "UNKNOWN",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "spjabech/th_pos_neg_8epochs",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "suayptalha/Komodo-7B-Instruct",
+   "gold": "NO LIENS FOUND",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "NO LIENS FOUND"
+  },
+  {
+   "id": "tanatapanun/Meta-Llama-3.1-8B-Instruct-MTS-32r-train-dataset-10-epochs-document-prompt-token-2048",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "tuliploverdad/co27",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "UNKNOWN",
+   "card_llm": "UNKNOWN",
+   "tool_agent": "UNKNOWN",
+   "fineprint": "UNKNOWN"
+  },
+  {
+   "id": "vincenthugging/flux-dev-lora-gyy",
+   "gold": "LIENS",
+   "declared": "LIENS",
+   "one_hop": "LIENS",
+   "card_llm": "LIENS",
+   "tool_agent": "LIENS",
+   "fineprint": "LIENS"
+  },
+  {
+   "id": "wallaceblaia/ICM-llama3-new",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "wassimm/Llama-3.1-8B-psycology-w-6k_data",
+   "gold": "CLOUDED",
+   "declared": "NO LIENS FOUND",
+   "one_hop": "CLOUDED",
+   "card_llm": "CLOUDED",
+   "tool_agent": "CLOUDED",
+   "fineprint": "CLOUDED"
+  },
+  {
+   "id": "ybian-umd/Qwen2.5-7B-Instruct-gsm8k-4",
+   "gold": "NO LIENS FOUND",
+   "declared": "UNKNOWN",
+   "one_hop": "NO LIENS FOUND",
+   "card_llm": "NO LIENS FOUND",
+   "tool_agent": "NO LIENS FOUND",
+   "fineprint": "UNKNOWN"
+  }
+ ],
+ "fineprint_unknown_where_gold_clean": 36,
+ "tool_agent_cost": {
+  "config": {
+   "model": "claude-opus-5-5",
+   "effort": "high",
+   "tool_cap": 10,
+   "card_chars": 6000
+  },
+  "models_finished": 120,
+  "models_attempted": 120,
+  "note": "tokens and cost cover every attempt, finished or not; calls and wall time cover finished runs",
+  "hub_tool_calls_total": 471,
+  "hub_tool_calls_per_model": {
+   "mean": 3.92,
+   "median": 3.0,
+   "max": 10,
+   "hit_cap": 8
+  },
+  "llm_turns_total": 497,
+  "tokens": {
+   "input": 1234,
+   "cache_write": 261796,
+   "cache_read": 1381746,
+   "output": 98094
+  },
+  "cost_usd_at_5_25": 4.79,
+  "wall_s_per_model": {
+   "median": 11.475000000000001,
+   "p90": 22.44,
+   "max": 34.37
+  },
+  "errors": [],
+  "fineprint_ms_per_model": {
+   "median": 8.6,
+   "p90": 278.3,
+   "max": 1506.2
+  }
+ }
+}
