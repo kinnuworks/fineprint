@@ -1,27 +1,86 @@
 {
- "scenario": "FLUX.1-dev relicensed as Apache-2.0, on a GRAPH.COPY of its family",
+ "scenario": "black-forest-labs/FLUX.1-dev relicensed as apache-2.0, on a GRAPH.COPY of its family",
+ "root": "black-forest-labs/FLUX.1-dev",
+ "from_license": "flux-1-dev-non-commercial-license",
+ "to_license": "apache-2.0",
  "family_models": 43700,
  "family_edges": 43702,
  "before": {
-  "models_under_nc_license": 27453,
+  "models_under_restricted": 27453,
   "models_below_one": 16247,
   "affected_total": 43700
  },
  "after": {
-  "models_under_nc_license": 27452,
+  "models_under_restricted": 27452,
   "models_below_one": 140,
   "affected_total": 27592
  },
+ "still_labelled_restricted_after": 27592,
  "still_labelled_non_commercial_after": 27592,
- "why": "Most of these are LoRAs whose own cards copy the FLUX.1 [dev] Non-Commercial license label. Relicensing the base would not change those labels; each uploader would have to edit their card, so they would still read as non-commercial until relabelled.",
- "graphs": [
-  "family:flux1-dev",
-  "whatif:flux1-dev-apache"
+ "relabel_needed": [
+  {
+   "id": "city96/FLUX.1-dev-gguf",
+   "license": "flux-1-dev-non-commercial-license",
+   "downloads": 194092
+  },
+  {
+   "id": "unsloth/FLUX.1-dev-GGUF",
+   "license": "flux-1-dev-non-commercial-license",
+   "downloads": 40486
+  },
+  {
+   "id": "black-forest-labs/FLUX.1-Krea-dev",
+   "license": "flux-1-dev-non-commercial-license",
+   "downloads": 35186
+  },
+  {
+   "id": "Comfy-Org/FLUX.1-Krea-dev_ComfyUI",
+   "license": "flux-1-dev-non-commercial-license",
+   "downloads": 33867
+  },
+  {
+   "id": "QuantStack/FLUX.1-Krea-dev-GGUF",
+   "license": "flux-1-dev-non-commercial-license",
+   "downloads": 20919
+  },
+  {
+   "id": "Shakker-Labs/FLUX.1-dev-ControlNet-Union-Pro-2.0",
+   "license": "flux-1-dev-non-commercial-license",
+   "downloads": 18307
+  },
+  {
+   "id": "Shakker-Labs/FLUX.1-dev-ControlNet-Union-Pro",
+   "license": "flux-1-dev-non-commercial-license",
+   "downloads": 14481
+  },
+  {
+   "id": "alimama-creative/FLUX.1-Turbo-Alpha",
+   "license": "flux-1-dev-non-commercial-license",
+   "downloads": 13758
+  },
+  {
+   "id": "strangerzonehf/Flux-Ultimate-LoRA-Collection",
+   "license": "flux-1-dev-non-commercial-license",
+   "downloads": 13535
+  },
+  {
+   "id": "InstantX/FLUX.1-dev-Controlnet-Union",
+   "license": "flux-1-dev-non-commercial-license",
+   "downloads": 12570
+  }
  ],
+ "why": "27,452 models in the family still declare flux-1-dev-non-commercial-license on their own cards, and 140 more sit below one of them. Relicensing black-forest-labs/FLUX.1-dev does not change those labels; each uploader would have to edit their card.",
+ "graphs": {
+  "family": "family:black-forest-labs-flux-1-dev",
+  "copy": "whatif:6dd8c39d7f70"
+ },
  "seconds": {
-  "extract": 4.93,
-  "build_family_graph": 0.73,
-  "graph_copy": 0.718,
-  "walks": 0.37
- }
+  "family": 0.0,
+  "graph_copy": 2.748,
+  "edit": 0.079,
+  "walks": 2.439,
+  "delete": 0.038,
+  "total": 5.437
+ },
+ "cached_family": true
 }
