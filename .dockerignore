@@ -1,0 +1,8 @@
+*
+!api/**
+!data/derived/*.json
+!deploy/dump.rdb
+!deploy/start.sh
+!db/udf/lineage.js
+api/tests
+**/__pycache__
