@@ -18,3 +18,5 @@ eval/cache/
 *.egg-info/
 data/handcheck/raw/
 web/screenshots/*.tmp
+docs/SUBMISSION.md
+video/

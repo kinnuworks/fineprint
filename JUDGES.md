@@ -16,13 +16,22 @@ Open `ifmylove2011/girlslike`, a FLUX LoRA that says apache-2.0. Commercial use:
 
 ## Minute 4: the agent reads a card
 
-Open `deepseek-ai/DeepSeek-R1-Distill-Llama-8B`, which declares MIT. Hub tags alone: UNKNOWN (it names no base model). Press "Read the card". The agent quotes "DeepSeek-R1-Distill-Llama-8B is derived from Llama3.1-8B-Base", resolves `meta-llama/Llama-3.1-8B` in the graph, and the verdict becomes CLOUDED with Llama 3.1 terms. The LLM never writes Cypher and never decides a verdict.
+Open `deepseek-ai/DeepSeek-R1-Distill-Llama-8B`, which declares MIT. Hub tags alone: UNKNOWN (it names no base model). Press "Read the card". The agent quotes "DeepSeek-R1-Distill-Llama-8B is derived from Llama3.1-8B-Base", resolves `meta-llama/Llama-3.1-8B` in the graph, and the verdict becomes CLOUDED with Llama 3.1 terms. The LLM never writes Cypher and never decides a verdict. Card reading works for any model on the Hub, not only this one.
 
 ## Minute 5: it acts in code
 
 ```bash
 pip install "fineprint-agent @ git+https://github.com/kinnuworks/fineprint#subdirectory=agent"
-FINEPRINT_API=https://api-production-9f25.up.railway.app fineprint check demo --use commercial   # exits 1: BLOCK on a Qwen Research model
+export FINEPRINT_API=https://api-production-9f25.up.railway.app
+fineprint check ifmylove2011/girlslike --use commercial   # exits 1: BLOCK, FLUX.1 [dev] terms
+fineprint check ifmylove2011/girlslike --use noncommercial   # exits 0: CONDITIONS
+```
+
+`fineprint check` takes model ids, files or folders. From a clone of the repo, it scans the demo project for the model ids in its code:
+
+```bash
+git clone https://github.com/kinnuworks/fineprint && cd fineprint
+fineprint check demo --use commercial   # exits 1: BLOCK on a Qwen Research model
 ```
 
 The same decision drives the MCP server for coding agents and `fineprint.guard()`, which stops a `from_pretrained` download before the weights arrive. See [agent/README.md](agent/README.md).
@@ -30,6 +39,6 @@ The same decision drives the MCP server for coding agents and `fineprint.guard()
 ## If you have one more minute
 
 - Org rulings: open `meta-llama/Llama-3.1-8B-Instruct` and pick "Org rulings: acme-legal". The company's stored approval of the Llama 3.1 terms turns CONDITIONS into ALLOW, and the panel shows which ruling did it. Each company's rulings live in their own FalkorDB graph (`org:acme-legal`), and an agent records new ones through the `record_ruling` MCP tool.
-- [eval/results_v2.json](eval/results_v2.json): on 120 sealed models, FinePrint never called a restricted model clean (0 of 69); an LLM reading the card did so 8 times.
-- `GET /api/what-if`: relicense FLUX.1-dev as Apache-2.0 on a `GRAPH.COPY` of its family, and 27,592 of 43,700 models are still labelled non-commercial, because their own cards copied the label.
+- [eval/results_v2.json](eval/results_v2.json): on 120 sealed models, FinePrint never called a restricted model clean (0 of 69). An LLM agent with live Hub API tools did so 5 times, and an LLM reading only the card 8 times. The agent is more accurate overall on v2 (92 against 80), mostly because FinePrint answers UNKNOWN for models with no license; the README has the full table.
+- Live what-if: [api-production-9f25.up.railway.app/api/what-if?root=black-forest-labs/FLUX.1-dev&license=apache-2.0](https://api-production-9f25.up.railway.app/api/what-if?root=black-forest-labs/FLUX.1-dev&license=apache-2.0). Each request runs `GRAPH.COPY` on the FLUX.1-dev family graph, relicenses FLUX.1-dev in the copy, re-walks the lineage and deletes the copy (timings are in `seconds`). 27,592 of 43,700 models are still labelled non-commercial, because their own cards copied the label. Try `root=Qwen/Qwen2.5-3B` or `root=meta-llama/Llama-3.2-1B&license=mit` too.
 - [docs/upstream/](docs/upstream/): the FalkorDB UDF bug we hit, and a fix for the card template behind 54% of the mismatches.

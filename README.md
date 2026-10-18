@@ -134,12 +134,85 @@ MATCH (m:Model) WHERE size(m.inherits) > 0 AND m.license IN $permissive
 RETURN count(m), sum(m.downloads)
 ```
 
-What-if on a copy (`scripts/what_if.py`): the FLUX.1-dev family is written to its own graph, copied, and the copy is edited and re-walked.
+Live what-if on a copy (`GET /api/what-if?root=<model id>&license=<key>`, [api/fineprint_core/whatif.py](api/fineprint_core/whatif.py)). The root's family (the root, every model below it, and the lineage edges between them) is written once to its own graph, `family:<slug>`. Every request then copies that graph, edits the copy, re-walks it, and deletes it:
 
 ```
-GRAPH.COPY family:flux1-dev whatif:flux1-dev-apache
-MATCH (m:Model) WHERE m.id = 'black-forest-labs/FLUX.1-dev' SET m.license = 'apache-2.0'   // on the copy
-MATCH (r:Model) WHERE r.license = $nc WITH collect(r) AS roots RETURN lineage.descendantIds(roots)
+GRAPH.COPY family:black-forest-labs-flux-1-dev whatif:<uuid>
+MATCH (m:Model) WHERE m.id = $root SET m.license = $license                  // on the copy only
+MATCH (r:Model) WHERE r.license = $old WITH collect(r) AS roots              // on the family and the copy
+RETURN size(roots), size(lineage.descendantIds(roots))
+GRAPH.DELETE whatif:<uuid>                                                  // in a finally
+```
+
+`hub` is never written. The root must be under a restricted license, the family is capped at 120,000 models, at most two simulations run at once, and the endpoint allows 10 calls a minute. Measured on a laptop with the server otherwise idle:
+
+| Root (relicensed as apache-2.0) | Family | Bound by the old license, before → after | Build family (first call only) | GRAPH.COPY | Walks | GRAPH.DELETE | First call total |
+|---|---|---|---|---|---|---|---|
+| black-forest-labs/FLUX.1-dev (FLUX.1 [dev] Non-Commercial) | 43,700 | 43,700 → 27,592 | 6.49 s | 0.29 s | 0.28 s | under 0.01 s | 7.08 s |
+| Qwen/Qwen2.5-3B (Qwen Research) | 8,483 | 8,483 → 6,974 | 0.94 s | 0.10 s | 0.03 s | under 0.01 s | 1.07 s |
+| meta-llama/Llama-3.2-1B (Llama 3.2) | 3,846 | 3,846 → 2,887 | 0.36 s | 0.11 s | 0.03 s | under 0.01 s | 0.50 s |
+| facebook/nllb-200-distilled-600M (CC BY-NC 4.0) | 677 | 677 → 449 | 0.28 s | 0.10 s | 0.01 s | under 0.01 s | 0.39 s |
+
+Once the family graph exists, FLUX.1-dev took 0.53 s in total (copy 0.29 s, walks 0.23 s). With the laptop short of memory the copy took up to 3 s, since GRAPH.COPY forks the server. The family graphs for these four ship in the snapshot, so on the live API the first call skips the build. While a snapshot save holds the one fork Redis allows, the copy is refused with "could not fork", so the code waits and retries.
+
+Database users ([api/fineprint_core/acl.py](api/fineprint_core/acl.py)). FalkorDB treats the graph name as the command's key, so Redis ACL key patterns apply to `GRAPH.*` commands. At boot, [deploy/start.sh](deploy/start.sh) creates these users with random passwords and switches the default user off:
+
+| User | Commands | Keys |
+|---|---|---|
+| `fp-hub-ro` (reports, search) | `GRAPH.RO_QUERY` | `hub`, `family:*` |
+| `fp-whatif` | `GRAPH.QUERY`, `GRAPH.RO_QUERY`, `GRAPH.COPY`, `GRAPH.DELETE` | `family:*`, `whatif:*`, plus the selector `(~hub +graph.ro_query)` |
+| `fp-org-<slug>` (one per ruleset, created on first use) | `GRAPH.QUERY`, `GRAPH.RO_QUERY`, `GRAPH.DELETE` | `org:<slug>` only |
+| `fp-admin` (Clerk writes, creating org users) | all | all |
+
+FalkorDB's key specs mark even `GRAPH.RO_QUERY` as read-write, so a `%R~hub` read-only pattern refuses reads too; read-only access is enforced by granting only the `GRAPH.RO_QUERY` command. [api/tests/test_acl.py](api/tests/test_acl.py) checks the refusals:
+
+```
+fp-org-a  GRAPH.QUERY hub "... SET m.acl_probe = 1"   -> NOPERM No permissions to access a key
+fp-org-a  GRAPH.RO_QUERY org:b "MATCH (r:Ruling) ..." -> NOPERM No permissions to access a key
+fp-hub-ro GRAPH.QUERY hub "... SET ..."              -> NOPERM User fp-hub-ro has no permissions to run the 'graph.QUERY' command
+fp-whatif GRAPH.COPY hub whatif:x                    -> NOPERM No permissions to access a key
+```
+
+Redis records each refusal, so the audit trail is in the database too (`ACL LOG`, trimmed):
+
+```
+reason key  context toplevel  object hub        username fp-org-zz-org  cmd=graph.QUERY
+reason key  context toplevel  object org:other  username fp-org-zz-org  cmd=graph.RO_QUERY
+```
+
+Without the passwords in the environment (local development) every connection falls back to the default user.
+
+Search (`GET /api/search`) uses a fulltext index on `Model.id`. [deploy/start.sh](deploy/start.sh) creates it at boot; FalkorDB builds it in the background (about 40 s over 3.16M nodes on an idle laptop, +680 MB) and search uses the old `CONTAINS` scan until the index is OPERATIONAL. A single-node `SET` with the index in place took 1 to 9 ms. It is not stored in the snapshot: on the laptop, a snapshot that carried it took 8 minutes to load, most of it rebuilding indexes.
+
+```cypher
+CALL db.idx.fulltext.createNodeIndex('Model', 'id')
+CALL db.idx.fulltext.queryNodes('Model', 'qwen2 5 3b*') YIELD node
+WITH node AS m WHERE m.missing = false RETURN m.id, m.license, m.downloads ORDER BY m.downloads DESC LIMIT 10
+```
+
+Each token of the query must match, the last one as a prefix, and unlike `CONTAINS` it ignores case. The Clerk uses the same index to resolve a bare model name ("Llama-3.2-1B") to `org/name`, then applies the same exact `ENDS WITH '/name'` test and ambiguity rule the old full scan used.
+
+Query plans for `kenpath/svara-tts-v1` (Llama 3.2 terms three hops up), from `GRAPH.PROFILE` on the laptop while it was short of memory (idle, the ancestor walk takes about 3 ms). Both start from the range index on `Model.id`; in the obligations query the UDF walk (the `Project` right above the first index scan) is most of the 8 ms, and the joins to License and Clause are under 1 ms each:
+
+```
+GRAPH.PROFILE hub "<obligations query above>"
+Results                                              1 record
+    Aggregate                                        1 record    0.05 ms
+        Sort                                         5 records   0.00 ms
+            Project                                  5 records   0.01 ms
+                Conditional Traverse (l)->(c:Clause) 5 records   0.09 ms
+                    Filter                           1 record    0.00 ms
+                        Conditional Traverse (x)->(l:License)  3 records  0.98 ms
+                            Project                  3 records   0.01 ms
+                                Node By Index Scan (x:Model)   3 records  0.14 ms
+                                    Unwind           3 records   0.01 ms
+                                        Project      1 record    6.85 ms   (lineage.ancestors)
+                                            Node By Index Scan (m:Model)  1 record  0.28 ms
+
+GRAPH.PROFILE hub "MATCH (m:Model) WHERE m.id = 'kenpath/svara-tts-v1' RETURN lineage.ancestors(m, 64)"
+Results                                              1 record
+    Project                                          1 record    9.74 ms   (lineage.ancestors)
+        Node By Index Scan (m:Model)                 1 record    0.29 ms
 ```
 
 Load-bearing models (`GET /api/load-bearing`):
@@ -176,6 +249,8 @@ The Hugging Face API lists a model's direct children, 1,000 per page. Finding al
 | PageRank over 3.16M models | 1 to 2 s |
 | Relicensing points, found and counted | 18 s |
 | Clerk reading one card | about 8 s |
+| Live what-if on FLUX.1-dev (GRAPH.COPY of 43,700 models, edit, two walks, GRAPH.DELETE) | 0.53 s with the family graph in place; 7.1 s when it is built first |
+| Search over 3.16M ids, fulltext index vs CONTAINS scan | median 48 ms (8 to 243) vs 278 ms (216 to 1,118), ten queries |
 
 ## Evaluation
 
@@ -223,6 +298,8 @@ In FalkorDB v4.22.1, `getNeighbors` and `graph.traverse` in a UDF follow only th
 - `eval/`: the sealed evaluation above.
 
 ## Run it
+
+The work was done during the hackathon, Oct 15 to 18, in a private folder. When the repo went public on Oct 18 its history was squashed into a few commits.
 
 Every number in this README can be rebuilt with [scripts/reproduce.sh](scripts/reproduce.sh). The steps:
 

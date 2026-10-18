@@ -18,7 +18,11 @@ Every number in the README, the script or query that produces it, and the file i
 | Unsloth template hardcodes apache-2.0 | `unsloth/save.py` `MODEL_CARD`, commit 72d0d2d | source read | [link](https://github.com/unslothai/unsloth/blob/72d0d2dbf33fd16c7ed1c6f909276aa33fa1f6b4/unsloth/save.py) |
 | Relicensing points / with mismatches below / models below | 38,489 / 2,438 / 9,386 | `scripts/relicense_points.py` (Cypher + UDF) | `data/derived/relicense_points.json` |
 | Hub API calls for Llama-3.1-8B's descendants vs graph | 21,653 calls (about 3.7 h) vs 70 ms | `scripts/hub_api_comparison.py` | `data/derived/hub_api_comparison.json` |
-| FLUX.1-dev relicensed as Apache-2.0 (what-if) | 27,592 of 43,700 still labelled non-commercial | `scripts/what_if.py` (separate family graph, GRAPH.COPY, re-walk) | `data/derived/what_if_flux.json` |
+| FLUX.1-dev relicensed as Apache-2.0 (what-if) | 27,592 of 43,700 still labelled non-commercial | `GET /api/what-if` and `scripts/what_if.py` (family graph, GRAPH.COPY per request, re-walk, GRAPH.DELETE); `api/tests/test_whatif.py` | `data/derived/what_if_flux.json`, live |
+| Other what-if roots (relicensed as apache-2.0) | Qwen/Qwen2.5-3B 8,483 → 6,974; meta-llama/Llama-3.2-1B 3,846 → 2,887; facebook/nllb-200-distilled-600M 677 → 449 | `GET /api/what-if?root=...` | live |
+| What-if timings | see README "Queries and algorithms" | `seconds` in the `GET /api/what-if` response | live |
+| ACL isolation | org user cannot write `hub` or read another org; `fp-hub-ro` cannot run GRAPH.QUERY (NOPERM) | `api/fineprint_core/acl.py`; `api/tests/test_acl.py` | live |
+| Fulltext search | `queryNodes` on Model.id, median 48 ms vs 278 ms for the CONTAINS scan over ten queries | `api/app.py` `search`; index built with `db.idx.fulltext.createNodeIndex` | live |
 | SD 1.5 direct children after deletion | 3,373 | `MATCH (c:Model)-[]->(m:Model {id:'runwayml/stable-diffusion-v1-5'}) RETURN count(c)` | live |
 | Eval, said clean when it isn't | FinePrint 0 of 69; card LLM 8; one hop 19; declared 33 | `eval/run_eval.py v2` | `eval/results_v2.json` |
 | Eval accuracy | v2 80/120, v3 103/120 | `eval/run_eval.py v2`, `eval/run_eval.py v3` | `eval/results_v2.json`, `eval/results_v3.json` |
