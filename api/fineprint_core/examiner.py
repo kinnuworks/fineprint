@@ -94,7 +94,7 @@ def decide(report: dict, use: str = "commercial") -> dict:
     if (report.get("coverage") is not None and report["coverage"] < 1.0) and v == "NO LIENS FOUND":
         return {"decision": "CONDITIONS", "why": "Part of the chain has no recognised license; review before shipping."}
     if report.get("unresolved_card_claims") and v == "NO LIENS FOUND":
-        return {"decision": "CONDITIONS", "why": "The model card names a base model or dataset that isn't on the Hub; review it before shipping."}
+        return {"decision": "CONDITIONS", "why": "Its model card names training data or a base model that is not on the Hub (often a private dataset), so the chain is incomplete. Review that before shipping."}
     if v in ("CLOUDED", "LIENS"):
         n = sum(len(l["clauses"]) for l in report["liens"])
         return {"decision": "CONDITIONS", "why": f"{n} obligations to meet before shipping."}
