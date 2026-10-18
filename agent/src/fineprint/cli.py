@@ -21,7 +21,7 @@ from .client import (USES, ApiUnavailable, NotFound, fail_closed, get_api, norma
                      resolve_use)
 from .scan import scan
 
-EXIT_OK, EXIT_BLOCK, EXIT_CONDITIONS, EXIT_UNREACHABLE, EXIT_USAGE = 0, 1, 2, 3, 64
+EXIT_OK, EXIT_BLOCK, EXIT_CONDITIONS, EXIT_UNREACHABLE, EXIT_NOT_FOUND, EXIT_USAGE = 0, 1, 2, 3, 4, 64
 ORDER = {"BLOCK": 0, "CONDITIONS": 1, "ERROR": 2, "ALLOW": 3, "N/A": 4}
 
 
@@ -121,6 +121,12 @@ def cmd_check(args) -> int:
     rows = sorted(((rep, hits[mid]) for mid, rep in zip(ids, reports)),
                   key=lambda r: ORDER.get(render.decision(r[0]), 5))
     code = exit_code(reports, args.strict, args.fail_closed)
+    # A model id typed on the command line that the Hub doesn't have is almost always a typo:
+    # fail rather than pass a check that checked nothing.
+    missing = [mid for mid, rep in zip(ids, reports)
+               if "command line" in hits[mid] and render.decision(rep) == "N/A" and not rep.get("_unreachable")]
+    if missing and code == EXIT_OK:
+        code = EXIT_NOT_FOUND
     unchecked = [r for r in reports if r.get("_unreachable")]
     if unchecked and not args.fail_closed:
         print(f"fineprint: WARNING: {len(unchecked)} of {len(reports)} models were not checked "
@@ -151,7 +157,9 @@ def cmd_check(args) -> int:
         print()
     print(", ".join(f"{d}: {counts[d]}" for d in sorted(counts, key=lambda d: ORDER.get(d, 5))))
     print()
-    if code == EXIT_BLOCK and "BLOCK" not in counts:
+    if code == EXIT_NOT_FOUND:
+        print(f"Result: fail. Not on the Hugging Face Hub (check the spelling): {', '.join(missing)}.")
+    elif code == EXIT_BLOCK and "BLOCK" not in counts:
         print(f"Result: fail (fail-closed). {len(unchecked)} model{'s' if len(unchecked) != 1 else ''} "
               f"could not be checked: FinePrint API not reachable at {get_api().base}.")
     elif code == EXIT_BLOCK:

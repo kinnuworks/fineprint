@@ -25,6 +25,11 @@ _build_locks: dict[str, threading.Lock] = {}
 _build_guard = threading.Lock()
 
 
+def _non_commercial(key: str) -> bool:
+    lic = LICENSES.get(key)
+    return bool(lic is not None and getattr(lic, "commercial", True) is False)
+
+
 class WhatIfError(ValueError):
     """Bad input; the message is safe to show. `status` is the HTTP code to answer with."""
 
@@ -191,8 +196,8 @@ def _simulate(root_id: str, from_license: str, to_license: str) -> dict:
         "family_models": models, "family_edges": edges,
         "before": before, "after": after,
         "still_labelled_restricted_after": still,
-        # Older clients read this key.
-        "still_labelled_non_commercial_after": still,
+        # Older clients read this key; it is only true when the old license is non-commercial.
+        **({"still_labelled_non_commercial_after": still} if _non_commercial(from_license) else {}),
         "relabel_needed": [{"id": r[0], "license": r[1], "downloads": r[2]} for r in relabel],
         "why": why,
         "graphs": {"family": fam_name, "copy": copy},

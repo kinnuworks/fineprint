@@ -293,3 +293,16 @@ def test_check_missing_path_is_usage_error(tmp_path, fake_api, capsys, monkeypat
     assert cli.main(["check", "demo"]) == 64
     assert "not a model id" in capsys.readouterr().err
     assert fake_api.calls == []
+
+
+def test_unknown_model_id_on_the_command_line_fails(monkeypatch, capsys):
+    """A typo'd id must not pass the check: the API answers N/A, the CLI exits 4."""
+    from fineprint import cli
+
+    def fake_check(mid, use, ruleset=None):
+        return {"model": mid, "decision": "N/A", "verdict": "UNKNOWN", "why": "No such public model."}
+
+    monkeypatch.setattr(cli, "_check_one", fake_check)
+    code = cli.main(["check", "not/a-real-model", "--use", "commercial"])
+    assert code == cli.EXIT_NOT_FOUND
+    assert "Not on the Hugging Face Hub" in capsys.readouterr().out

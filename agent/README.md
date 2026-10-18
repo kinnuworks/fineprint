@@ -143,6 +143,7 @@ Exit codes:
 | 1 | at least one `BLOCK` (models in `FINEPRINT_ALLOW` do not count), or, with `--fail-closed` / `FINEPRINT_FAIL_CLOSED=1`, at least one model that could not be checked |
 | 2 | at least one `CONDITIONS`, only with `--strict` |
 | 3 | the API could not be reached for any model (fail-open default; a `WARNING` goes to stderr) |
+| 4 | a model id given on the command line is not on the Hub (usually a typo) |
 | 64 | bad usage |
 
 ## Hook: check before Python runs
