@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 import time
 
 from fineprint_core.examiner import decide, examine
-from fineprint_core.graph import ro
+from fineprint_core.graph import fulltext_ready, ro
 
 ROOT = Path(__file__).resolve().parent.parent
 HEADLINE = ROOT / "data" / "derived" / "headline.json"
@@ -43,8 +43,13 @@ def stats():
     """Hub-wide numbers computed in FalkorDB (headline_graph.json), plus the DuckDB cross-check."""
     g = json.loads(HEADLINE_GRAPH.read_text())
     n = g["numbers"]
+    import datetime as _dt
+    at = g.get("computed_at") or g.get("at") or _dt.datetime.fromtimestamp(
+        HEADLINE_GRAPH.stat().st_mtime, _dt.timezone.utc).isoformat(timespec="seconds")
     out = {
         "computed_in": "FalkorDB",
+        "computed_at": at,
+        "computed_how": "scripts/headline_graph.py ran these queries in FalkorDB; this endpoint serves the saved result.",
         "models_total": n["models_total"][0],
         "inheriting_restricted": n["inheriting_restricted"][0],
         "inheriting_but_declare_permissive": n["inheriting_but_declare_permissive"][0],
@@ -181,14 +186,37 @@ def descendants(org: str, name: str, k: int = Query(50, ge=1, le=500)):
     return {"model": mid, "stats": stats_, "top": top}
 
 
+def fulltext_query(q: str) -> str | None:
+    """Turn free text into a RediSearch query on the Model.id fulltext index: every token must
+    match, the last one as a prefix. Tokens are alphanumeric only, so nothing needs escaping."""
+    import re
+    toks = [t for t in re.split(r"[^a-z0-9]+", q.lower()) if t]
+    if not toks:
+        return None
+    if len(toks[-1]) >= 2:
+        toks[-1] += "*"
+    return " ".join(toks[:12])
+
+
 @app.get("/api/search")
-def search(q: str = Query(..., min_length=2), limit: int = Query(10, ge=1, le=50)):
-    """Exact id first (index lookup), then ids containing the text, most downloaded first."""
+def search(q: str = Query(..., min_length=2, max_length=200), limit: int = Query(10, ge=1, le=50)):
+    """Exact id first (range index), then the fulltext index on Model.id, most downloaded first."""
     q = q.strip().removeprefix("https://huggingface.co/").strip("/")
     exact = ro("MATCH (m:Model) WHERE m.id = $q AND m.missing = false RETURN m.id, m.license, m.downloads", {"q": q})
-    rows = ro("MATCH (m:Model) WHERE m.id CONTAINS $q AND m.missing = false AND m.id <> $q "
-              "RETURN m.id, m.license, m.downloads ORDER BY m.downloads DESC LIMIT " + str(int(limit)), {"q": q},
-              timeout=20000)
+    ftq = fulltext_query(q) if fulltext_ready() else None
+    rows = []
+    if ftq:
+        try:
+            rows = ro("CALL db.idx.fulltext.queryNodes('Model', $ft) YIELD node WITH node AS m "
+                      "WHERE m.missing = false AND m.id <> $q "
+                      "RETURN m.id, m.license, m.downloads ORDER BY m.downloads DESC LIMIT " + str(int(limit)),
+                      {"ft": ftq, "q": q}, timeout=20000)
+        except Exception:
+            rows = None  # no fulltext index in this snapshot
+    if not ftq or rows is None:
+        rows = ro("MATCH (m:Model) WHERE m.id CONTAINS $q AND m.missing = false AND m.id <> $q "
+                  "RETURN m.id, m.license, m.downloads ORDER BY m.downloads DESC LIMIT " + str(int(limit)), {"q": q},
+                  timeout=20000)
     return [{"id": r[0], "license": r[1], "downloads": r[2]} for r in (exact + rows)[: int(limit)]]
 
 
@@ -204,14 +232,11 @@ CARD_READS = ROOT / "data" / "derived" / "card_reads.json"
 _card_source: dict[str, str] = {}
 _recorded: dict[str, dict] = json.loads(CARD_READS.read_text()) if CARD_READS.exists() else {}
 _card_calls: list[float] = []
-# On the public deploy only these models can be read live; set FINEPRINT_READCARD_OPEN=1 to allow any.
-READ_CARD_ALLOW = {
-    "TheBloke/LeoScorpius-GreenNode-Alpaca-7B-v1-GGUF",
-    "kenpath/svara-tts-v1",
-    "QCRI/Fanar-2-27B-Instruct",
-    "HuggingFaceTB/SmolVLM2-500M-Video-Instruct",
-    "deepseek-ai/DeepSeek-R1-Distill-Llama-8B",
-}
+# Any model in the graph can be read. Live reads are capped per minute (all callers) and per day
+# (per process, FINEPRINT_READCARD_DAILY). Past the daily cap, models with a recorded read replay it.
+READ_CARD_PER_MINUTE = 6
+READ_CARD_DAILY_DEFAULT = 300
+_card_day: dict[str, object] = {"day": "", "count": 0}
 
 
 @app.post("/api/read-card/{org}/{name}")
@@ -225,13 +250,28 @@ def read_card(org: str, name: str):
     from fineprint_core.graph import hub
     import os
     mid = f"{org}/{name}"
-    if os.environ.get("FINEPRINT_READCARD_OPEN") != "1" and mid not in READ_CARD_ALLOW and mid not in _card_cache:
-        raise HTTPException(403, "Live card reading is limited to the demo models on this deployment.")
+    if mid not in _card_cache and mid not in _recorded and not ro(
+            "MATCH (m:Model) WHERE m.id = $id AND m.missing = false RETURN m.id", {"id": mid}):
+        raise HTTPException(404, f"{mid} is not in the graph.")
     now = time.time()
-    _card_calls[:] = [t for t in _card_calls if now - t < 60]
-    if mid not in _card_cache and len(_card_calls) >= 6:
-        raise HTTPException(429, "Too many card reads this minute; try again shortly.")
-    _card_calls.append(now)
+    replay = False
+    if mid not in _card_cache:
+        _card_calls[:] = [t for t in _card_calls if now - t < 60]
+        if len(_card_calls) >= READ_CARD_PER_MINUTE:
+            raise HTTPException(429, "Too many card reads this minute; try again shortly.")
+        today = time.strftime("%Y-%m-%d", time.gmtime(now))
+        if _card_day["day"] != today:
+            _card_day.update(day=today, count=0)
+        try:
+            daily = int(os.environ.get("FINEPRINT_READCARD_DAILY", READ_CARD_DAILY_DEFAULT))
+        except ValueError:
+            daily = READ_CARD_DAILY_DEFAULT
+        if int(_card_day["count"]) >= daily:
+            if mid not in _recorded:
+                raise HTTPException(429, f"This deployment has used its {daily} live card reads for today (UTC). "
+                                         "Models already read today still work; try others tomorrow.")
+            replay = True
+        _card_calls.append(now)
     scope = [mid] + [r[0] for r in ro("MATCH (c:Model)-[]->(p:Model) WHERE c.id = $id RETURN p.id", {"id": mid})]
     hub().query("MATCH (m:Model)-[r]->() WHERE m.id IN $ids AND r.by = 'clerk' AND r.read_from = $id DELETE r", {"ids": scope, "id": mid})
     before = examine(mid)["verdict"]
@@ -239,11 +279,14 @@ def read_card(org: str, name: str):
     source = _card_source.get(mid, "cache") if cached else "live"
     if not cached:
         try:
+            if replay:
+                raise RuntimeError("daily live read cap reached")
+            _card_day["count"] = int(_card_day["count"]) + 1
             _card_cache[mid] = extract(mid)
         except Exception as e:
             if mid not in _recorded:
                 raise HTTPException(502, f"could not read the card: {str(e)[:120]}")
-            # The live call failed (no key, quota, outage): replay the recorded read of this card.
+            # The live call failed or was capped (no key, quota, outage): replay the recorded read.
             _card_cache[mid] = _recorded[mid]["claims"]
             source = "recorded"
         _card_source[mid] = source
@@ -259,9 +302,19 @@ def read_card(org: str, name: str):
             "recorded_at": _recorded.get(mid, {}).get("read_at") if source == "recorded" else None, "kept": os.environ.get("FINEPRINT_READCARD_KEEP") == "1"}
 
 
+_whatif_calls: list[float] = []
+
+
 @app.get("/api/what-if")
-def what_if():
-    """FLUX.1-dev relicensed as Apache-2.0, answered on a GRAPH.COPY of its family (scripts/what_if.py)."""
-    d = json.loads((ROOT / "data" / "derived" / "what_if_flux.json").read_text())
-    d.pop("chokepoints_by_betweenness", None)
-    return d
+def what_if(root: str | None = Query(None, max_length=200), license: str = Query("apache-2.0", max_length=60)):
+    """Relicense `root` as `license` on a fresh GRAPH.COPY of its family, re-walk, delete the copy."""
+    from fineprint_core import whatif
+    now = time.time()
+    _whatif_calls[:] = [t for t in _whatif_calls if now - t < 60]
+    if len(_whatif_calls) >= 10:
+        raise HTTPException(429, "Too many simulations this minute; try again shortly.")
+    _whatif_calls.append(now)
+    try:
+        return whatif.simulate(root, license)
+    except whatif.WhatIfError as e:
+        raise HTTPException(e.status, str(e))

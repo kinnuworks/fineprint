@@ -13,7 +13,7 @@ from typing import Literal
 import anthropic
 from pydantic import BaseModel, Field
 
-from .graph import hub, ro
+from .graph import fulltext_ready, hub, ro
 
 MODEL = os.environ.get("FINEPRINT_CLERK_MODEL", "claude-opus-5-5")
 KEYCHAIN_SERVICE = "fineprint-anthropic"
@@ -99,8 +99,20 @@ def _resolve(name: str, label: str) -> str | None:
     if rows:
         return rows[0][0]
     if "/" not in name and len(name) >= 4:
-        rows = ro(f"MATCH (n:{label}) WHERE n.id ENDS WITH $tail RETURN n.id, n.downloads "
-                  "ORDER BY n.downloads DESC LIMIT 2", {"tail": "/" + name})
+        rows = None
+        toks = [t for t in re.split(r"[^a-z0-9]+", name.lower()) if t]
+        if label == "Model" and toks and fulltext_ready():
+            # Candidates from the fulltext index on Model.id (every token of the name), then the
+            # same exact "ends with /name" test the full scan used.
+            try:
+                rows = ro("CALL db.idx.fulltext.queryNodes('Model', $ft) YIELD node WITH node AS n "
+                          "WHERE n.id ENDS WITH $tail RETURN n.id, n.downloads ORDER BY n.downloads DESC LIMIT 2",
+                          {"ft": " ".join(toks[:12]), "tail": "/" + name})
+            except Exception:
+                rows = None  # no fulltext index in this snapshot
+        if rows is None:
+            rows = ro(f"MATCH (n:{label}) WHERE n.id ENDS WITH $tail RETURN n.id, n.downloads "
+                      "ORDER BY n.downloads DESC LIMIT 2", {"tail": "/" + name})
         if len(rows) == 1 or (len(rows) == 2 and (rows[0][1] or 0) > 10 * (rows[1][1] or 0)):
             return rows[0][0]
     return None
