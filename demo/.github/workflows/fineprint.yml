@@ -1,0 +1,34 @@
+# Fails the build when a model this repo loads is BLOCK for commercial use.
+# Repository variables:
+#   FINEPRINT_API  base URL of the FinePrint API (for example https://fineprint.example.org)
+#   FINEPRINT_PIP  pip spec for the fineprint CLI, for example
+#                  "fineprint-agent @ git+https://github.com/OWNER/REPO#subdirectory=agent"
+# Exit codes: 1 BLOCK (or a model that could not be checked, since this job fails closed),
+# 2 CONDITIONS (only with --strict).
+name: fineprint
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    env:
+      FINEPRINT_API: ${{ vars.FINEPRINT_API }}
+      FINEPRINT_FAIL_CLOSED: "1"   # an unreachable API fails the build instead of passing it
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install fineprint
+        run: pip install "${{ vars.FINEPRINT_PIP }}"
+      - name: Check model terms
+        run: |
+          set -o pipefail
+          fineprint check --use commercial . | tee fineprint.md
+      - name: Add the table to the job summary
+        if: always()
+        run: cat fineprint.md >> "$GITHUB_STEP_SUMMARY" || true

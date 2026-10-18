@@ -1,0 +1,32 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fineprint-agent"
+version = "0.1.0"
+description = "Agent tools for FinePrint: MCP server, Hugging Face download guard and a repo checker."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+dependencies = [
+    "httpx>=0.25",
+    "mcp>=1.2",
+    "pydantic>=2",
+]
+
+[project.optional-dependencies]
+hub = ["huggingface_hub>=0.20"]
+dev = ["pytest>=8", "huggingface_hub>=0.20"]
+
+[project.scripts]
+fineprint = "fineprint.cli:main"
+fineprint-mcp = "fineprint.mcp_server:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/fineprint"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = ["live: hits a running FinePrint API (FINEPRINT_API, default http://localhost:8000)"]
+addopts = "-m 'not live'"
