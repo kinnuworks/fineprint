@@ -6,7 +6,7 @@ FinePrint reads the obligations an open AI model inherited from its family tree.
 
 Track: Agents That Act on Connected Data.
 
-Live site: [fineprint-plum.vercel.app](https://fineprint-plum.vercel.app) (API: [api-production-9f25.up.railway.app](https://api-production-9f25.up.railway.app/api/health)) · Demo video: _added at upload_ · Five-minute path: [JUDGES.md](JUDGES.md) · Every number: [CLAIMS.md](CLAIMS.md)
+Live site: [fineprint-plum.vercel.app](https://fineprint-plum.vercel.app) (API: [api-production-9f25.up.railway.app](https://api-production-9f25.up.railway.app/api/health)) · Demo video: [youtu.be/GyyAkWWM_AA](https://youtu.be/GyyAkWWM_AA) · Five-minute path: [JUDGES.md](JUDGES.md) · Every number: [CLAIMS.md](CLAIMS.md)
 
 ## What the graph found
 

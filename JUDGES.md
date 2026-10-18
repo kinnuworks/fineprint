@@ -1,6 +1,6 @@
 # Five minutes with FinePrint
 
-Live site: [fineprint-plum.vercel.app](https://fineprint-plum.vercel.app) (API: [api-production-9f25.up.railway.app](https://api-production-9f25.up.railway.app/api/health)) · Video: _added at upload_ · Every number: [CLAIMS.md](CLAIMS.md)
+Live site: [fineprint-plum.vercel.app](https://fineprint-plum.vercel.app) (API: [api-production-9f25.up.railway.app](https://api-production-9f25.up.railway.app/api/health)) · Video: [youtu.be/GyyAkWWM_AA](https://youtu.be/GyyAkWWM_AA) · Every number: [CLAIMS.md](CLAIMS.md)
 
 ## Minute 1: the number
 
