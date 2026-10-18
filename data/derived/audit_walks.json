@@ -1,0 +1,134 @@
+{
+ "Research only": {
+  "roots": 252,
+  "descendants": 3,
+  "walk_seconds": 0.02,
+  "mark_seconds": 10.34
+ },
+ "OpenRAIL": {
+  "roots": 101041,
+  "descendants": 9391,
+  "walk_seconds": 0.33,
+  "mark_seconds": 36.57
+ },
+ "Llama 4": {
+  "roots": 795,
+  "descendants": 129,
+  "walk_seconds": 0.01,
+  "mark_seconds": 23.23
+ },
+ "FLUX Non-Commercial": {
+  "roots": 157,
+  "descendants": 694,
+  "walk_seconds": 0.01,
+  "mark_seconds": 3.41
+ },
+ "Coqui Public Model License": {
+  "roots": 103,
+  "descendants": 74,
+  "walk_seconds": 0.02,
+  "mark_seconds": 12.93
+ },
+ "Apple Machine Learning Research": {
+  "roots": 303,
+  "descendants": 188,
+  "walk_seconds": 0.08,
+  "mark_seconds": 10.41
+ },
+ "Circlestone Labs Non-Commercial": {
+  "roots": 204,
+  "descendants": 238,
+  "walk_seconds": 0.01,
+  "mark_seconds": 5.36
+ },
+ "CC BY-NC": {
+  "roots": 32965,
+  "descendants": 16454,
+  "walk_seconds": 0.42,
+  "mark_seconds": 25.68
+ },
+ "DeepSeek": {
+  "roots": 967,
+  "descendants": 2572,
+  "walk_seconds": 0.06,
+  "mark_seconds": 23.88
+ },
+ "FLUX.1 [dev] Non-Commercial": {
+  "roots": 43291,
+  "descendants": 16808,
+  "walk_seconds": 0.3,
+  "mark_seconds": 12.67
+ },
+ "Gemma": {
+  "roots": 16673,
+  "descendants": 57936,
+  "walk_seconds": 0.38,
+  "mark_seconds": 34.08
+ },
+ "Llama 2": {
+  "roots": 10931,
+  "descendants": 6726,
+  "walk_seconds": 0.93,
+  "mark_seconds": 3.87
+ },
+ "Llama 3": {
+  "roots": 11399,
+  "descendants": 19172,
+  "walk_seconds": 0.17,
+  "mark_seconds": 9.7
+ },
+ "Llama 3.1": {
+  "roots": 9821,
+  "descendants": 23599,
+  "walk_seconds": 0.24,
+  "mark_seconds": 16.23
+ },
+ "Llama 3.2": {
+  "roots": 8699,
+  "descendants": 13689,
+  "walk_seconds": 0.11,
+  "mark_seconds": 17.52
+ },
+ "Llama 3.3": {
+  "roots": 2687,
+  "descendants": 3140,
+  "walk_seconds": 0.04,
+  "mark_seconds": 0.08
+ },
+ "Mistral Non-Production": {
+  "roots": 108,
+  "descendants": 150,
+  "walk_seconds": 0.02,
+  "mark_seconds": 22.46
+ },
+ "Mistral Research": {
+  "roots": 616,
+  "descendants": 1687,
+  "walk_seconds": 0.04,
+  "mark_seconds": 13.87
+ },
+ "Named non-commercial license": {
+  "roots": 1227,
+  "descendants": 787,
+  "walk_seconds": 0.05,
+  "mark_seconds": 18.41
+ },
+ "Named research license": {
+  "roots": 994,
+  "descendants": 292,
+  "walk_seconds": 0.05,
+  "mark_seconds": 17.78
+ },
+ "Qwen": {
+  "roots": 1554,
+  "descendants": 8570,
+  "walk_seconds": 0.06,
+  "mark_seconds": 18.29
+ },
+ "Qwen Research": {
+  "roots": 1805,
+  "descendants": 73794,
+  "walk_seconds": 0.4,
+  "mark_seconds": 40.93
+ }
+}

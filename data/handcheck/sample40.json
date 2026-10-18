@@ -1,0 +1,842 @@
+[
+ {
+  "id": "hama-jp/gemma2-27b-sft-241111-lora-00",
+  "rel": "finetune",
+  "inherits": [
+   "Gemma"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "hama-jp/gemma-2-27b-4bit"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": true,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 417
+ },
+ {
+  "id": "dzanbek/d0e53338-1891-4d79-b77c-532652f05692",
+  "rel": "adapter",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "NousResearch/Hermes-2-Theta-Llama-3-8B"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": false,
+   "non-commercial|cc-by-nc": false,
+   "apache": false
+  },
+  "body_len": 3528
+ },
+ {
+  "id": "KYUNGHYUN9/Llama-3-Open-Ko-8B-Itos-Test",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/llama-3-8b"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 413
+ },
+ {
+  "id": "theprint/ThinkMix-Gemma3-4B",
+  "rel": "finetune",
+  "inherits": [
+   "Gemma"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/gemma-3-4b-it-unsloth-bnb-4bit",
+   "theprint/ThinkMix-GPT-0126"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": true,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 441
+ },
+ {
+  "id": "RaihanGG2026/RaihanGG2026",
+  "rel": "finetune",
+  "inherits": [
+   "Gemma"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/gemma-2-2b-it-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": true,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 397
+ },
+ {
+  "id": "darsh10/model_gemma_panda_0_1_2_3_20",
+  "rel": "finetune",
+  "inherits": [
+   "Gemma"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/gemma-3-4b-it"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": true,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 414
+ },
+ {
+  "id": "bizlaz/ai-custom-model",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3.1"
+  ],
+  "yaml_license": [],
+  "yaml_base_lines": [],
+  "body_mentions": {
+   "llama": false,
+   "gemma": false,
+   "license": false,
+   "non-commercial|cc-by-nc": false,
+   "apache": false
+  },
+  "body_len": 34
+ },
+ {
+  "id": "mradermacher/YamshadowStrangemerges_32_AlloyingotneoyNeuralsirkrishna-GGUF",
+  "rel": "quantized",
+  "inherits": [
+   "CC BY-NC"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "MaziyarPanahi/YamshadowStrangemerges_32_AlloyingotneoyNeuralsirkrishna"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": false,
+   "license": false,
+   "non-commercial|cc-by-nc": false,
+   "apache": false
+  },
+  "body_len": 4429
+ },
+ {
+  "id": "javalenzuela/llama3_8B_agora",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "meta-llama/Meta-Llama-3-8B-Instruct"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 432
+ },
+ {
+  "id": "Zack-Z/llama31_8bi_CoTsft_rs0_0_hp1_e1_5cut_2",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3.1"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/Meta-Llama-3.1-8B-Instruct"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 425
+ },
+ {
+  "id": "Parth/llama3.1-8B-AI4PRIVACY",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3.1"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 433
+ },
+ {
+  "id": "HungryDino/meta_llama_3.1_8b_instruct-owl_numbers-iterated-gen13",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3.1"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/Meta-Llama-3.1-8B-Instruct"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 429
+ },
+ {
+  "id": "mradermacher/MixtureofMerges-MoE-2x7b-v6-GGUF",
+  "rel": "quantized",
+  "inherits": [
+   "CC BY-NC"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "jsfs11/MixtureofMerges-MoE-2x7b-v6",
+   "yam-peleg/Experiment26-7B",
+   "mlabonne/AlphaMonarch-7B"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": false,
+   "license": false,
+   "non-commercial|cc-by-nc": false,
+   "apache": false
+  },
+  "body_len": 3600
+ },
+ {
+  "id": "Ozin11/josse-gemma2-effort-estimator",
+  "rel": "finetune",
+  "inherits": [
+   "Gemma"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/gemma-2-2b-it-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": true,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 2717
+ },
+ {
+  "id": "Colin1337X/checkpoint-uber",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3.1"
+  ],
+  "yaml_license": [
+   "mit"
+  ],
+  "yaml_base_lines": [
+   "Colin1337X/complete-sft",
+   "- Orenguteng/Llama-3.1-8B-Lexi-Uncensored-V2"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": false,
+   "license": false,
+   "non-commercial|cc-by-nc": false,
+   "apache": false
+  },
+  "body_len": 0
+ },
+ {
+  "id": "Vishwaksen/llama-3-CounterServer-V2",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/llama-3-8b-Instruct-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 431
+ },
+ {
+  "id": "mradermacher/CodeRM-8B-GGUF",
+  "rel": "quantized",
+  "inherits": [
+   "Llama 3.1"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "KAKA22/CodeRM-8B",
+   "KAKA22/CodeRM-UnitTest"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": false,
+   "license": false,
+   "non-commercial|cc-by-nc": false,
+   "apache": false
+  },
+  "body_len": 3014
+ },
+ {
+  "id": "Nekuromento/llama3-empower-functions-small-v1.1-Q5_K_M-GGUF",
+  "rel": "quantized",
+  "inherits": [
+   "Llama 3.1"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "empower-dev/llama3-empower-functions-small-v1.1"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": false,
+   "non-commercial|cc-by-nc": false,
+   "apache": false
+  },
+  "body_len": 1902
+ },
+ {
+  "id": "donatscript/lora_model",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/llama-3-8b-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 428
+ },
+ {
+  "id": "LeonKogler/MergedModelAllArticles",
+  "rel": "quantized",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/llama-3-8b-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 422
+ },
+ {
+  "id": "localized-ft/Llama-3.1-8B-bad-medical-advice-last-third-sft-seed4-epoch3",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3.1"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/Meta-Llama-3.1-8B-Instruct"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 441
+ },
+ {
+  "id": "mradermacher/T3qm7xNeuralsirkrishna_Experiment28Strangemerges_32-GGUF",
+  "rel": "quantized",
+  "inherits": [
+   "CC BY-NC"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "MaziyarPanahi/T3qm7xNeuralsirkrishna_Experiment28Strangemerges_32"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": false,
+   "license": false,
+   "non-commercial|cc-by-nc": false,
+   "apache": false
+  },
+  "body_len": 4304
+ },
+ {
+  "id": "ergar/monolingual-reinforcement-learning-mt",
+  "rel": "adapter",
+  "inherits": [
+   "CC BY-NC"
+  ],
+  "yaml_license": [
+   "mit"
+  ],
+  "yaml_base_lines": [
+   "- facebook/nllb-200-distilled-600M",
+   "facebook/nllb-200-distilled-1.3B"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": false,
+   "license": false,
+   "non-commercial|cc-by-nc": false,
+   "apache": false
+  },
+  "body_len": 1431
+ },
+ {
+  "id": "SupermanRX/therapistAismallerQuantized",
+  "rel": "quantized",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/llama-3-8b-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 422
+ },
+ {
+  "id": "anthughes/llama-3.3-70b-instruct-lora-pls-prefix-3ep-pr005-nh250",
+  "rel": "adapter",
+  "inherits": [
+   "Llama 3.3",
+   "Llama 3.1"
+  ],
+  "yaml_license": [],
+  "yaml_base_lines": [],
+  "body_mentions": {
+   "llama": false,
+   "gemma": false,
+   "license": false,
+   "non-commercial|cc-by-nc": false,
+   "apache": false
+  },
+  "body_len": 34
+ },
+ {
+  "id": "kairawal/Gemma-3-1B-IT-GA-SynthDolly-1A-E3",
+  "rel": "finetune",
+  "inherits": [
+   "Gemma"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/gemma-3-1b-it"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": true,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 430
+ },
+ {
+  "id": "PKU-Alignment/ProgressGym-HistLlama3-70B-C018-pretrain-v0.1",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "cc-by-4.0"
+  ],
+  "yaml_base_lines": [
+   "PKU-Alignment/ProgressGym-HistText",
+   "- meta-llama/Meta-Llama-3-70B"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": false
+  },
+  "body_len": 5795
+ },
+ {
+  "id": "hvonhue/Llama3_lora_batchsize4",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/llama-3-8b-Instruct-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 428
+ },
+ {
+  "id": "exonics/trendyol_absa_noval_yeni6",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "Trendyol/Llama-3-Trendyol-LLM-8b-chat-v2.0"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 444
+ },
+ {
+  "id": "omeryentur/gemma2-2b-it-grok",
+  "rel": "finetune",
+  "inherits": [
+   "Gemma"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/gemma-2-2b-it-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": true,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 426
+ },
+ {
+  "id": "lumiseven/llama-3-8b-bnb-4bit-ft-1",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/llama-3-8b-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 421
+ },
+ {
+  "id": "ailexleon/Gemma-4-Gembrain-X-31B-mlx-8Bit",
+  "rel": "quantized",
+  "inherits": [
+   "CC BY-NC"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "Nimbz/Gemma-4-Gembrain-X-31B"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": true,
+   "license": false,
+   "non-commercial|cc-by-nc": false,
+   "apache": false
+  },
+  "body_len": 820
+ },
+ {
+  "id": "jjinkoo/test_gguf080901",
+  "rel": "quantized",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "MLP-KTLim/llama-3-Korean-Bllossom-8B"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 428
+ },
+ {
+  "id": "elfe14elfe/elfe_LLM",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/llama-3-8b-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 422
+ },
+ {
+  "id": "TACameronStott/GenreLlama38b",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/llama-3-8b-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 426
+ },
+ {
+  "id": "daanvdweijden/gemma3-1b-numbers-craig-s1",
+  "rel": "finetune",
+  "inherits": [
+   "Gemma"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/gemma-3-1b-it"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": true,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 425
+ },
+ {
+  "id": "irenicquasar/llama3-8B-sft-bnb-4bit",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/llama-3-8b-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 424
+ },
+ {
+  "id": "daanvdweijden/gemma3-4b-chess-albanese-s5",
+  "rel": "finetune",
+  "inherits": [
+   "Gemma"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/gemma-3-4b-it"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": true,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 420
+ },
+ {
+  "id": "webnizam/llama3-8b-unintended-consequences",
+  "rel": "finetune",
+  "inherits": [
+   "Llama 3"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/llama-3-8b-bnb-4bit"
+  ],
+  "body_mentions": {
+   "llama": true,
+   "gemma": false,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 420
+ },
+ {
+  "id": "Rickaym/gemma-3-4b-3-myanmar-chat",
+  "rel": "finetune",
+  "inherits": [
+   "Gemma"
+  ],
+  "yaml_license": [
+   "apache-2.0"
+  ],
+  "yaml_base_lines": [
+   "unsloth/gemma-3-4b-it"
+  ],
+  "body_mentions": {
+   "llama": false,
+   "gemma": true,
+   "license": true,
+   "non-commercial|cc-by-nc": false,
+   "apache": true
+  },
+  "body_len": 424
+ }
+]

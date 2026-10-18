@@ -1,0 +1,9 @@
+{
+ "root": "meta-llama/Llama-3.1-8B",
+ "descendants": 21639,
+ "graph_descendants": 21639,
+ "hub_api_calls_needed": 21653,
+ "median_call_seconds": 0.61,
+ "estimated_sequential_minutes": 220.9,
+ "graph_ms_median": 70.0
+}

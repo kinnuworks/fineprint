@@ -1,0 +1,472 @@
+{
+ "computed_in": "FalkorDB",
+ "relicensing_points": 38489,
+ "points_with_mismatched_descendants": 2438,
+ "mismatched_models_below_some_point": 9386,
+ "seconds": {
+  "find_points": 9.42,
+  "count_below": 4.91
+ },
+ "top": [
+  {
+   "model": "CultriX/NeuralTrix-7B-dpo",
+   "restricted_parents": [
+    "mlabonne/OmniBeagle-7B"
+   ],
+   "own_downloads_30d": 105,
+   "mismatched_models_below": 1243,
+   "their_downloads_30d": 148462.0
+  },
+  {
+   "model": "Gille/StrangeMerges_11-7B-slerp",
+   "restricted_parents": [
+    "mlabonne/NeuralBeagle14-7B"
+   ],
+   "own_downloads_30d": 58,
+   "mismatched_models_below": 1231,
+   "their_downloads_30d": 137210.0
+  },
+  {
+   "model": "Kukedlc/NeuTrixOmniBe-7B-model-remix",
+   "restricted_parents": [
+    "paulml/OmniBeagleSquaredMBX-v3-7B-v2"
+   ],
+   "own_downloads_30d": 72,
+   "mismatched_models_below": 1196,
+   "their_downloads_30d": 139521.0
+  },
+  {
+   "model": "mlabonne/NeuralOmniBeagle-7B",
+   "restricted_parents": [
+    "mlabonne/OmniBeagle-7B"
+   ],
+   "own_downloads_30d": 32,
+   "mismatched_models_below": 861,
+   "their_downloads_30d": 170558.0
+  },
+  {
+   "model": "canopylabs/orpheus-3b-0.1-pretrained",
+   "restricted_parents": [
+    "meta-llama/Llama-3.2-3B-Instruct"
+   ],
+   "own_downloads_30d": 1626,
+   "mismatched_models_below": 857,
+   "their_downloads_30d": 361657.0
+  },
+  {
+   "model": "mlabonne/OmniTruthyBeagle-7B-v0",
+   "restricted_parents": [
+    "mlabonne/OmniBeagle-7B"
+   ],
+   "own_downloads_30d": 27,
+   "mismatched_models_below": 849,
+   "their_downloads_30d": 169194.0
+  },
+  {
+   "model": "louisbrulenaudet/Pearl-7B-slerp",
+   "restricted_parents": [
+    "mlabonne/OmniBeagle-7B"
+   ],
+   "own_downloads_30d": 94,
+   "mismatched_models_below": 716,
+   "their_downloads_30d": 122187.0
+  },
+  {
+   "model": "Kukedlc/Fasciculus-Arcuatus-7B-slerp",
+   "restricted_parents": [
+    "macadeliccc/MonarchLake-7B"
+   ],
+   "own_downloads_30d": 78,
+   "mismatched_models_below": 666,
+   "their_downloads_30d": 104673.0
+  },
+  {
+   "model": "Kukedlc/NeuralMarioMonarch-7B-slerp",
+   "restricted_parents": [
+    "mlabonne/Monarch-7B"
+   ],
+   "own_downloads_30d": 68,
+   "mismatched_models_below": 659,
+   "their_downloads_30d": 102218.0
+  },
+  {
+   "model": "NousResearch/Hermes-2-Theta-Llama-3-8B",
+   "restricted_parents": [
+    "NousResearch/Hermes-2-Pro-Llama-3-8B"
+   ],
+   "own_downloads_30d": 11914,
+   "mismatched_models_below": 291,
+   "their_downloads_30d": 10176.0
+  },
+  {
+   "model": "mayacinka/yam-jom-7B",
+   "restricted_parents": [
+    "eren23/ogno-monarch-jaskier-merge-7b-OH-PREF-DPO-v2"
+   ],
+   "own_downloads_30d": 64,
+   "mismatched_models_below": 288,
+   "their_downloads_30d": 22166.0
+  },
+  {
+   "model": "princeton-nlp/gemma-2-9b-it-SimPO",
+   "restricted_parents": [
+    "google/gemma-2-9b-it"
+   ],
+   "own_downloads_30d": 444,
+   "mismatched_models_below": 252,
+   "their_downloads_30d": 8174.0
+  },
+  {
+   "model": "unsloth/Qwen2.5-3B-Instruct-bnb-4bit",
+   "restricted_parents": [
+    "Qwen/Qwen2.5-3B-Instruct"
+   ],
+   "own_downloads_30d": 40260,
+   "mismatched_models_below": 238,
+   "their_downloads_30d": 7194.0
+  },
+  {
+   "model": "Gille/StrangeMerges_16-7B-slerp",
+   "restricted_parents": [
+    "SanjiWatsuki/Kunoichi-7B"
+   ],
+   "own_downloads_30d": 58,
+   "mismatched_models_below": 179,
+   "their_downloads_30d": 51923.0
+  },
+  {
+   "model": "automerger/OgnoExperiment27-7B",
+   "restricted_parents": [
+    "eren23/ogno-monarch-jaskier-merge-7b-OH-PREF-DPO-v2"
+   ],
+   "own_downloads_30d": 68,
+   "mismatched_models_below": 173,
+   "their_downloads_30d": 51937.0
+  },
+  {
+   "model": "Kukedlc/NeuralMaths-Experiment-7b",
+   "restricted_parents": [
+    "mlabonne/NeuralDaredevil-7B"
+   ],
+   "own_downloads_30d": 60,
+   "mismatched_models_below": 143,
+   "their_downloads_30d": 55632.0
+  },
+  {
+   "model": "nbeerbower/Flammen-Trismegistus-7B",
+   "restricted_parents": [
+    "flammenai/flammen3X-mistral-7B"
+   ],
+   "own_downloads_30d": 60,
+   "mismatched_models_below": 141,
+   "their_downloads_30d": 44055.0
+  },
+  {
+   "model": "flammenai/flammen5-mistral-7B",
+   "restricted_parents": [
+    "nbeerbower/Flammen-Kunoichi-7B"
+   ],
+   "own_downloads_30d": 20,
+   "mismatched_models_below": 136,
+   "their_downloads_30d": 43741.0
+  },
+  {
+   "model": "flammenai/flammen7-mistral-7B",
+   "restricted_parents": [
+    "flammenai/flammen3X-mistral-7B"
+   ],
+   "own_downloads_30d": 24,
+   "mismatched_models_below": 131,
+   "their_downloads_30d": 43520.0
+  },
+  {
+   "model": "flammenai/flammen8-mistral-7B",
+   "restricted_parents": [
+    "mlabonne/AlphaMonarch-7B"
+   ],
+   "own_downloads_30d": 18,
+   "mismatched_models_below": 128,
+   "their_downloads_30d": 43350.0
+  },
+  {
+   "model": "flammenai/flammen9-mistral-7B",
+   "restricted_parents": [
+    "flammenai/flammen3X-mistral-7B"
+   ],
+   "own_downloads_30d": 23,
+   "mismatched_models_below": 126,
+   "their_downloads_30d": 43261.0
+  },
+  {
+   "model": "ReadyArt/4.2.0-Broken-Tutu-24b",
+   "restricted_parents": [
+    "TroyDoesAI/BlackSheep-24B",
+    "ReadyArt/Forgotten-Safeword-24B"
+   ],
+   "own_downloads_30d": 82,
+   "mismatched_models_below": 126,
+   "their_downloads_30d": 65143.0
+  },
+  {
+   "model": "nbeerbower/bophades-mistral-7B",
+   "restricted_parents": [
+    "paulml/NeuralOmniWestBeaglake-7B",
+    "paulml/OmniBeagleSquaredMBX-v3-7B"
+   ],
+   "own_downloads_30d": 66,
+   "mismatched_models_below": 110,
+   "their_downloads_30d": 44207.0
+  },
+  {
+   "model": "mayacinka/yam-jom-7B-slerp",
+   "restricted_parents": [
+    "eren23/ogno-monarch-jaskier-merge-7b-OH-PREF-DPO-v2"
+   ],
+   "own_downloads_30d": 62,
+   "mismatched_models_below": 108,
+   "their_downloads_30d": 9565.0
+  },
+  {
+   "model": "WeiboAI/VibeThinker-3B",
+   "restricted_parents": [
+    "Qwen/Qwen2.5-Coder-3B"
+   ],
+   "own_downloads_30d": 3572,
+   "mismatched_models_below": 108,
+   "their_downloads_30d": 25111.0
+  },
+  {
+   "model": "nbeerbower/Bophades-BruinsMaid-7B",
+   "restricted_parents": [
+    "SanjiWatsuki/Loyal-Toppy-Bruins-Maid-7B-DARE"
+   ],
+   "own_downloads_30d": 65,
+   "mismatched_models_below": 108,
+   "their_downloads_30d": 43946.0
+  },
+  {
+   "model": "nbeerbower/Suppe-v1-7B",
+   "restricted_parents": [
+    "mlabonne/Zebrafish-7B",
+    "mlabonne/AlphaMonarch-7B"
+   ],
+   "own_downloads_30d": 30,
+   "mismatched_models_below": 103,
+   "their_downloads_30d": 42233.0
+  },
+  {
+   "model": "nbeerbower/MaidFlameSoup-7B",
+   "restricted_parents": [
+    "nbeerbower/Maidphin-Kunoichi-7B",
+    "nbeerbower/Flammen-Kunoichi-7B"
+   ],
+   "own_downloads_30d": 32,
+   "mismatched_models_below": 101,
+   "their_downloads_30d": 41671.0
+  },
+  {
+   "model": "nbeerbower/bophades-v2-mistral-7B",
+   "restricted_parents": [
+    "paulml/NeuralOmniWestBeaglake-7B",
+    "paulml/OmniBeagleSquaredMBX-v3-7B"
+   ],
+   "own_downloads_30d": 62,
+   "mismatched_models_below": 99,
+   "their_downloads_30d": 42250.0
+  },
+  {
+   "model": "KatyTheCutie/LemonadeRP-4.5.3",
+   "restricted_parents": [
+    "NeverSleep/Noromaid-7B-0.4-DPO"
+   ],
+   "own_downloads_30d": 97,
+   "mismatched_models_below": 85,
+   "their_downloads_30d": 52834.0
+  },
+  {
+   "model": "sometimesanotion/Lamarck-14B-v0.6",
+   "restricted_parents": [
+    "Krystalan/DRT-14B"
+   ],
+   "own_downloads_30d": 50,
+   "mismatched_models_below": 77,
+   "their_downloads_30d": 11957.0
+  },
+  {
+   "model": "unsloth/Qwen2.5-Coder-3B-Instruct-bnb-4bit",
+   "restricted_parents": [
+    "Qwen/Qwen2.5-Coder-3B-Instruct"
+   ],
+   "own_downloads_30d": 18863,
+   "mismatched_models_below": 71,
+   "their_downloads_30d": 4830.0
+  },
+  {
+   "model": "Vortex5/Amber-Starlight-12B",
+   "restricted_parents": [
+    "DreadPoor/Strawberry_Smoothie-12B-Model_Stock"
+   ],
+   "own_downloads_30d": 26,
+   "mismatched_models_below": 70,
+   "their_downloads_30d": 16299.0
+  },
+  {
+   "model": "darkc0de/XortronCriminalComputingConfig",
+   "restricted_parents": [
+    "TroyDoesAI/BlackSheep-24B"
+   ],
+   "own_downloads_30d": 368,
+   "mismatched_models_below": 69,
+   "their_downloads_30d": 21845.0
+  },
+  {
+   "model": "flammenai/flammen18-mistral-7B",
+   "restricted_parents": [
+    "nbeerbower/Maidphin-Kunoichi-7B",
+    "nbeerbower/Flammen-Kunoichi-7B"
+   ],
+   "own_downloads_30d": 17,
+   "mismatched_models_below": 69,
+   "their_downloads_30d": 36342.0
+  },
+  {
+   "model": "hama-jp/gemma-2-27b-4bit",
+   "restricted_parents": [
+    "hama-jp/gemma-2-27b"
+   ],
+   "own_downloads_30d": 21,
+   "mismatched_models_below": 61,
+   "their_downloads_30d": 0
+  },
+  {
+   "model": "Novaciano/La_Mejor_Mezcla-3.2-1B",
+   "restricted_parents": [
+    "dphn/Dolphin3.0-Llama3.2-1B",
+    "prithivMLmods/Bellatrix-Tiny-1B-v3"
+   ],
+   "own_downloads_30d": 59,
+   "mismatched_models_below": 56,
+   "their_downloads_30d": 7130.0
+  },
+  {
+   "model": "EpistemeAI2/Fireball-Alpaca-Llama3.1-8B-Philos",
+   "restricted_parents": [
+    "unsloth/Meta-Llama-3.1-8B-Instruct-bnb-4bit"
+   ],
+   "own_downloads_30d": 6,
+   "mismatched_models_below": 51,
+   "their_downloads_30d": 18836.0
+  },
+  {
+   "model": "unsloth/Qwen2.5-3B-Instruct-unsloth-bnb-4bit",
+   "restricted_parents": [
+    "Qwen/Qwen2.5-3B-Instruct"
+   ],
+   "own_downloads_30d": 90803,
+   "mismatched_models_below": 49,
+   "their_downloads_30d": 2281.0
+  },
+  {
+   "model": "Naphula/Goetia-24B-v1.3",
+   "restricted_parents": [
+    "TroyDoesAI/BlackSheep-24B",
+    "Darkhn/M3.2-24B-Animus-V5.1-Pro"
+   ],
+   "own_downloads_30d": 55,
+   "mismatched_models_below": 49,
+   "their_downloads_30d": 20055.0
+  },
+  {
+   "model": "flammenai/flammen22X-mistral-7B",
+   "restricted_parents": [
+    "SanjiWatsuki/Kunoichi-DPO-v2-7B"
+   ],
+   "own_downloads_30d": 25,
+   "mismatched_models_below": 48,
+   "their_downloads_30d": 34664.0
+  },
+  {
+   "model": "Kukedlc/NeuralMaxime-7B-slerp",
+   "restricted_parents": [
+    "mlabonne/NeuralMonarch-7B",
+    "mlabonne/AlphaMonarch-7B"
+   ],
+   "own_downloads_30d": 78,
+   "mismatched_models_below": 47,
+   "their_downloads_30d": 31894.0
+  },
+  {
+   "model": "haoranxu/ALMA-13B-Pretrain",
+   "restricted_parents": [
+    "meta-llama/Llama-2-13b-hf"
+   ],
+   "own_downloads_30d": 8750,
+   "mismatched_models_below": 46,
+   "their_downloads_30d": 18714.0
+  },
+  {
+   "model": "liminerity/Blur-7b-v1.21",
+   "restricted_parents": [
+    "udkai/Turdus",
+    "decruz07/kellemar-DPO-Orca-Distilled-7B-SLERP"
+   ],
+   "own_downloads_30d": 58,
+   "mismatched_models_below": 46,
+   "their_downloads_30d": 26729.0
+  },
+  {
+   "model": "DreadPoor/Famino-12B-Model_Stock",
+   "restricted_parents": [
+    "cgato/Nemo-12b-Humanize-SFT-v0.2.5-KTO"
+   ],
+   "own_downloads_30d": 153,
+   "mismatched_models_below": 46,
+   "their_downloads_30d": 13111.0
+  },
+  {
+   "model": "suayptalha/FastLlama-3.2-1B-Instruct",
+   "restricted_parents": [
+    "meta-llama/Llama-3.2-1B-Instruct"
+   ],
+   "own_downloads_30d": 78,
+   "mismatched_models_below": 45,
+   "their_downloads_30d": 6020.0
+  },
+  {
+   "model": "Trelis/Llama-3.2-1B-Instruct-MATH-synthetic",
+   "restricted_parents": [
+    "unsloth/Llama-3.2-1B-Instruct"
+   ],
+   "own_downloads_30d": 32,
+   "mismatched_models_below": 44,
+   "their_downloads_30d": 4795.0
+  },
+  {
+   "model": "gate369/BrurryDog-7b-v0.1",
+   "restricted_parents": [
+    "udkai/Turdus"
+   ],
+   "own_downloads_30d": 23,
+   "mismatched_models_below": 43,
+   "their_downloads_30d": 26209.0
+  },
+  {
+   "model": "gate369/Blurred-Beagle-7b-slerp",
+   "restricted_parents": [
+    "alnrg2arg/blockchainlabs_7B_merged_test2_4"
+   ],
+   "own_downloads_30d": 16,
+   "mismatched_models_below": 40,
+   "their_downloads_30d": 26071.0
+  },
+  {
+   "model": "DeepAuto-AI/Explore_Llama-3.2-1B-Inst_v1.1",
+   "restricted_parents": [
+    "meta-llama/Llama-3.2-1B-Instruct"
+   ],
+   "own_downloads_30d": 59,
+   "mismatched_models_below": 39,
+   "their_downloads_30d": 4652.0
+  }
+ ]
+}

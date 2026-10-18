@@ -1,0 +1,12 @@
+{
+ "cards_read": 133,
+ "errors": 17,
+ "claims": 210,
+ "claim_status": {
+  "resolved": 148,
+  "not in graph": 62
+ },
+ "new_edges": 108,
+ "models_gaining_edges": 82,
+ "verdict_changes": []
+}

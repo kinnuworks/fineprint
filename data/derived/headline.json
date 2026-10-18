@@ -1,0 +1,416 @@
+{
+  "models_total": 3161594,
+  "models_with_declared_parents": 894527,
+  "multi_parent_models": 15104,
+  "models_inheriting_restrictive_terms": 176002,
+  "of_those_declaring_permissive_license": 39848,
+  "share_by_count": 0.2264,
+  "downloads_30d_inheriting": 49519610,
+  "downloads_30d_mismatched": 3250709,
+  "share_by_downloads": 0.0656,
+  "mismatch_by_nearest_depth": {
+    "1": 31289,
+    "2": 4834,
+    "3": 1179,
+    "4": 1393,
+    "5": 397,
+    "6": 126,
+    "7": 272,
+    "8": 262,
+    "9": 90,
+    "10": 6
+  },
+  "max_inheritance_depth": 39,
+  "mismatch_by_family": {
+    "Gemma": 11231,
+    "Llama 3.1": 8854,
+    "Llama 3": 8464,
+    "Llama 3.2": 5964,
+    "CC BY-NC": 4875,
+    "Llama 2": 1210,
+    "Llama 3.3": 558
+  },
+  "mismatch_by_relation": {
+    "finetune": 25507,
+    "quantized": 9794,
+    "adapter": 3024,
+    "merge": 1523
+  },
+  "mismatch_by_declared_license": {
+    "apache-2.0": 35959,
+    "mit": 3263,
+    "cc-by-4.0": 381,
+    "cc-by-sa-4.0": 160,
+    "afl-3.0": 43,
+    "wtfpl": 13,
+    "unlicense": 11,
+    "cc0-1.0": 8,
+    "bsd-3-clause": 4,
+    "bsl-1.0": 3,
+    "bsd-2-clause": 2,
+    "bsd": 1
+  },
+  "top_by_downloads": [
+    {
+      "id": "QCRI/Fanar-2-27B-Instruct",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Gemma"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 193149
+    },
+    {
+      "id": "kenpath/svara-tts-v1",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3.2"
+      ],
+      "relation": "adapter",
+      "downloads_30d": 103429
+    },
+    {
+      "id": "canopylabs/3b-de-ft-research_release",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3.2"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 85896
+    },
+    {
+      "id": "unsloth/orpheus-3b-0.1-ft",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3.2"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 57856
+    },
+    {
+      "id": "RedHatAI/gemma-3-27b-it-FP8-dynamic",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Gemma"
+      ],
+      "relation": "quantized",
+      "downloads_30d": 56785
+    },
+    {
+      "id": "bartowski/Altworld_Hemmingway-1-GGUF",
+      "declared": "apache-2.0",
+      "inherits": [
+        "CC BY-NC"
+      ],
+      "relation": "quantized",
+      "downloads_30d": 54221
+    },
+    {
+      "id": "mradermacher/Llama3.3-8B-Instruct-Thinking-Heretic-Uncensored-Claude-4.5-Opus-High-Reasoning-i1-GGUF",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3.3"
+      ],
+      "relation": "quantized",
+      "downloads_30d": 52350
+    },
+    {
+      "id": "vidore/colpali-v1.2",
+      "declared": "mit",
+      "inherits": [
+        "Gemma"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 41599
+    },
+    {
+      "id": "alakxender/mms-tts-div-finetuned-md-f01",
+      "declared": "mit",
+      "inherits": [
+        "CC BY-NC"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 34604
+    },
+    {
+      "id": "canopylabs/orpheus-3b-0.1-ft",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3.2"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 30243
+    },
+    {
+      "id": "mradermacher/Slimaki-Tavern-24B-v1.3-i1-GGUF",
+      "declared": "apache-2.0",
+      "inherits": [
+        "CC BY-NC"
+      ],
+      "relation": "quantized",
+      "downloads_30d": 28595
+    },
+    {
+      "id": "emillykkejensen/EmbeddingGemma-Scandi-300m",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Gemma"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 17761
+    },
+    {
+      "id": "touati-kamel/f5tts-algerian-darja",
+      "declared": "apache-2.0",
+      "inherits": [
+        "CC BY-NC"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 16369
+    },
+    {
+      "id": "vidore/colpali-v1.3",
+      "declared": "mit",
+      "inherits": [
+        "Gemma"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 16352
+    },
+    {
+      "id": "mradermacher/MN-Violet-Lotus-12B-GGUF",
+      "declared": "cc-by-4.0",
+      "inherits": [
+        "CC BY-NC"
+      ],
+      "relation": "quantized",
+      "downloads_30d": 13773
+    },
+    {
+      "id": "Sunbird/orpheus-3b-tts-multilingual",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3.2"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 13410
+    },
+    {
+      "id": "DavidAU/Gemma-The-Writer-N-Restless-Quill-10B-Uncensored-GGUF",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Gemma"
+      ],
+      "relation": "quantized",
+      "downloads_30d": 12427
+    },
+    {
+      "id": "AiHub4MSRH-Hash/hash-MedGemma-4B-16bit-eng-swa-it",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Gemma"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 12115
+    },
+    {
+      "id": "NousResearch/Hermes-2-Theta-Llama-3-8B",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 11914
+    },
+    {
+      "id": "inference-optimization/Llama-3.2-0.5B-Instruct",
+      "declared": "mit",
+      "inherits": [
+        "Llama 3.2"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 11850
+    },
+    {
+      "id": "Andycurrent/Gemma-3-4B-VL-it-Gemini-Pro-Heretic-Uncensored-Thinking_GGUF",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Gemma"
+      ],
+      "relation": "quantized",
+      "downloads_30d": 11217
+    },
+    {
+      "id": "vicgalle/Configurable-Hermes-2-Pro-Llama-3-8B",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 10089
+    },
+    {
+      "id": "mradermacher/ChatGPT-2.V2-GGUF",
+      "declared": "apache-2.0",
+      "inherits": [
+        "CC BY-NC"
+      ],
+      "relation": "quantized",
+      "downloads_30d": 9713
+    },
+    {
+      "id": "mradermacher/Goetia-26B-A4B-v1.7-i1-GGUF",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Gemma"
+      ],
+      "relation": "quantized",
+      "downloads_30d": 9382
+    },
+    {
+      "id": "DavidAU/L3-DARKEST-PLANET-16.5B-GGUF",
+      "declared": "apache-2.0",
+      "inherits": [
+        "CC BY-NC",
+        "Llama 3"
+      ],
+      "relation": "quantized",
+      "downloads_30d": 8996
+    },
+    {
+      "id": "haoranxu/ALMA-13B-Pretrain",
+      "declared": "mit",
+      "inherits": [
+        "Llama 2"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 8750
+    },
+    {
+      "id": "CultriX/NeuralMona_MoE-4x7B",
+      "declared": "apache-2.0",
+      "inherits": [
+        "CC BY-NC"
+      ],
+      "relation": "merge",
+      "downloads_30d": 8745
+    },
+    {
+      "id": "jsfs11/MixtureofMerges-MoE-4x7b-v5",
+      "declared": "apache-2.0",
+      "inherits": [
+        "CC BY-NC"
+      ],
+      "relation": "merge",
+      "downloads_30d": 8740
+    },
+    {
+      "id": "hfl/llama-3-chinese-8b-instruct-v3",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 8739
+    },
+    {
+      "id": "winninghealth/WiNGPT2-Llama-3-8B-Chat",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 8730
+    },
+    {
+      "id": "jsfs11/MixtureofMerges-MoE-4x7b-v4",
+      "declared": "apache-2.0",
+      "inherits": [
+        "CC BY-NC"
+      ],
+      "relation": "merge",
+      "downloads_30d": 8725
+    },
+    {
+      "id": "hfl/llama-3-chinese-8b-instruct",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 8670
+    },
+    {
+      "id": "haoranxu/ALMA-13B-R",
+      "declared": "mit",
+      "inherits": [
+        "Llama 2"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 8662
+    },
+    {
+      "id": "Kukedlc/NeuralLLaMa-3-8b-ORPO-v0.3",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3.1"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 8658
+    },
+    {
+      "id": "winninghealth/WiNGPT2-Llama-3-8B-Base",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 8650
+    },
+    {
+      "id": "hfl/llama-3-chinese-8b-instruct-v2",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 8646
+    },
+    {
+      "id": "pytorch/gemma-3-27b-it-AWQ-INT4",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Gemma"
+      ],
+      "relation": "quantized",
+      "downloads_30d": 8582
+    },
+    {
+      "id": "fdtn-ai/Foundation-Sec-8B",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3.1"
+      ],
+      "relation": "finetune",
+      "downloads_30d": 8334
+    },
+    {
+      "id": "unsloth/orpheus-3b-0.1-ft-GGUF",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3.2"
+      ],
+      "relation": "quantized",
+      "downloads_30d": 8266
+    },
+    {
+      "id": "isaiahbjork/orpheus-3b-0.1-ft-Q4_K_M-GGUF",
+      "declared": "apache-2.0",
+      "inherits": [
+        "Llama 3.2"
+      ],
+      "relation": "quantized",
+      "downloads_30d": 8260
+    }
+  ]
+}

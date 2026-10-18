@@ -1,0 +1,8 @@
+{
+ "mismatched": 48975,
+ "via_unsloth": 24947,
+ "share": 0.509,
+ "template_signature": 26406,
+ "template_share": 0.539,
+ "template_signature_rule": "tags unsloth + text-generation-inference + license:apache-2.0"
+}
