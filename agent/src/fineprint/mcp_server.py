@@ -216,10 +216,14 @@ def relicense_points(k: Annotated[int, Field(ge=1, le=100, description="How many
 
 
 @mcp.tool()
-def what_if_flux() -> str:
-    """Counterfactual on a GRAPH.COPY of the FLUX.1-dev family: if FLUX.1-dev were Apache-2.0,
-    how many models would still be bound by non-commercial terms. Before and after counts."""
-    return render.what_if(_call(get_api().what_if))
+def what_if(
+    root: Annotated[str, Field(description="Base model under a restricted license, e.g. black-forest-labs/FLUX.1-dev")]
+    = "black-forest-labs/FLUX.1-dev",
+    license: Annotated[str, Field(description="License key to give it, e.g. apache-2.0 or mit")] = "apache-2.0",
+) -> str:
+    """Counterfactual on a live GRAPH.COPY of a model's family: relicense the root, re-walk lineage,
+    and count models still bound by the old license. The copy is deleted afterwards."""
+    return render.what_if(_call(get_api().what_if, root, license))
 
 
 @mcp.tool()

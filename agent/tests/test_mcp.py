@@ -11,7 +11,7 @@ FANAR = "QCRI/Fanar-2-27B-Instruct"
 QWEN = "Qwen/Qwen2.5-7B-Instruct"
 LLAMA = "acme/Llama-3.1-8B-tuned"
 TOOLS = {"check_model", "explain_path", "downstream", "draft_remediation", "find_clean_substitute",
-         "search_models", "load_bearing", "relicense_points", "what_if_flux", "hub_stats",
+         "search_models", "load_bearing", "relicense_points", "what_if", "hub_stats",
          "record_ruling", "list_rulings"}
 TAKES_MODEL_ID = {"check_model", "explain_path", "downstream", "draft_remediation", "find_clean_substitute"}
 
@@ -126,11 +126,24 @@ def test_relicense_points(fake_api):
     assert "Declared license differs from upstream terms" in out
 
 
-def test_what_if_flux(fake_api):
-    out = srv.what_if_flux()
-    assert out.startswith("What if: FLUX.1-dev relicensed as Apache-2.0, on a GRAPH.COPY of its family")
-    assert "| bound by non-commercial terms in total | 43,700 | 27,592 |" in out
-    assert "| only inherit it from below a non-commercial model | 16,247 | 140 |" in out
+def test_what_if(fake_api):
+    out = srv.what_if()
+    assert out.startswith("What if: black-forest-labs/FLUX.1-dev relicensed as apache-2.0, on a GRAPH.COPY")
+    assert "| bound by flux-1-dev-non-commercial-license terms in total | 43,700 | 27,592 |" in out
+    assert "| declare flux-1-dev-non-commercial-license | 27,453 | 27,452 |" in out
+    assert "- city96/FLUX.1-dev-gguf [flux-1-dev-non-commercial-license], 194,092 downloads" in out
+    assert "copied family:black-forest-labs-flux-1-dev to whatif:0123abcd with GRAPH.COPY" in out
+    assert fake_api.what_if_params == {"root": "black-forest-labs/FLUX.1-dev", "license": "apache-2.0"}
+    srv.what_if(root="meta-llama/Llama-3.2-1B", license="mit")
+    assert fake_api.what_if_params == {"root": "meta-llama/Llama-3.2-1B", "license": "mit"}
+
+
+def test_what_if_renders_older_api_shape():
+    from fineprint import render
+    out = render.what_if({"scenario": "old", "before": {"models_under_nc_license": 2, "affected_total": 3},
+                          "after": {"models_under_nc_license": 1, "affected_total": 1},
+                          "graphs": ["family:flux1-dev", "whatif:flux1-dev-apache"]})
+    assert "| declare the non-commercial license | 2 | 1 |" in out
     assert "whatif:flux1-dev-apache" in out
 
 
@@ -154,7 +167,7 @@ def test_search_models(fake_api):
 
 def test_algorithm_tools_raise_when_api_down(fake_api):
     fake_api.down = True
-    for fn in (srv.load_bearing, srv.relicense_points, srv.what_if_flux, srv.hub_stats):
+    for fn in (srv.load_bearing, srv.relicense_points, srv.what_if, srv.hub_stats):
         with pytest.raises(srv.ToolError, match="not reachable"):
             fn()
     with pytest.raises(srv.ToolError, match="not reachable"):
@@ -164,7 +177,7 @@ def test_algorithm_tools_raise_when_api_down(fake_api):
 def test_algorithm_tool_on_older_api(fake_api):
     fake_api.missing = {"/api/what-if"}
     with pytest.raises(srv.ToolError, match="does not offer that yet"):
-        srv.what_if_flux()
+        srv.what_if()
 
 
 def test_tools_raise_clear_error_when_api_down(fake_api):
@@ -191,7 +204,8 @@ def test_tool_schemas():
     assert schema(by_name["search_models"])["required"] == ["q"]
     assert schema(by_name["load_bearing"])["properties"]["k"]["default"] == 10
     assert schema(by_name["relicense_points"])["properties"]["k"]["maximum"] == 100
-    assert not schema(by_name["what_if_flux"]).get("properties")
+    wi = schema(by_name["what_if"])["properties"]
+    assert wi["root"]["default"] == "black-forest-labs/FLUX.1-dev" and wi["license"]["default"] == "apache-2.0"
     use = schema(by_name["check_model"])["properties"]["use"]
     assert use["enum"] == ["commercial", "noncommercial"] and use["default"] == "commercial"
     k = schema(by_name["downstream"])["properties"]["k"]

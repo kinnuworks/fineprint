@@ -115,14 +115,19 @@ RELICENSE = {"computed_in": "FalkorDB", "relicensing_points": 38489, "points_wit
                       "own_downloads_30d": 105, "mismatched_models_below": 1243, "their_downloads_30d": 148462.0},
                      {"model": "Gille/StrangeMerges_11-7B-slerp", "restricted_parents": ["mlabonne/NeuralBeagle14-7B"],
                       "own_downloads_30d": 58, "mismatched_models_below": 1231, "their_downloads_30d": 137210.0}]}
-WHAT_IF = {"scenario": "FLUX.1-dev relicensed as Apache-2.0, on a GRAPH.COPY of its family",
-           "family_models": 43700, "family_edges": 43702,
-           "before": {"models_under_nc_license": 27453, "models_below_one": 16247, "affected_total": 43700},
-           "after": {"models_under_nc_license": 27452, "models_below_one": 140, "affected_total": 27592},
-           "still_non_commercial_after": 27592,
+WHAT_IF = {"scenario": "black-forest-labs/FLUX.1-dev relicensed as apache-2.0, on a GRAPH.COPY of its family",
+           "root": "black-forest-labs/FLUX.1-dev", "from_license": "flux-1-dev-non-commercial-license",
+           "to_license": "apache-2.0", "family_models": 43700, "family_edges": 43702,
+           "before": {"models_under_restricted": 27453, "models_below_one": 16247, "affected_total": 43700},
+           "after": {"models_under_restricted": 27452, "models_below_one": 140, "affected_total": 27592},
+           "still_labelled_restricted_after": 27592, "still_labelled_non_commercial_after": 27592,
+           "relabel_needed": [{"id": "city96/FLUX.1-dev-gguf", "license": "flux-1-dev-non-commercial-license",
+                               "downloads": 194092}],
            "why": "LoRAs and fine-tunes that declare the license themselves keep it.",
-           "graphs": ["family:flux1-dev", "whatif:flux1-dev-apache"],
-           "seconds": {"extract": 3.31, "graph_copy": 5.102}}
+           "graphs": {"family": "family:black-forest-labs-flux-1-dev", "copy": "whatif:0123abcd"},
+           "seconds": {"family": 0.0, "graph_copy": 0.29, "edit": 0.001, "walks": 0.28, "delete": 0.001,
+                       "total": 0.6},
+           "cached_family": True}
 STATS = {"computed_in": "FalkorDB", "models_total": 3161594, "inheriting_restricted": 242170,
          "inheriting_but_declare_permissive": 48975, "their_downloads_30d": 5879953.0, "ship_license_file": 346,
          "by_family": [["Gemma", 11215]], "graph_audit": {"numbers": {"models_total": [3161594]}}}
@@ -216,6 +221,7 @@ class FakeApi:
         if path == "/api/relicense-points":
             return httpx.Response(200, json={**RELICENSE, "top": RELICENSE["top"][:k]})
         if path == "/api/what-if":
+            self.what_if_params = dict(request.url.params)
             return httpx.Response(200, json=WHAT_IF)
         if path == "/api/stats":
             return httpx.Response(200, json=STATS)

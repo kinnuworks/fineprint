@@ -258,3 +258,38 @@ def test_check_ruleset_flag_and_env(tmp_path, fake_api, capsys, monkeypatch):
     assert cli.main(["report", "acme/Llama-3.1-8B-tuned"]) == 1
     monkeypatch.setenv("FINEPRINT_RULESET", "Not Valid")
     assert cli.main(["check", str(tmp_path)]) == 64
+
+
+def test_check_model_ids_directly(tmp_path, fake_api, capsys, monkeypatch):
+    # After `pip install`, there is no demo folder: model ids on the command line are checked as-is.
+    monkeypatch.chdir(tmp_path)
+    assert cli.main(["check", NC]) == 1
+    out = capsys.readouterr().out
+    assert f"| {NC} | BLOCK |" in out and "| command line |" in out
+    assert f"/api/report/{NC}" in fake_api.calls[-1]
+    assert cli.main(["check", FANAR, QWEN]) == 0
+    assert cli.main(["check", FANAR, QWEN, "--strict"]) == 2
+    assert cli.main(["check", f"https://huggingface.co/{NC}", "--use", "noncommercial"]) == 0
+
+
+def test_check_mixes_paths_and_ids(tmp_path, fake_api, capsys):
+    write(tmp_path, "a.py", f'from_pretrained("{QWEN}")')
+    assert cli.main(["check", str(tmp_path), NC, "--json"]) == 1
+    rows = {r["model"]: r for r in json.loads(capsys.readouterr().out)}
+    assert set(rows) == {QWEN, NC}
+    assert rows[NC]["found_in"] == ["command line"]
+
+
+def test_check_existing_path_wins_over_id(tmp_path, fake_api, capsys, monkeypatch):
+    # A folder named like org/name is scanned, not looked up.
+    monkeypatch.chdir(tmp_path)
+    write(tmp_path, "acme/proj/a.py", f'from_pretrained("{QWEN}")')
+    assert cli.main(["check", "acme/proj", "--json"]) == 0
+    assert [r["model"] for r in json.loads(capsys.readouterr().out)] == [QWEN]
+
+
+def test_check_missing_path_is_usage_error(tmp_path, fake_api, capsys, monkeypatch):
+    monkeypatch.chdir(tmp_path)
+    assert cli.main(["check", "demo"]) == 64
+    assert "not a model id" in capsys.readouterr().err
+    assert fake_api.calls == []

@@ -2,7 +2,7 @@
 
 Tools that let code and coding agents ask FinePrint about a Hugging Face model before using it:
 
-- an MCP server with twelve tools: five per-model tools (`check_model`, `explain_path`, `downstream`, `draft_remediation`, `find_clean_substitute`), five that expose FalkorDB graph algorithms and Hub-wide numbers (`search_models`, `load_bearing`, `relicense_points`, `what_if_flux`, `hub_stats`), and two for org rulings (`record_ruling`, `list_rulings`),
+- an MCP server with twelve tools: five per-model tools (`check_model`, `explain_path`, `downstream`, `draft_remediation`, `find_clean_substitute`), five that expose FalkorDB graph algorithms and Hub-wide numbers (`search_models`, `load_bearing`, `relicense_points`, `what_if`, `hub_stats`), and two for org rulings (`record_ruling`, `list_rulings`),
 - `fineprint.guard()`, which checks every `huggingface_hub` download (and so every `from_pretrained`) first,
 - a `fineprint` CLI that scans a repo for model ids and prints a markdown table, with exit codes for CI and hooks.
 
@@ -43,7 +43,7 @@ python -m fineprint.mcp_server      # stdio transport; or the `fineprint-mcp` sc
 | `search_models` | `q`, `limit` (1-50, default 10), `use` (optional) | model ids matching `q`, exact id first, then by downloads (`/api/search`); with `use`, each result's decision and why |
 | `load_bearing` | `k` (1-100, default 10) | FalkorDB PageRank over lineage edges (`/api/load-bearing`): the base models most of the Hub stands on, with descendants and their 30-day downloads. PageRank also counts automated upload farms, so read it next to the download numbers |
 | `relicense_points` | `k` (1-100, default 10) | models that declared a permissive license directly on a parent with restricted terms, ranked by mismatched models below them (`/api/relicense-points`) |
-| `what_if_flux` | none | FLUX.1-dev relicensed as Apache-2.0 on a `GRAPH.COPY` of its family: before and after counts of models bound by non-commercial terms (`/api/what-if`) |
+| `what_if` | `root` (default FLUX.1-dev), `license` (default apache-2.0) | Relicenses `root` on a fresh `GRAPH.COPY` of its family, re-walks the lineage and deletes the copy: before and after counts of models bound by the old license, and the most downloaded ones that would still need to relabel (`/api/what-if`) |
 | `record_ruling` | `ruleset`, `scope` (`license` or `model`), `target` (license key or model id), `effect` (`approve` or `reject`), `use` (`commercial`, `non-commercial`, `any`), `note`, `conditions` (optional) | the saved ruling; later `check_model` calls with that ruleset apply it |
 | `list_rulings` | `ruleset` | every ruling in the ruleset, newest first, with superseded ones marked |
 | `hub_stats` | none | top-level Hub-wide numbers from `/api/stats` (models, how many inherit restricted terms, how many of those declare a permissive license, downloads, LICENSE files) |
@@ -113,7 +113,7 @@ Or add `import fineprint.autoguard` at the top of an entry point. `fineprint.gua
 ## CLI
 
 ```bash
-fineprint check [PATH] [--use commercial|noncommercial] [--ruleset SLUG] [--strict] [--fail-closed] [--json]
+fineprint check [PATH | MODEL_ID ...] [--use commercial|noncommercial] [--ruleset SLUG] [--strict] [--fail-closed] [--json]
 fineprint report MODEL_ID [--use commercial|noncommercial] [--ruleset SLUG] [--fail-closed] [--json] [--no-graph] [--strict]
 ```
 

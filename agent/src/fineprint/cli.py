@@ -1,4 +1,7 @@
-"""`fineprint check [PATH]` and `fineprint report MODEL_ID`.
+"""`fineprint check [PATH | MODEL_ID ...]` and `fineprint report MODEL_ID`.
+
+`check` takes folders, files, or Hugging Face model ids. An argument that is not an existing
+path and looks like `org/name` (or a huggingface.co URL) is checked as a model id.
 
 The API's decision for the chosen use (--use, else FINEPRINT_USE, else commercial) sets the
 exit code: 0 nothing to stop on, 1 at least one BLOCK, 2 CONDITIONS with --strict,
@@ -74,15 +77,48 @@ def exit_code(reports: list[dict], strict: bool, closed: bool = False) -> int:
     return EXIT_OK
 
 
+def _as_model_id(arg: str) -> str | None:
+    """`arg` as a model id when it is not an existing path and looks like org/name; else None."""
+    if os.path.exists(arg):
+        return None
+    try:
+        mid = normalize_model_id(arg)
+    except ValueError:
+        return None
+    return mid if "/" in mid else None
+
+
+def _collect(targets: list[str]) -> tuple[dict[str, list[str]], list[str]]:
+    """Model ids to check with where each was found, plus the arguments that were neither."""
+    found: dict[str, list[str]] = {}
+    bad: list[str] = []
+    for t in targets:
+        mid = _as_model_id(t)
+        if mid:
+            found.setdefault(mid, []).append("command line")
+        elif os.path.exists(t):
+            for m, hit in scan(t).items():
+                found.setdefault(m, []).extend(hit.places)
+        else:
+            bad.append(t)
+    return found, bad
+
+
 def cmd_check(args) -> int:
-    hits = scan(args.path)
+    targets = args.path or ["."]
+    hits, bad = _collect(targets)
+    if bad:
+        print(f"fineprint: no such file or folder, and not a model id like org/name: {', '.join(bad)}",
+              file=sys.stderr)
+        return EXIT_USAGE
+    where = ", ".join(targets)
     if not hits:
-        print(f"No Hugging Face model ids found under {args.path}.")
+        print(f"No Hugging Face model ids found under {where}.")
         return EXIT_OK
     ids = list(hits)
     with ThreadPoolExecutor(max_workers=8) as pool:
         reports = list(pool.map(lambda m: _check_one(m, args.use, args.ruleset), ids))
-    rows = sorted(((rep, hits[mid].places) for mid, rep in zip(ids, reports)),
+    rows = sorted(((rep, hits[mid]) for mid, rep in zip(ids, reports)),
                   key=lambda r: ORDER.get(render.decision(r[0]), 5))
     code = exit_code(reports, args.strict, args.fail_closed)
     unchecked = [r for r in reports if r.get("_unreachable")]
@@ -100,7 +136,7 @@ def cmd_check(args) -> int:
         d = render.decision(r)
         counts[d] = counts.get(d, 0) + 1
     rs = f", org rulings {args.ruleset}" if args.ruleset else ""
-    print(f"## FinePrint check: {len(ids)} model{'s' if len(ids) != 1 else ''} in {args.path}, {args.use} use{rs}")
+    print(f"## FinePrint check: {len(ids)} model{'s' if len(ids) != 1 else ''} in {where}, {args.use} use{rs}")
     print()
     print(table(rows))
     print()
@@ -181,8 +217,9 @@ def build_parser() -> argparse.ArgumentParser:
     p = _Parser(prog="fineprint", description="Check the license terms Hugging Face models "
                                 "inherit through their lineage, using the FinePrint API (FINEPRINT_API).")
     sub = p.add_subparsers(dest="cmd", required=True, parser_class=_Parser)
-    c = sub.add_parser("check", help="scan a repo for model ids and check each one")
-    c.add_argument("path", nargs="?", default=".")
+    c = sub.add_parser("check", help="check model ids found in folders or files, or given directly")
+    c.add_argument("path", nargs="*", metavar="PATH_OR_MODEL_ID",
+                   help="folders or files to scan (default: .), or model ids like org/name")
     _use_arg(c)
     c.add_argument("--strict", action="store_true", help="exit 2 if any model is CONDITIONS")
     c.add_argument("--json", action="store_true", help="print JSON instead of a markdown table")

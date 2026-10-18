@@ -171,8 +171,12 @@ class Api:
     def relicense_points(self, k: int = 10) -> dict:
         return self._get("/api/relicense-points", {"k": int(k)}, timeout=60.0)
 
-    def what_if(self) -> dict:
-        return self._get("/api/what-if", timeout=120.0)
+    def what_if(self, root: str | None = None, license: str = "apache-2.0") -> dict:
+        """Relicense `root` on a live GRAPH.COPY of its family (the API's default root is FLUX.1-dev)."""
+        params = {"license": license}
+        if root:
+            params["root"] = root
+        return self._get("/api/what-if", params, timeout=120.0)
 
 
 _default: Api | None = None

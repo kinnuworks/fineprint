@@ -401,18 +401,30 @@ def relicense_points(data: dict) -> str:
 
 def what_if(data: dict) -> str:
     b, a = data.get("before") or {}, data.get("after") or {}
+    lic = data.get("from_license") or "the restricted license"
     lines = [f"What if: {data.get('scenario', '?')}",
              f"Family: {_n(data.get('family_models', '?'))} models, {_n(data.get('family_edges', '?'))} lineage edges.",
              "", "| | before | after |", "|---|---|---|"]
     labels = {"models_under_nc_license": "declare the non-commercial license",
-              "models_below_one": "only inherit it from below a non-commercial model",
-              "affected_total": "bound by non-commercial terms in total"}
+              "models_under_restricted": f"declare {lic}",
+              "models_below_one": f"only inherit it from below a model under {lic}" if data.get("from_license")
+              else "only inherit it from below a non-commercial model",
+              "affected_total": f"bound by {lic} terms in total" if data.get("from_license")
+              else "bound by non-commercial terms in total"}
     for k in dict.fromkeys(list(b) + list(a)):
         lines.append(f"| {labels.get(k, k)} | {_n(b.get(k, '-'))} | {_n(a.get(k, '-'))} |")
     if data.get("why"):
         lines += ["", data["why"]]
-    if data.get("graphs"):
-        lines.append(f"Graphs: {', '.join(data['graphs'])} (the original graph is not changed).")
+    relabel = data.get("relabel_needed") or []
+    if relabel:
+        lines += ["", "Most downloaded models that would still need to relabel:"]
+        lines += [f"- {r.get('id')} [{r.get('license')}], {_n(r.get('downloads') or 0)} downloads" for r in relabel[:10]]
+    graphs = data.get("graphs")
+    if isinstance(graphs, dict):
+        lines.append(f"Graphs: copied {graphs.get('family')} to {graphs.get('copy')} with GRAPH.COPY, edited the copy, "
+                     "then deleted it (hub is not changed).")
+    elif graphs:
+        lines.append(f"Graphs: {', '.join(graphs)} (the original graph is not changed).")
     secs = data.get("seconds")
     if isinstance(secs, dict):
         lines.append("Timings (s): " + ", ".join(f"{k} {v}" for k, v in secs.items()))

@@ -90,8 +90,10 @@ def test_algorithm_tools_live():
     assert "1. " in lb and "descendants" in lb
     rp = mcp_server.relicense_points(k=3)
     assert "relicense points:" in rp and "3. " in rp
-    wi = mcp_server.what_if_flux()
-    assert "FLUX.1-dev" in wi and "| bound by non-commercial terms in total |" in wi
+    wi = mcp_server.what_if()
+    assert "FLUX.1-dev" in wi and "| bound by flux-1-dev-non-commercial-license terms in total | 43,700 | 27,592 |" in wi
+    wi = mcp_server.what_if(root="meta-llama/Llama-3.2-1B", license="mit")
+    assert "| declare llama3.2 |" in wi and "GRAPH.COPY" in wi
     st = mcp_server.hub_stats()
     assert "- models on the Hub:" in st
     se = mcp_server.search_models("Qwen2.5-7B-Instruct", limit=3, use="commercial")
